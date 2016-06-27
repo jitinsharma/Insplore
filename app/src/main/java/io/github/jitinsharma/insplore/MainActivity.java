@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
-    String f;
     LatLng coord;
     LocationObject locationObject;
     public static final String TAG = "InsploreMap";
