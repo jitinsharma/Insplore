@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="io.github.jitinsharma.insplore.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/location_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <fragment
+                android:id="@+id/lite_map"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                map:liteMode="true"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_below="@id/lite_map"
+                android:text="Hello There!" />
+
+            <TextView
+                android:id="@+id/nearby_locations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="?attr/colorAccent"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:layout_below="@id/lite_map"
+                android:layout_alignParentRight="true"
+                android:text="NEARBY" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/flight_search_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_card"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/city_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="Get Out of Bangalore"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_below="@id/city_message"/>
+
+            <TextView
+                android:id="@+id/inspire_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorAccent"
+                android:textAllCaps="true"
+                android:text="@string/inspire_search"
+                android:textStyle="bold"
+                android:padding="@dimen/standard_padding"
+                android:layout_below="@+id/divider"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:id="@+id/top_destination_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorAccent"
+                android:textAllCaps="true"
+                android:text="@string/top_destination"
+                android:textStyle="bold"
+                android:layout_below="@+id/divider"
+                android:padding="@dimen/standard_padding"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:layout_toLeftOf="@id/inspire_search"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
