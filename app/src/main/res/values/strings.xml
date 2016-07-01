@@ -11,4 +11,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="top_destination">TOP DESTINATIONS</string>
     <string name="inspire_search">INSPIRE ME</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="go_button">GO</string>
+
+    <string-array name="top_dest_year_array">
+        <item>2011</item>
+        <item>2012</item>
+        <item>2013</item>
+        <item>2014</item>
+        <item>2015</item>
+    </string-array>
 </resources>

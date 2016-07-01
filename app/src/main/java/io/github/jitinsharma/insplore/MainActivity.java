@@ -1,11 +1,15 @@
 package io.github.jitinsharma.insplore;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,6 +19,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,10 +38,15 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.vision.text.Text;
 
+import io.github.jitinsharma.insplore.Utilities.AnimationUtilities;
+import io.github.jitinsharma.insplore.activities.SearchActivity;
+import io.github.jitinsharma.insplore.fragment.DatePickerFragment;
+import io.github.jitinsharma.insplore.model.AsyncTaskListener;
 import io.github.jitinsharma.insplore.model.LocationObject;
+import io.github.jitinsharma.insplore.service.LocationTask;
 import io.github.jitinsharma.insplore.storage.TinyDB;
 
 public class MainActivity extends AppCompatActivity
@@ -48,12 +61,18 @@ public class MainActivity extends AppCompatActivity
     TinyDB tinyDB;
     TextView nearbyLocations;
     int PLACE_PICKER_REQUEST = 1;
+    TextView topDestinationButton;
+    ImageView imageView;
+    TabLayout tabLayout;
+    Button goButton;
+    TextView topDestDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tabLayout = (TabLayout)findViewById(R.id.divider);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -65,6 +84,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         nearbyLocations = (TextView)findViewById(R.id.nearby_locations);
+        imageView = (ImageView)findViewById(R.id.city_image);
+        goButton = (Button)findViewById(R.id.go_button);
+        topDestDate = (TextView)findViewById(R.id.top_dest_date_text);
 
         if (mGoogleApiClient == null) {
             mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -79,6 +101,8 @@ public class MainActivity extends AppCompatActivity
         supportMapFragment.getMapAsync(this);
         locationObject = new LocationObject();
         tinyDB = new TinyDB(this);
+        tabLayout.addTab(tabLayout.newTab().setText(getBaseContext().getString(R.string.top_destination)));
+        tabLayout.addTab(tabLayout.newTab().setText(getBaseContext().getString(R.string.inspire_search)));
 
         nearbyLocations.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +115,76 @@ public class MainActivity extends AppCompatActivity
                 } catch (GooglePlayServicesNotAvailableException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        goButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), SearchActivity.class);
+                intent.putExtra("TYPE", "TOP_DEST");
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    ActivityOptions options = ActivityOptions
+                            .makeSceneTransitionAnimation(MainActivity.this, imageView, "search");
+                    startActivity(intent, options.toBundle());
+                }
+                else{
+                    startActivity(intent);
+                }
+
+            }
+        });
+
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()){
+                    case 0:
+                        AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
+                                getBaseContext(), R.color.colorAccent), ContextCompat.getColor(
+                                getBaseContext(), R.color.colorPrimary), tabLayout);
+
+                        AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
+                                getBaseContext(), R.color.colorPrimary), ContextCompat.getColor(
+                                getBaseContext(), R.color.colorAccent), goButton);
+                        break;
+                    case 1:
+                        AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
+                                getBaseContext(), R.color.colorPrimary), ContextCompat.getColor(
+                                        getBaseContext(), R.color.colorAccent), tabLayout);
+
+
+                        AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
+                                getBaseContext(), R.color.colorAccent), ContextCompat.getColor(
+                                getBaseContext(), R.color.colorPrimary), goButton);
+                        break;
+                    default:
+                        AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
+                                getBaseContext(), R.color.colorAccent), ContextCompat.getColor(
+                                getBaseContext(), R.color.colorPrimary), tabLayout);
+
+                        AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
+                                getBaseContext(), R.color.colorPrimary), ContextCompat.getColor(
+                                getBaseContext(), R.color.colorAccent), goButton);
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        topDestDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogFragment datePickerFragment = new DatePickerFragment();
+                datePickerFragment.show(getSupportFragmentManager(), "datepicker");
             }
         });
     }
@@ -144,18 +238,8 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_top_dest) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -191,6 +275,9 @@ public class MainActivity extends AppCompatActivity
             //coord = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
             locationObject.setLatitude(mLastLocation.getLatitude());
             locationObject.setLongitude(mLastLocation.getLongitude());
+            if (tinyDB.getString("Airport").isEmpty() && tinyDB.getString("City").isEmpty()){
+                loadAirportCityData(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+            }
             Log.e(TAG, "API connected" + coord);
         }
     }
@@ -210,5 +297,21 @@ public class MainActivity extends AppCompatActivity
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10f));
         mMap.addMarker(new MarkerOptions()
         .position(latLng));
+    }
+
+    public void loadAirportCityData(double latitude, double longitude){
+        LocationTask locationTask = new LocationTask(getBaseContext(), new AirportCityListener());
+        LatLng latLng = new LatLng(latitude, longitude);
+        locationTask.execute(latLng);
+    }
+
+    class AirportCityListener implements AsyncTaskListener<LocationObject> {
+
+        @Override
+        public void onTaskComplete(LocationObject result) {
+            tinyDB.putString("Airport", result.getAirportCode());
+            tinyDB.putString("City", result.getCityName());
+            Toast.makeText(getBaseContext(), result.getAirportCode() + result.getCityName(), Toast.LENGTH_SHORT).show();
+        }
     }
 }
