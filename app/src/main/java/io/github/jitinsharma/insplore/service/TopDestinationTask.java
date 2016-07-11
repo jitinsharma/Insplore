@@ -45,13 +45,14 @@ public class TopDestinationTask extends AsyncTask<String, Void, ArrayList<TopDes
     protected ArrayList<TopDestinationObject> doInBackground(String... strings) {
         String baseUrl = "https://api.sandbox.amadeus.com/v1.2/travel-intelligence/top-destinations";
         String fromAirport = strings[0];
+        String month = strings[1];
 
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
         String airportJson = null;
         Uri uri = Uri.EMPTY;
         uri = Uri.parse(baseUrl).buildUpon()
-                .appendQueryParameter("period", "2015-09")
+                .appendQueryParameter("period", month)
                 .appendQueryParameter("origin", fromAirport)
                 .appendQueryParameter("apikey",context.getString(R.string.ama_sandbox))
                 .build();

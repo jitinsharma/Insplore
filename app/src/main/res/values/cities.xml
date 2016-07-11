@@ -1,0 +1,107 @@
+<resources>
+  <string-array name='yapq_cities'>
+    <item>Abu Dhabi</item>
+    <item>Antalya</item>
+    <item>Atlanta</item>
+    <item>Auckland</item>
+    <item>Baku</item>
+    <item>Bangkok</item>
+    <item>Barcelona</item>
+    <item>Beijing</item>
+    <item>Berlin</item>
+    <item>Bilbao</item>
+    <item>Birmingham</item>
+    <item>Bratislava</item>
+    <item>Bucharest</item>
+    <item>Budapest</item>
+    <item>Cairo</item>
+    <item>Cape Town</item>
+    <item>Chennai</item>
+    <item>Chiang Mai</item>
+    <item>Chicago</item>
+    <item>Christchurch</item>
+    <item>Copenhagen</item>
+    <item>Denpasar</item>
+    <item>Doha</item>
+    <item>Dubai</item>
+    <item>Dublin</item>
+    <item>Edinburgh</item>
+    <item>Florence</item>
+    <item>Glasgow</item>
+    <item>Graz</item>
+    <item>Guangzhou</item>
+    <item>Hamburg</item>
+    <item>Hangzhou</item>
+    <item>Hanoi</item>
+    <item>Helsinki</item>
+    <item>Ho Chi Minh City</item>
+    <item>Honolulu</item>
+    <item>Indianapolis</item>
+    <item>Innsbruck</item>
+    <item>Iowa City</item>
+    <item>Jaipur</item>
+    <item>Jakarta</item>
+    <item>Jerusalem</item>
+    <item>Kiev</item>
+    <item>Kolkata</item>
+    <item>Krakow</item>
+    <item>Las Vegas</item>
+    <item>Lima</item>
+    <item>Linz</item>
+    <item>Lisbon</item>
+    <item>Liverpool</item>
+    <item>London</item>
+    <item>Los Angeles</item>
+    <item>Lyon</item>
+    <item>Madrid</item>
+    <item>Manama</item>
+    <item>Manchester</item>
+    <item>Manila</item>
+    <item>Marseille</item>
+    <item>Mecca</item>
+    <item>Melbourne</item>
+    <item>Mexico City</item>
+    <item>Milan</item>
+    <item>Monaco</item>
+    <item>Montreal</item>
+    <item>Moscow</item>
+    <item>Mumbai</item>
+    <item>Munich</item>
+    <item>Nairobi</item>
+    <item>Nanjing</item>
+    <item>New Delhi</item>
+    <item>New York</item>
+    <item>Newcastle upon Tyne</item>
+    <item>Nice</item>
+    <item>Orlando</item>
+    <item>Oslo</item>
+    <item>Oxford</item>
+    <item>Paris</item>
+    <item>Prague</item>
+    <item>Reims</item>
+    <item>Reykjavik</item>
+    <item>Riyadh</item>
+    <item>Rome</item>
+    <item>San Diego</item>
+    <item>San Francisco</item>
+    <item>San Jose</item>
+    <item>Seattle</item>
+    <item>Seoul</item>
+    <item>Shanghai</item>
+    <item>Shenzhen</item>
+    <item>Singapore</item>
+    <item>Sofia</item>
+    <item>Stockholm</item>
+    <item>Sydney</item>
+    <item>Tallinn</item>
+    <item>Tel Aviv</item>
+    <item>Toronto</item>
+    <item>Turku</item>
+    <item>Vancouver</item>
+    <item>Vienna</item>
+    <item>Warsaw</item>
+    <item>Washington</item>
+    <item>Zaragoza</item>
+    <item>Zurich</item>
+  </string-array>
+</resources>

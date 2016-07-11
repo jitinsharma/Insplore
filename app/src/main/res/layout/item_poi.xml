@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="@dimen/standard_padding"
+    android:layout_marginRight="@dimen/standard_padding"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/top_section"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <ImageView
+                android:id="@+id/poi_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/lotus_temple"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/poi_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/standard_padding"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@android:color/white"
+                android:text="Lotus Temple"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/top_dest_bottom_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_section">
+
+            <TextView
+                android:id="@+id/poi_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/standard_padding"
+                android:text="@string/city_short"/>
+
+            <View
+                android:id="@+id/poi_line_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/poi_description"
+                android:background="@android:color/darker_gray"/>
+
+            <ImageView
+                android:id="@+id/poi_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/poi_line_divider"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/standard_padding"
+                android:src="@drawable/ic_favorite_border_black_24dp"/>
+
+            <ImageView
+                android:id="@+id/poi_explore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/poi_line_divider"
+                android:layout_toLeftOf="@+id/poi_favorite"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/standard_padding"
+                android:src="@drawable/ic_explore_black_24dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

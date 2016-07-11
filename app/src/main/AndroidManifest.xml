@@ -55,6 +55,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="io.github.jitinsharma.insplore.MainActivity" />
         </activity>
+        <provider
+            android:authorities="io.github.jitinsharma.insplore"
+            android:name=".data.InProvider"/>
     </application>
 
 </manifest>

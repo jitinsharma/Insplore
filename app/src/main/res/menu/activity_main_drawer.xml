@@ -14,5 +14,9 @@
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_manage"
             android:title="Settings" />
+
+        <item
+            android:id="@+id/nav_saved_poi"
+            android:title="My Saved Places"/>
     </group>
 </menu>

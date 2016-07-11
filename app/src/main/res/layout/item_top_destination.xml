@@ -12,57 +12,67 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/hyphen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            android:padding="@dimen/standard_padding"/>
+        <RelativeLayout
+            android:id="@+id/top_section"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/comic_city">
 
-        <TextView
-            android:id="@+id/from"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_toLeftOf="@+id/hyphen"
-            android:layout_alignParentTop="true"
-            android:padding="10dp"
-            android:textSize="20sp"
-            tools:text="BLR"/>
+            <TextView
+                android:id="@+id/top_dest_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/standard_padding"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@android:color/white"
+                android:text="Bangalore"/>
 
-        <TextView
-            android:id="@+id/to"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_toRightOf="@+id/hyphen"
-            android:layout_alignParentTop="true"
-            android:padding="10dp"
-            android:textSize="20sp"
-            tools:text="DEL"/>
+            <TextView
+                android:id="@+id/top_dest_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top_dest_city"
+                android:layout_centerHorizontal="true"
+                android:text="Details"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium"
+                android:clickable="true"
+                android:padding="@dimen/standard_padding"
+                android:layout_margin="@dimen/standard_padding"
+                android:background="@drawable/rounded_corner"/>
+        </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/flight_icon"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/top_dest_bottom_section"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:padding="5dp"
-            android:layout_below="@id/hyphen"
-            android:src="@drawable/ic_flight_takeoff_black_24dp"/>
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_below="@+id/top_section">
 
-        <TextView
-            android:id="@+id/no_of_flights"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/hyphen"
-            android:padding="10dp"
-            android:layout_toRightOf="@id/flight_icon"
-            tools:text="2345"/>
+            <TextView
+                android:id="@+id/top_dest_flights"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="64,259"
+                android:drawableLeft="@drawable/ic_flight_takeoff_black_24dp"
+                android:padding="@dimen/standard_padding"
+                android:drawablePadding="@dimen/standard_padding"/>
 
+            <TextView
+                android:id="@+id/top_dest_passengers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4,259"
+                android:layout_toRightOf="@+id/top_dest_flights"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:padding="@dimen/standard_padding"
+                android:drawablePadding="@dimen/standard_padding"/>
+        </RelativeLayout>
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>

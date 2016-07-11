@@ -2,7 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.TopDestinationFragment">
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="io.github.jitinsharma.insplore.fragment.PlaceOfInterestFragment">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -10,34 +12,35 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_top_dest_search"
+                android:id="@+id/input_poi_search"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
 
                 <AutoCompleteTextView
-                    android:id="@+id/top_dest_search"
+                    android:id="@+id/poi_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
                     android:hint="@string/enter_city" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/top_dest_list"
+                android:id="@+id/poi_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/input_top_dest_search"/>
+                android:layout_below="@id/input_poi_search" />
 
             <ProgressBar
-                android:id="@+id/top_dest_progress"
+                android:id="@+id/poi_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/input_top_dest_search"
+                android:layout_below="@+id/input_poi_search"
                 android:layout_centerHorizontal="true"
-                android:progressDrawable="@drawable/circular_progress" />
+                android:progressDrawable="@drawable/circular_progress"
+                android:visibility="gone" />
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
 </FrameLayout>

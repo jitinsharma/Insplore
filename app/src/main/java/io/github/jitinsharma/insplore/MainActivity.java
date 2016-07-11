@@ -1,6 +1,8 @@
 package io.github.jitinsharma.insplore;
 
 import android.app.ActivityOptions;
+import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
@@ -19,10 +21,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,19 +38,20 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.vision.text.Text;
 
 import io.github.jitinsharma.insplore.Utilities.AnimationUtilities;
 import io.github.jitinsharma.insplore.activities.SearchActivity;
 import io.github.jitinsharma.insplore.fragment.DatePickerFragment;
 import io.github.jitinsharma.insplore.model.AsyncTaskListener;
+import io.github.jitinsharma.insplore.model.Constants;
 import io.github.jitinsharma.insplore.model.LocationObject;
 import io.github.jitinsharma.insplore.service.LocationTask;
 import io.github.jitinsharma.insplore.storage.TinyDB;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback,
-        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
+        DatePickerFragment.OnDatePickedListener {
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
@@ -64,13 +64,19 @@ public class MainActivity extends AppCompatActivity
     TextView topDestinationButton;
     ImageView imageView;
     TabLayout tabLayout;
-    Button goButton;
+    TextView goButton;
     TextView topDestDate;
+    private int mYear;
+    private int mMonth;
+    private int mDay;
+    private DatePickerDialog.OnDateSetListener dateSetListener;
+    Context self;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        self = getBaseContext();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         tabLayout = (TabLayout)findViewById(R.id.divider);
         setSupportActionBar(toolbar);
@@ -85,7 +91,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         nearbyLocations = (TextView)findViewById(R.id.nearby_locations);
         imageView = (ImageView)findViewById(R.id.city_image);
-        goButton = (Button)findViewById(R.id.go_button);
+        goButton = (TextView) findViewById(R.id.go_button);
         topDestDate = (TextView)findViewById(R.id.top_dest_date_text);
 
         if (mGoogleApiClient == null) {
@@ -122,7 +128,9 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), SearchActivity.class);
-                intent.putExtra("TYPE", "TOP_DEST");
+                intent.putExtra(Constants.INTENT_TYPE, Constants.TOP_DESTINATION);
+                intent.putExtra(Constants.TD_MONTH, topDestDate.getText().toString());
+                intent.putExtra(Constants.SAVED_AIRPORT_CODE, tinyDB.getString(Constants.SAVED_AIRPORT_CODE));
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                     ActivityOptions options = ActivityOptions
                             .makeSceneTransitionAnimation(MainActivity.this, imageView, "search");
@@ -143,29 +151,16 @@ public class MainActivity extends AppCompatActivity
                         AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
                                 getBaseContext(), R.color.colorAccent), ContextCompat.getColor(
                                 getBaseContext(), R.color.colorPrimary), tabLayout);
-
-                        AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
-                                getBaseContext(), R.color.colorPrimary), ContextCompat.getColor(
-                                getBaseContext(), R.color.colorAccent), goButton);
                         break;
                     case 1:
                         AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
                                 getBaseContext(), R.color.colorPrimary), ContextCompat.getColor(
                                         getBaseContext(), R.color.colorAccent), tabLayout);
-
-
-                        AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
-                                getBaseContext(), R.color.colorAccent), ContextCompat.getColor(
-                                getBaseContext(), R.color.colorPrimary), goButton);
                         break;
                     default:
                         AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
                                 getBaseContext(), R.color.colorAccent), ContextCompat.getColor(
                                 getBaseContext(), R.color.colorPrimary), tabLayout);
-
-                        AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
-                                getBaseContext(), R.color.colorPrimary), ContextCompat.getColor(
-                                getBaseContext(), R.color.colorAccent), goButton);
                 }
             }
 
@@ -183,10 +178,23 @@ public class MainActivity extends AppCompatActivity
         topDestDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogFragment datePickerFragment = new DatePickerFragment();
+                DialogFragment datePickerFragment = DatePickerFragment.newInstance(1, new DatePickerFragment.OnDatePickedListener() {
+                    @Override
+                    public void onDatePicked(int year, int month, int day, int requestCode) {
+                        String monthString;
+                        //Toast.makeText(MainActivity.this, ""+year+month+day, Toast.LENGTH_SHORT).show();
+                        monthString = String.format("%02d",month);
+                        topDestDate.setText(year + "-" + monthString);
+                    }
+                });
                 datePickerFragment.show(getSupportFragmentManager(), "datepicker");
             }
         });
+    }
+
+    @Override
+    public void onDatePicked(int year, int month, int day, int requestCode) {
+        //Toast.makeText(MainActivity.this, ""+year+month+day, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -239,7 +247,18 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_top_dest) {
-            // Handle the camera action
+        }
+        else if (id==R.id.nav_poi){
+            Intent intent = new Intent(self, SearchActivity.class);
+            intent.putExtra(Constants.INTENT_TYPE, Constants.POI);
+            startActivity(intent);
+            overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+        }
+        else if (id == R.id.nav_saved_poi){
+            Intent intent = new Intent(self, SearchActivity.class);
+            intent.putExtra(Constants.INTENT_TYPE, Constants.SAVED_POI);
+            startActivity(intent);
+            overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -275,7 +294,7 @@ public class MainActivity extends AppCompatActivity
             //coord = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
             locationObject.setLatitude(mLastLocation.getLatitude());
             locationObject.setLongitude(mLastLocation.getLongitude());
-            if (tinyDB.getString("Airport").isEmpty() && tinyDB.getString("City").isEmpty()){
+            if (tinyDB.getString(Constants.SAVED_AIRPORT_CODE).isEmpty() && tinyDB.getString(Constants.SAVED_CITY).isEmpty()){
                 loadAirportCityData(mLastLocation.getLatitude(), mLastLocation.getLongitude());
             }
             Log.e(TAG, "API connected" + coord);
@@ -309,8 +328,8 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         public void onTaskComplete(LocationObject result) {
-            tinyDB.putString("Airport", result.getAirportCode());
-            tinyDB.putString("City", result.getCityName());
+            tinyDB.putString(Constants.SAVED_AIRPORT_CODE, result.getAirportCode());
+            tinyDB.putString(Constants.SAVED_CITY, result.getCityName());
             Toast.makeText(getBaseContext(), result.getAirportCode() + result.getCityName(), Toast.LENGTH_SHORT).show();
         }
     }

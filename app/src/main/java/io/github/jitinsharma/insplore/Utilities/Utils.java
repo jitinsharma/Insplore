@@ -1,7 +1,10 @@
 package io.github.jitinsharma.insplore.Utilities;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -24,5 +27,19 @@ public class Utils {
             return null;
         }
         return json;
+    }
+
+    public static Bitmap convertBytesToBitmap(byte[] bytes){
+        Bitmap bitmap;
+        bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        return bitmap;
+    }
+
+    public static byte[] convertBitmapToBytes(Bitmap bitmap){
+        byte[] bytes;
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
+        bytes = stream.toByteArray();
+        return bytes;
     }
 }

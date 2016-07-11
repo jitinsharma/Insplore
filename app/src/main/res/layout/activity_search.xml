@@ -19,14 +19,15 @@
             android:layout_height="match_parent"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginStart="24dp"
+            app:expandedTitleTextAppearance="@android:style/TextAppearance.Large"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
-                android:src="@drawable/skyscrapers"
+                android:id="@+id/toolbar_image"
                 app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
                 android:layout_width="wrap_content"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 android:transitionName="search"
                 app:layout_collapseMode="parallax" />
