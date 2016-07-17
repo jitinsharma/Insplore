@@ -1,4 +1,4 @@
-package io.github.jitinsharma.insplore.Utilities;
+package io.github.jitinsharma.insplore.utilities;
 
 import android.content.Context;
 import android.graphics.Bitmap;

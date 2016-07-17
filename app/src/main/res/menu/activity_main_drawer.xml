@@ -17,6 +17,7 @@
 
         <item
             android:id="@+id/nav_saved_poi"
-            android:title="My Saved Places"/>
+            android:title="My Saved Places"
+            android:icon="@drawable/ic_favorite_black_24dp"/>
     </group>
 </menu>

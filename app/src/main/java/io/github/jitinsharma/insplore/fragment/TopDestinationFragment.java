@@ -1,5 +1,9 @@
 package io.github.jitinsharma.insplore.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,16 +23,15 @@ import io.github.jitinsharma.insplore.adapter.TopDestinationAdapter;
 import io.github.jitinsharma.insplore.model.AsyncTaskListener;
 import io.github.jitinsharma.insplore.model.Constants;
 import io.github.jitinsharma.insplore.model.TopDestinationObject;
-import io.github.jitinsharma.insplore.service.TopDestinationTask;
+import io.github.jitinsharma.insplore.service.TdService;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-public class TopDestinationFragment extends Fragment {
+public class TopDestinationFragment extends Fragment{
     RecyclerView topDestinationList;
     TopDestinationAdapter topDestinationAdapter;
     String month;
-    String cityName="";
     String airportCode;
     ArrayList<TopDestinationObject> topDestinationObjects;
     ProgressBar progressBar;
@@ -66,9 +69,20 @@ public class TopDestinationFragment extends Fragment {
         if (getArguments()!=null){
             cityListName.setVisibility(View.GONE);
         }
+        topDestinationList.setLayoutManager(new LinearLayoutManager(getContext()));
+        topDestinationList.setNestedScrollingEnabled(false);
+
         if (topDestinationObjects==null) {
-            TopDestinationTask topDestinationTask = new TopDestinationTask(getContext(), new TopDestinationListener());
-            topDestinationTask.execute(airportCode, month);
+            Intent tdService = new Intent(getContext(), TdService.class);
+            tdService.putExtra(Constants.DEP_AIRPORT, airportCode);
+            tdService.putExtra(Constants.TD_MONTH, month);
+            getContext().startService(tdService);
+            TdBroadcastReceiver tdBroadcastReceiver = new TdBroadcastReceiver();
+            IntentFilter intentFilter = new IntentFilter(TdService.ACTION_TdService);
+            intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+            getContext().registerReceiver(tdBroadcastReceiver, intentFilter);
+            //TopDestinationTask topDestinationTask = new TopDestinationTask(getContext(), new TopDestinationListener());
+            //topDestinationTask.execute(airportCode, month);
         }
         else{
             topDestinationAdapter = new TopDestinationAdapter(getContext(), topDestinationObjects);
@@ -84,15 +98,24 @@ public class TopDestinationFragment extends Fragment {
         return root;
     }
 
+    class TdBroadcastReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            topDestinationObjects = intent.getParcelableArrayListExtra(Constants.RECEIVE_LIST);
+            topDestinationAdapter = new TopDestinationAdapter(getContext(), topDestinationObjects);
+            topDestinationList.setAdapter(topDestinationAdapter);
+            progressBar.setVisibility(View.GONE);
+        }
+    }
+
     class TopDestinationListener implements AsyncTaskListener<ArrayList<TopDestinationObject>> {
 
         @Override
         public void onTaskComplete(ArrayList<TopDestinationObject> result) {
             topDestinationObjects = result;
             topDestinationAdapter = new TopDestinationAdapter(getContext(), result);
-            topDestinationList.setLayoutManager(new LinearLayoutManager(getContext()));
             topDestinationList.setAdapter(topDestinationAdapter);
-            topDestinationList.setNestedScrollingEnabled(false);
             progressBar.setVisibility(View.GONE);
         }
     }

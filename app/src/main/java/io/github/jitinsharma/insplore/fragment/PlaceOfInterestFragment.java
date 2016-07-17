@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -42,8 +43,8 @@ public class PlaceOfInterestFragment extends Fragment {
     private AutoCompleteTextView placeList;
     private RecyclerView recyclerView;
     PoiAdapter poiAdapter;
-    ArrayList<PoiObject> testList;
     Cursor cursor;
+    ProgressBar progressBar;
     public static final String[] POI_COLUMNS = {
             InContract.PoiEntry._ID,
             InContract.PoiEntry.COLUMN_POI_TITLE,
@@ -90,13 +91,14 @@ public class PlaceOfInterestFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_place_of_interest, container, false);
+        progressBar = (ProgressBar)root.findViewById(R.id.poi_progress);
         placeList = (AutoCompleteTextView)root.findViewById(R.id.poi_search);
         String places[] = getContext().getResources().getStringArray(R.array.yapq_cities);
         ArrayAdapter<String> placeArrayAdapter = new ArrayAdapter<String>(getContext(),
                 android.R.layout.simple_dropdown_item_1line, places);
         placeList.setAdapter(placeArrayAdapter);
         recyclerView = (RecyclerView)root.findViewById(R.id.poi_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         /*testList = new ArrayList<>(10);
 
         for (int i = 0; i < 10; i++) {
@@ -137,6 +139,8 @@ public class PlaceOfInterestFragment extends Fragment {
         placeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                progressBar.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.GONE);
                 InputMethodManager in = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                 in.hideSoftInputFromWindow(view.getApplicationWindowToken(), 0);
                 PoiTask poiTask = new PoiTask(getContext(), new PoiListener());
@@ -151,12 +155,9 @@ public class PlaceOfInterestFragment extends Fragment {
 
         @Override
         public void onTaskComplete(ArrayList<PoiObject> result) {
+            progressBar.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
             poiAdapter = new PoiAdapter(getContext(), result, new OnItemClick() {
-                @Override
-                public void onViewClicked(int position) {
-
-                }
-
                 @Override
                 public void onFavoriteClicked(int position) {
 
@@ -164,6 +165,15 @@ public class PlaceOfInterestFragment extends Fragment {
 
                 @Override
                 public void onMapClicked(int position) {
+
+                }
+
+                @Override
+                public void onWikiClick(int position) {
+
+                }
+                @Override
+                public void onShareIconClick(int position) {
 
                 }
             });

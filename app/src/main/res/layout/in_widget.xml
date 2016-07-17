@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/widget_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/widget_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:tintMode="multiply"
+        android:src="@android:color/transparent"
+        android:tint="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/widget_city_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hyphen"
+        android:padding="@dimen/standard_padding"
+        android:drawableLeft="@drawable/ic_location_on_black_24dp"
+        android:drawableStart="@drawable/ic_location_on_black_24dp"
+        android:drawablePadding="@dimen/standard_padding"
+        android:textStyle="bold"
+        tools:text="New Delhi"
+        android:textSize="20sp"/>
+
+    <RelativeLayout
+        android:id="@+id/widget_saved_poi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/widget_city_name">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/widget_poi_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:contentDescription="@string/image"
+                android:src="@drawable/lotus_temple"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/widget_poi_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/standard_padding"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@android:color/white"
+                android:text="@string/hyphen"
+                tools:text="Lotus Temple"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    </RelativeLayout>

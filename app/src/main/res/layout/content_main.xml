@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="io.github.jitinsharma.insplore.MainActivity"
+    tools:context=".activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
     <RelativeLayout
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/activity_horizontal_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="io.github.jitinsharma.insplore.MainActivity"
+        tools:context=".activities.MainActivity"
         tools:showIn="@layout/app_bar_main">
 
         <android.support.v7.widget.CardView
@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/lite_map"
                     android:padding="10dp"
-                    android:text="Hello There!"
+                    android:text="@string/welcome_text"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -49,11 +49,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_below="@id/lite_map"
                     android:background="?attr/selectableItemBackground"
                     android:clickable="true"
                     android:padding="10dp"
-                    android:text="NEARBY"
+                    android:text="@string/nearby"
                     android:textAllCaps="true"
                     android:textColor="?attr/colorAccent"
                     android:textStyle="bold" />
@@ -79,7 +80,7 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/skyscrapers"
                     android:textStyle="bold"
-                    android:transitionName="search" />
+                    android:transitionName="@string/transition_name" />
 
                 <android.support.design.widget.TabLayout
                     android:id="@+id/divider"
@@ -110,8 +111,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/top_dest_date_icon"
+                        android:layout_toEndOf="@+id/top_dest_date_icon"
                         android:padding="@dimen/standard_padding"
-                        android:text="2015-07" />
+                        android:text="@string/hyphen" />
                 </RelativeLayout>
 
                 <TextView
@@ -123,17 +125,23 @@
                     android:layout_alignParentRight="true"
                     android:background="?attr/selectableItemBackground"
                     android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
+                    android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
                     android:padding="@dimen/standard_padding"
                     android:text="@string/go_button"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
 
-                <View
-                    android:id="@+id/line_divider"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_above="@id/go_button"
-                    android:background="@android:color/darker_gray" />
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/return_trip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/semi_large_padding"
+                    android:layout_below="@id/divider"
+                    android:text="@string/return_trip"
+                    android:checked="true"
+                    android:visibility="gone"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
     </RelativeLayout>

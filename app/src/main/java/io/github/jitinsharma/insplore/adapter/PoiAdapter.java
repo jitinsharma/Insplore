@@ -21,8 +21,8 @@ import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import java.util.ArrayList;
 
 import io.github.jitinsharma.insplore.R;
-import io.github.jitinsharma.insplore.Utilities.AnimationUtilities;
-import io.github.jitinsharma.insplore.Utilities.Utils;
+import io.github.jitinsharma.insplore.utilities.AnimationUtilities;
+import io.github.jitinsharma.insplore.utilities.Utils;
 import io.github.jitinsharma.insplore.data.InContract;
 import io.github.jitinsharma.insplore.data.InContract.PoiEntry;
 import io.github.jitinsharma.insplore.model.OnItemClick;
@@ -82,20 +82,24 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
     public void onBindViewHolder(PoiVH holder, int position) {
         current = poiObjects.get(position);
         if (current.getGeoNameId()!=null){
-            selectionArgs = new String[]{current.getGeoNameId()};
+            selectionArgs = new String[]{current.getPoiLatitude()};
         }
         cursor = context.getContentResolver().query(
                 PoiEntry.CONTENT_URI,
                 POI_COLUMNS,
-                InContract.PoiEntry.COLUMN_GEO_ID + " = ?",
+                PoiEntry.COLUMN_POI_LAT + " = ?",
                 selectionArgs,
                 null
         );
         if (cursor!=null && cursor.moveToFirst()){
-            holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_black_24dp));
+            holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_accent_24dp));
+        }
+        else{
+            holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_border_black_24dp));
         }
         holder.poiTitle.setText(current.getTitle());
-        holder.poiDescription.setText(current.getPoiDescription());
+        holder.poiDescription.setVisibility(View.GONE);
+        //holder.poiDescription.setText(current.getPoiDescription());
         Glide.with(context)
                 .load(current.getMainImageUrl())
                 .into(holder.poiImage);
@@ -136,7 +140,7 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
                             PoiEntry.CONTENT_URI,
                             POI_COLUMNS,
                             InContract.PoiEntry.COLUMN_GEO_ID + " = ?",
-                            new String[]{current.getGeoNameId()},
+                            new String[]{current.getPoiLatitude()},
                             null
                     );
                     if (cursor!=null && !cursor.moveToFirst()){
@@ -155,7 +159,7 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
                         Uri uri = context.getContentResolver().insert(PoiEntry.CONTENT_URI, poiValues);
                         Animation in = AnimationUtils.loadAnimation(context, R.anim.fade_in);
                         Animation out = AnimationUtils.loadAnimation(context, R.anim.fade_out);
-                        poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_black_24dp));
+                        poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_accent_24dp));
                         poiFavorite.setAnimation(out);
                         in.start();
                         Toast.makeText(context, "Added to favorites", Toast.LENGTH_SHORT).show();
@@ -163,14 +167,15 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
                     else{
                         context.getContentResolver().delete(
                                 PoiEntry.CONTENT_URI,
-                                PoiEntry.COLUMN_GEO_ID + " = ?",
-                                new String[]{current.getGeoNameId()}
+                                PoiEntry.COLUMN_POI_LAT + " = ?",
+                                new String[]{current.getPoiLatitude()}
                         );
                         Animation out = AnimationUtils.loadAnimation(context, R.anim.fade_out);
                         poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_border_black_24dp));
                         poiFavorite.setAnimation(out);
                         Toast.makeText(context, "Removed from favorites", Toast.LENGTH_SHORT).show();
                     }
+                    notifyDataSetChanged();
                 }
             });
 

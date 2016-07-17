@@ -1,6 +1,7 @@
 package io.github.jitinsharma.insplore.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
@@ -10,11 +11,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
 import io.github.jitinsharma.insplore.R;
+import io.github.jitinsharma.insplore.fragment.InspirationSearchFragment;
 import io.github.jitinsharma.insplore.fragment.PlaceOfInterestFragment;
 import io.github.jitinsharma.insplore.fragment.SavedPoiFragment;
 import io.github.jitinsharma.insplore.fragment.TopDestinationFragment;
@@ -37,9 +40,10 @@ public class SearchActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         self = getBaseContext();
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
-        if (getIntent() != null) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
+        if (getIntent() != null && getIntent().hasExtra(Constants.INTENT_TYPE)) {
+            Intent intent = getIntent();
             if (getIntent().getStringExtra(Constants.INTENT_TYPE).equals(Constants.TOP_DESTINATION)) {
                 imageView.setBackgroundDrawable(self.getResources().getDrawable(R.drawable.skyscrapers));
                 getSupportActionBar().setTitle(self.getString(R.string.top_destination));
@@ -70,6 +74,25 @@ public class SearchActivity extends AppCompatActivity {
                         .replace(R.id.container, savedPoiFragment)
                         .commit();
             }
+            else if (getIntent().getStringExtra(Constants.INTENT_TYPE).equals(Constants.INSPIRE_ME)){
+                getSupportActionBar().setTitle(self.getString(R.string.inspire_search));
+                imageView.setBackgroundDrawable(getResources().getDrawable(R.drawable.inspire));
+                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                imageView.setColorFilter(self.getResources().getColor(android.R.color.darker_gray), android.graphics.PorterDuff.Mode.MULTIPLY);
+                InspirationSearchFragment fragment = InspirationSearchFragment.newInstance("","");
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
+            }
+        }
+        else{
+            getSupportActionBar().setTitle(self.getString(R.string.my_saved_places));
+            imageView.setBackgroundDrawable(getResources().getDrawable(R.drawable.places_toronto));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            SavedPoiFragment savedPoiFragment = SavedPoiFragment.newInstance("","");
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, savedPoiFragment)
+                    .commit();
         }
         updateWindowColor(imageView);
     }
@@ -85,5 +108,14 @@ public class SearchActivity extends AppCompatActivity {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setStatusBarColor(mMutedColor);
         }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        if (intent!=null){
+            String test = ""+intent.getStringExtra(Constants.SAVED_POI);
+            Log.d("tag", test);
+        }
+        super.onNewIntent(intent);
     }
 }

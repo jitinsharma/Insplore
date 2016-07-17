@@ -7,8 +7,17 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
 
+    <dimen name="small_padding">5dp</dimen>
     <dimen name="standard_padding">10dp</dimen>
     <dimen name="semi_large_padding">15dp</dimen>
     <dimen name="large_padding">20dp</dimen>
     <dimen name="extra_large_padding">30dp</dimen>
+
+    <dimen name="widget_default_height">150dp</dimen>
+    <dimen name="widget_today_default_width">150dp</dimen>
+    <dimen name="widget_today_default_height">150dp</dimen>
+    <dimen name="widget_today_min_resize_width">200dp</dimen>
+    <dimen name="widget_today_min_resize_height">@dimen/widget_today_default_height</dimen>
+    <dimen name="widget_today_large_width">220dp</dimen>
+
 </resources>

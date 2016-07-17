@@ -12,6 +12,7 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -30,34 +31,44 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="io.github.jitinsharma.insplore.MainActivity" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activities.SearchActivity"
             android:label="@string/title_activity_search"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="io.github.jitinsharma.insplore.MainActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
+
         <provider
+            android:name=".data.InProvider"
             android:authorities="io.github.jitinsharma.insplore"
-            android:name=".data.InProvider"/>
+            android:exported="false" />
+
+        <service android:name=".service.InService" />
+        <service android:name=".widget.InWidgetService"/>
+        <receiver android:name=".widget.InWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/in_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginLeft="@dimen/standard_padding"
     android:layout_marginRight="@dimen/standard_padding"
     app:cardCornerRadius="10dp"
@@ -15,13 +16,13 @@
         <RelativeLayout
             android:id="@+id/top_section"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="200dp">
 
             <ImageView
                 android:id="@+id/poi_image"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/lotus_temple"
+                android:layout_height="200dp"
+                android:contentDescription="@string/image"
                 android:scaleType="fitXY"/>
 
             <TextView
@@ -33,7 +34,8 @@
                 android:textSize="25sp"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@android:color/white"
-                android:text="Lotus Temple"/>
+                android:text="@string/hyphen"
+                tools:text="Lotus Temple"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -62,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/poi_line_divider"
                 android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:clickable="true"
                 android:background="?attr/selectableItemBackground"
                 android:padding="@dimen/standard_padding"
@@ -73,10 +76,35 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/poi_line_divider"
                 android:layout_toLeftOf="@+id/poi_favorite"
+                android:layout_toStartOf="@+id/poi_favorite"
                 android:clickable="true"
                 android:background="?attr/selectableItemBackground"
                 android:padding="@dimen/standard_padding"
                 android:src="@drawable/ic_explore_black_24dp"/>
+
+            <ImageView
+                android:id="@+id/poi_wiki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/poi_line_divider"
+                android:layout_toLeftOf="@+id/poi_explore"
+                android:layout_toStartOf="@+id/poi_explore"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/standard_padding"
+                android:src="@mipmap/ic_wikipedia_logotype_of_earth_puzzle"/>
+
+            <ImageView
+                android:id="@+id/poi_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/poi_line_divider"
+                android:layout_toLeftOf="@+id/poi_wiki"
+                android:layout_toStartOf="@+id/poi_wiki"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/standard_padding"
+                android:src="@drawable/ic_share_black_24dp"/>
         </RelativeLayout>
     </RelativeLayout>
 </android.support.v7.widget.CardView>

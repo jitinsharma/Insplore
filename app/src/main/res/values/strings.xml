@@ -8,14 +8,28 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="top_destination">Top Destinations</string>
     <string name="inspire_search">Inspire Me</string>
     <string name="places_of_interest">Places of Interest</string>
     <string name="my_saved_places">My Saved Places</string>
     <string name="title_activity_search">SearchActivity</string>
+
+    <!--Main Activity-->
     <string name="go_button">GO</string>
+    <string name="transition_name">search</string>
+    <string name="welcome_text">Hello There!</string>
+    <string name="nearby">NEARBY</string>
+    <string name="hyphen">-</string>
+
     <string name="enter_city">Enter City</string>
+
+    <!--Inspiration Search-->
+    <string name="price">price</string>
+    <string name="date">date</string>
+    <string name="flight">flight</string>
+
+    <!--Place of interest-->
+    <string name="image">image</string>
 
     <string-array name="top_dest_year_array">
         <item>2011</item>
@@ -28,4 +42,11 @@
     <string name="city_desc">"Humayun's tomb  is the tomb of the Mughal Emperor Humayun in Delhi, India. The tomb was commissioned by Humayun's first wife Bega Begum  in 1569-70, and designed by Mirak Mirza Ghiyas, a Persian architect chosen by Bega Begum. It was the first garden-tomb on the Indian subcontinent, and is located in Nizamuddin East, Delhi, India, close to the Dina-panah citadel also known as Purana Qila , that Humayun founded in 1533. It was also the first structure to use red sandstone at such a scale. The tomb was declared a UNESCO World Heritage Site in 1993, and since then has undergone extensive restoration work, which is complete. Besides the main tomb enclosure of Humayun, several smaller monuments dot the pathway leading up to it, from the main entrance in the West, including one that even pre-dates the main tomb itself, by twenty years; it is the tomb complex of Isa Khan Niyazi, an Afghan noble in Sher Shah Suri's court of the Suri dynasty, who fought against the Mughals, constructed in 1547 CE.\nThe complex encompasses the main tomb of the Emperor Humayun, which houses the graves of Bega Begum herself, Hamida Begum, and also Dara Shikoh, great-great-grandson of Humayun and son of the later Emperor Shah Jahan, as well as numerous other subsequent Mughals, including Emperor Jahandar Shah, Farrukhsiyar, Rafi Ul-Darjat, Rafi Ud-Daulat and Alamgir II. It represented a leap in Mughal architecture, and together with its accomplished Charbagh garden, typical of Persian gardens, but never seen before in India, it set a precedent for subsequent Mughal architecture. It is seen as a clear departure from the fairly modest mausoleum of his father, the first Mughal Emperor, Babur, called Bagh-e Babur  in Kabul . Though the latter was the first Emperor to start the tradition of being buried in a paradise garden. Modelled on Gur-e Amir, the tomb of his ancestor and Asia's conqueror Timur in Samarkand, it created a precedent for future Mughal architecture of royal mausolea, which reached its zenith with the Taj Mahal, at Agra.\nThe site was chosen on the banks of Yamuna river, due to its proximity to Nizamuddin Dargah, the mausoleum of the celebrated Sufi saint of Delhi, Nizamuddin Auliya, who was much revered by the rulers of Delhi, and whose residence, Chilla Nizamuddin Auliya lies just north-east of the tomb. In later Mughal history, the last Mughal Emperor, Bahadur Shah Zafar took refuge here, during the Indian Rebellion of 1857, along with three princes, and was captured by Captain Hodson before being exiled to Rangoon. At the time of the Slave Dynasty this land was under the 'KiloKheri Fort' which was capital of Sultan Kequbad, son of Nasiruddin ."</string>
     <string name="city_short">Bal Bharati Public School  is a group of institutions providing education at school level in India. Padma Vibhushan Lala Hansraj Gupta, an Indian philanthropist founded the parent body  which governs all the member schools across India. Bal Bharati Public School ranks among the premier institutes in Delhi and the country.\n\n"</string>
     <string name="wiki_icon">"<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" title="Creative Commons BY 3.0">CC 3.0 BY</a></div>"</string>
+    <string name="action_share">Share</string>
+    <string name="return_trip">Return Trip</string>
+    <string name="max_price">Max price($)</string>
+
+    <string name="permission_rationale_location">Access to the location service is required.</string>
+    <string name="location_permission_denied">Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Insplore\'.</string>
+    <string name="permission_required_toast">Location permission is required.</string>
 </resources>

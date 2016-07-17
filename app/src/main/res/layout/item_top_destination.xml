@@ -28,7 +28,8 @@
                 android:textSize="25sp"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@android:color/white"
-                android:text="Bangalore"/>
+                android:text="@string/hyphen"
+                tools:text="Bangalore"/>
 
             <TextView
                 android:id="@+id/top_dest_detail"
@@ -36,7 +37,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/top_dest_city"
                 android:layout_centerHorizontal="true"
-                android:text="Details"
+                android:text="@string/hyphen"
+                tools:text="Details"
                 android:textColor="@android:color/white"
                 android:textSize="15sp"
                 android:fontFamily="sans-serif-medium"
@@ -58,8 +60,10 @@
                 android:id="@+id/top_dest_flights"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="64,259"
+                android:text="@string/hyphen"
+                tools:text="64,259"
                 android:drawableLeft="@drawable/ic_flight_takeoff_black_24dp"
+                android:drawableStart="@drawable/ic_flight_takeoff_black_24dp"
                 android:padding="@dimen/standard_padding"
                 android:drawablePadding="@dimen/standard_padding"/>
 
@@ -67,9 +71,12 @@
                 android:id="@+id/top_dest_passengers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4,259"
+                android:text="@string/hyphen"
+                tools:text="4,259"
                 android:layout_toRightOf="@+id/top_dest_flights"
+                android:layout_toEndOf="@+id/top_dest_flights"
                 android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:drawableStart="@drawable/ic_person_black_24dp"
                 android:padding="@dimen/standard_padding"
                 android:drawablePadding="@dimen/standard_padding"/>
         </RelativeLayout>

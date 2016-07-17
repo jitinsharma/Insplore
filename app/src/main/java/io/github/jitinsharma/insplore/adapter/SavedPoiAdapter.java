@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import io.github.jitinsharma.insplore.R;
-import io.github.jitinsharma.insplore.Utilities.Utils;
+import io.github.jitinsharma.insplore.utilities.Utils;
 import io.github.jitinsharma.insplore.data.InContract;
 import io.github.jitinsharma.insplore.model.OnItemClick;
 import io.github.jitinsharma.insplore.model.PoiObject;
@@ -60,9 +60,11 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
     public void onBindViewHolder(SavedPoiVH holder, int position) {
         current = poiObjects.get(position);
         holder.poiTitle.setText(current.getTitle());
-        holder.poiDescription.setText(current.getPoiDescription());
+        holder.poiDescription.setVisibility(View.GONE);
+        //holder.poiDescription.setText(current.getPoiDescription());
         holder.poiImage.setImageBitmap(Utils.convertBytesToBitmap(current.getImageArray()));
-        holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_black_24dp));
+        holder.poiImage.setColorFilter(context.getResources().getColor(android.R.color.darker_gray), android.graphics.PorterDuff.Mode.MULTIPLY);
+        holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_accent_24dp));
     }
 
     @Override
@@ -76,6 +78,8 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
         ImageView poiImage;
         ImageView poiExplore;
         ImageView poiFavorite;
+        ImageView poiWiki;
+        ImageView poiShare;
 
         public SavedPoiVH(View itemView) {
             super(itemView);
@@ -86,14 +90,16 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
             poiImage = (ImageView)itemView.findViewById(R.id.poi_image);
             poiExplore = (ImageView)itemView.findViewById(R.id.poi_explore);
             poiFavorite = (ImageView) itemView.findViewById(R.id.poi_favorite);
+            poiWiki = (ImageView) itemView.findViewById(R.id.poi_wiki);
+            poiShare = (ImageView) itemView.findViewById(R.id.poi_share);
 
             poiFavorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     context.getContentResolver().delete(
                             InContract.PoiEntry.CONTENT_URI,
-                            InContract.PoiEntry.COLUMN_GEO_ID + " = ?",
-                            new String[]{current.getGeoNameId()});
+                            InContract.PoiEntry.COLUMN_POI_LAT + " = ?",
+                            new String[]{current.getPoiLatitude()});
                     Toast.makeText(context, "Removed from favorites", Toast.LENGTH_SHORT).show();
                     onItemClick.onFavoriteClicked(getAdapterPosition());
                 }
@@ -106,12 +112,26 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
                 }
             });
 
+            poiWiki.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClick.onWikiClick(getAdapterPosition());
+                }
+            });
+
+            poiShare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClick.onShareIconClick(getAdapterPosition());
+                }
+            });
+
         }
 
         @Override
         public void onClick(View view) {
-            if (view == poiExplore){
-                onItemClick.onMapClicked(getAdapterPosition());
+            if (view.getId() == poiWiki.getId()){
+                onItemClick.onWikiClick(getAdapterPosition());
             }
         }
     }

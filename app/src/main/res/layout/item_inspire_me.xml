@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/small_padding"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/im_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hyphen"
+            tools:text="New Delhi"
+            android:padding="@dimen/standard_padding"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <View
+            android:id="@+id/line_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/im_city_name"
+            android:background="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/im_flight_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_divider"
+            android:padding="@dimen/standard_padding"
+            android:layout_toLeftOf="@+id/im_dep_code"
+            android:layout_toStartOf="@+id/im_dep_code"
+            android:contentDescription="@string/flight"
+            android:src="@drawable/ic_flight_takeoff_black_24dp"/>
+
+        <TextView
+            android:id="@+id/im_dep_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/im_hyphen"
+            android:layout_toStartOf="@+id/im_hyphen"
+            android:layout_below="@+id/line_divider"
+            android:textSize="20sp"
+            android:padding="@dimen/standard_padding"
+            android:text="@string/hyphen"
+            tools:text="BLR"/>
+
+        <TextView
+            android:id="@+id/im_hyphen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/line_divider"
+            android:padding="@dimen/standard_padding"
+            android:textSize="20sp"
+            android:text="@string/hyphen"/>
+
+        <TextView
+            android:id="@+id/im_arr_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/im_hyphen"
+            android:layout_toEndOf="@+id/im_hyphen"
+            android:layout_below="@+id/line_divider"
+            android:padding="@dimen/standard_padding"
+            android:textSize="20sp"
+            tools:text="DEL"
+            android:text="@string/hyphen"/>
+
+        <ImageView
+            android:id="@+id/im_date_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/im_flight_icon"
+            android:padding="@dimen/standard_padding"
+            android:layout_toLeftOf="@+id/im_dep_date"
+            android:layout_toStartOf="@+id/im_dep_date"
+            android:contentDescription="@string/date"
+            android:src="@drawable/ic_date_range_black_24dp"/>
+
+        <TextView
+            android:id="@+id/im_dep_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/im_date_hyphen"
+            android:layout_toStartOf="@+id/im_date_hyphen"
+            android:padding="@dimen/standard_padding"
+            android:layout_below="@id/im_flight_icon"
+            android:text="@string/hyphen"
+            tools:text="22 Aug, 16"/>
+
+        <TextView
+            android:id="@+id/im_date_hyphen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/standard_padding"
+            android:layout_below="@id/im_flight_icon"
+            android:text="@string/hyphen"/>
+
+        <TextView
+            android:id="@+id/im_arr_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/im_date_hyphen"
+            android:layout_toEndOf="@+id/im_date_hyphen"
+            android:padding="@dimen/standard_padding"
+            android:layout_below="@id/im_flight_icon"
+            android:text="@string/hyphen"
+            tools:text="22 Aug, 16"/>
+
+        <TextView
+            android:id="@+id/im_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/standard_padding"
+            android:textStyle="bold|italic"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:text="@string/hyphen"
+            tools:text="450"/>
+
+        <ImageView
+            android:id="@+id/im_curr_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/standard_padding"
+            android:paddingBottom="@dimen/standard_padding"
+            android:layout_toLeftOf="@+id/im_price"
+            android:layout_toStartOf="@+id/im_price"
+            android:contentDescription="@string/price"
+            android:src="@drawable/ic_account_balance_wallet_black_24dp"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -34,7 +34,6 @@ public class DatePickerFragment extends DialogFragment
 
     public static DatePickerFragment newInstance(int requestCode, OnDatePickedListener listener) {
         DatePickerFragment datePickerFragment = new DatePickerFragment();
-        Bundle bundle = new Bundle();
         datePickerFragment.setOnDatePickedListener(listener);
         return datePickerFragment;
     }
@@ -46,8 +45,6 @@ public class DatePickerFragment extends DialogFragment
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
-        if (bundle!=null){
-        }
         Calendar maxDate = Calendar.getInstance();
         maxDate.add(Calendar.MONTH, -1);
 

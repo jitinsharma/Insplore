@@ -1,13 +1,25 @@
 package io.github.jitinsharma.insplore.fragment;
 
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+
+import java.util.ArrayList;
 
 import io.github.jitinsharma.insplore.R;
+import io.github.jitinsharma.insplore.adapter.InspireSearchAdapter;
+import io.github.jitinsharma.insplore.model.InspireSearchObject;
+import io.github.jitinsharma.insplore.service.InService;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +35,11 @@ public class InspirationSearchFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private RecyclerView searchResults;
+    private InspireSearchAdapter inspireSearchAdapter;
+    private ArrayList<InspireSearchObject> inspireSearchObjects;
+    InBroadcastReceiver inBroadcastReceiver;
+    ProgressBar progressBar;
 
     public InspirationSearchFragment() {
         // Required empty public constructor
@@ -60,7 +76,31 @@ public class InspirationSearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inspiration_search, container, false);
+        View root = inflater.inflate(R.layout.fragment_inspiration_search, container, false);
+        searchResults = (RecyclerView)root.findViewById(R.id.inspire_search_results);
+        progressBar = (ProgressBar)root.findViewById(R.id.inspire_progress);
+        searchResults.setLayoutManager(new LinearLayoutManager(getContext()));
+        //inspireSearchAdapter = new InspireSearchAdapter(getContext(), new ArrayList<InspireSearchObject>());
+        //searchResults.setAdapter(inspireSearchAdapter);
+
+        Intent inService = new Intent(getActivity(), InService.class);
+        getActivity().startService(inService);
+        inBroadcastReceiver = new InBroadcastReceiver();
+        IntentFilter intentFilter = new IntentFilter(InService.ACTION_InService);
+        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+        getContext().registerReceiver(inBroadcastReceiver, intentFilter);
+
+        return root;
     }
 
+    class InBroadcastReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            inspireSearchObjects = intent.getParcelableArrayListExtra("KEY");
+            inspireSearchAdapter = new InspireSearchAdapter(getContext(), inspireSearchObjects);
+            searchResults.setAdapter(inspireSearchAdapter);
+            progressBar.setVisibility(View.GONE);
+        }
+    }
 }

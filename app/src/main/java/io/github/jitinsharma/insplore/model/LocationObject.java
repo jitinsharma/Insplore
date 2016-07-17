@@ -9,6 +9,16 @@ public class LocationObject {
     String airportCode;
     String cityName;
 
+    public String getTabSelection() {
+        return tabSelection;
+    }
+
+    public void setTabSelection(String tabSelection) {
+        this.tabSelection = tabSelection;
+    }
+
+    String tabSelection;
+
     public String getAirportCode() {
         return airportCode;
     }

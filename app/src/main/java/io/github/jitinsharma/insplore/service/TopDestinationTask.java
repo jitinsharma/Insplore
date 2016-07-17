@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import io.github.jitinsharma.insplore.R;
-import io.github.jitinsharma.insplore.Utilities.Utils;
+import io.github.jitinsharma.insplore.utilities.Utils;
 import io.github.jitinsharma.insplore.model.AsyncTaskListener;
 import io.github.jitinsharma.insplore.model.TopDestinationObject;
 

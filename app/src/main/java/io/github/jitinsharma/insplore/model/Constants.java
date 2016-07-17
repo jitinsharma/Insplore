@@ -14,5 +14,10 @@ public final class Constants {
     public static final String CITY_NAME = "CITY_NAME";
     public static final String SAVED_AIRPORT_CODE = "AIRPORT_CODE";
     public static final String SAVED_CITY = "SAVED_CITY";
+    public static final String LAST_LAT = "LAST_LATITUDE";
+    public static final String LAST_LONG = "LAST_LONGITUDE";
     public static final String TOP_DEST_OBJ = "TOP_DESTINATION_OBJECT";
+    public static final String TRIP_TYPE = "TRIP_TYPE";
+    public static final String DEP_AIRPORT = "DEP_AIRPORT";
+    public static final String RECEIVE_LIST = "RECEIVE_LIST";
 }
