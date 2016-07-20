@@ -21,12 +21,11 @@ import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import java.util.ArrayList;
 
 import io.github.jitinsharma.insplore.R;
-import io.github.jitinsharma.insplore.utilities.AnimationUtilities;
-import io.github.jitinsharma.insplore.utilities.Utils;
-import io.github.jitinsharma.insplore.data.InContract;
 import io.github.jitinsharma.insplore.data.InContract.PoiEntry;
 import io.github.jitinsharma.insplore.model.OnItemClick;
 import io.github.jitinsharma.insplore.model.PoiObject;
+import io.github.jitinsharma.insplore.utilities.AnimationUtilities;
+import io.github.jitinsharma.insplore.utilities.Utils;
 
 /**
  * Created by jitin on 04/07/16.
@@ -40,7 +39,7 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
     String[] selectionArgs;
     Bitmap bitmap;
     byte[] imageArray;
-    PoiObject current;
+    PoiObject cursorPoiObject;
     public static final String[] POI_COLUMNS = {
             PoiEntry._ID,
             PoiEntry.COLUMN_POI_TITLE,
@@ -80,8 +79,8 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
 
     @Override
     public void onBindViewHolder(PoiVH holder, int position) {
-        current = poiObjects.get(position);
-        if (current.getGeoNameId()!=null){
+        PoiObject current = poiObjects.get(position);
+        if (current.getPoiLatitude()!=null){
             selectionArgs = new String[]{current.getPoiLatitude()};
         }
         cursor = context.getContentResolver().query(
@@ -107,22 +106,19 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
         AnimationUtilities.setAnimation(holder.itemView, context, position, 400);
     }
 
-    /*@Override
-    public int getItemCount() {
-        return poiObjects.size();
-    }*/
-
     @Override
     public int getItemCount() {
         return poiObjects.size();
     }
 
-    class PoiVH extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class PoiVH extends RecyclerView.ViewHolder{
         TextView poiTitle;
         TextView poiDescription;
         ImageView poiImage;
         ImageView poiExplore;
         ImageView poiFavorite;
+        ImageView poiWiki;
+        ImageView poiShare;
 
         public PoiVH(View itemView) {
             super(itemView);
@@ -132,15 +128,18 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
             poiImage = (ImageView)itemView.findViewById(R.id.poi_image);
             poiExplore = (ImageView)itemView.findViewById(R.id.poi_explore);
             poiFavorite = (ImageView) itemView.findViewById(R.id.poi_favorite);
+            poiWiki = (ImageView) itemView.findViewById(R.id.poi_wiki);
+            poiShare = (ImageView) itemView.findViewById(R.id.poi_share);
 
             poiFavorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    cursorPoiObject = poiObjects.get(getAdapterPosition());
                     cursor = context.getContentResolver().query(
                             PoiEntry.CONTENT_URI,
                             POI_COLUMNS,
-                            InContract.PoiEntry.COLUMN_GEO_ID + " = ?",
-                            new String[]{current.getPoiLatitude()},
+                            PoiEntry.COLUMN_POI_LAT + " = ?",
+                            new String[]{cursorPoiObject.getPoiLatitude()},
                             null
                     );
                     if (cursor!=null && !cursor.moveToFirst()){
@@ -149,13 +148,13 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
                         bitmap = ((GlideBitmapDrawable)poiImage.getDrawable().getCurrent()).getBitmap();
                         imageArray = Utils.convertBitmapToBytes(bitmap);
 
-                        poiValues.put(PoiEntry.COLUMN_GEO_ID, current.getGeoNameId());
-                        poiValues.put(PoiEntry.COLUMN_POI_TITLE, current.getTitle());
-                        poiValues.put(PoiEntry.COLUMN_POI_DESC, current.getPoiDescription());
+                        poiValues.put(PoiEntry.COLUMN_GEO_ID, cursorPoiObject.getGeoNameId());
+                        poiValues.put(PoiEntry.COLUMN_POI_TITLE, cursorPoiObject.getTitle());
+                        poiValues.put(PoiEntry.COLUMN_POI_DESC, cursorPoiObject.getPoiDescription());
                         poiValues.put(PoiEntry.COLUMN_POI_IMAGE, imageArray);
-                        poiValues.put(PoiEntry.COLUMN_POI_LAT, current.getPoiLatitude());
-                        poiValues.put(PoiEntry.COLUMN_POI_LONG, current.getPoiLongitude());
-                        poiValues.put(PoiEntry.COLUMN_POI_WIKI_LINK, current.getWikipediaLink());
+                        poiValues.put(PoiEntry.COLUMN_POI_LAT, cursorPoiObject.getPoiLatitude());
+                        poiValues.put(PoiEntry.COLUMN_POI_LONG, cursorPoiObject.getPoiLongitude());
+                        poiValues.put(PoiEntry.COLUMN_POI_WIKI_LINK, cursorPoiObject.getWikipediaLink());
                         Uri uri = context.getContentResolver().insert(PoiEntry.CONTENT_URI, poiValues);
                         Animation in = AnimationUtils.loadAnimation(context, R.anim.fade_in);
                         Animation out = AnimationUtils.loadAnimation(context, R.anim.fade_out);
@@ -168,14 +167,15 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
                         context.getContentResolver().delete(
                                 PoiEntry.CONTENT_URI,
                                 PoiEntry.COLUMN_POI_LAT + " = ?",
-                                new String[]{current.getPoiLatitude()}
+                                new String[]{cursorPoiObject.getPoiLatitude()}
                         );
                         Animation out = AnimationUtils.loadAnimation(context, R.anim.fade_out);
                         poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_border_black_24dp));
                         poiFavorite.setAnimation(out);
                         Toast.makeText(context, "Removed from favorites", Toast.LENGTH_SHORT).show();
                     }
-                    notifyDataSetChanged();
+                    //notifyDataSetChanged();
+                    cursor.close();
                 }
             });
 
@@ -186,13 +186,20 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
                 }
             });
 
-        }
+            poiWiki.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClick.onWikiClick(getAdapterPosition());
+                }
+            });
 
-        @Override
-        public void onClick(View view) {
-            if (view == poiExplore){
-                onItemClick.onMapClicked(getAdapterPosition());
-            }
+            poiShare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClick.onShareIconClick(getAdapterPosition());
+                }
+            });
+
         }
     }
 }

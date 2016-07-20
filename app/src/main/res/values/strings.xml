@@ -28,6 +28,9 @@
     <string name="date">date</string>
     <string name="flight">flight</string>
 
+    <!--Top Destinations-->
+    <string name="details">Details</string>
+
     <!--Place of interest-->
     <string name="image">image</string>
 

@@ -30,7 +30,7 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
     String[] selectionArgs;
     Bitmap bitmap;
     byte[] imageArray;
-    PoiObject current;
+    PoiObject cursorPoiObject;
     Cursor cursor;
     public static final String[] POI_COLUMNS = {
             InContract.PoiEntry._ID,
@@ -58,7 +58,7 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
 
     @Override
     public void onBindViewHolder(SavedPoiVH holder, int position) {
-        current = poiObjects.get(position);
+        PoiObject current = poiObjects.get(position);
         holder.poiTitle.setText(current.getTitle());
         holder.poiDescription.setVisibility(View.GONE);
         //holder.poiDescription.setText(current.getPoiDescription());
@@ -72,7 +72,7 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
         return poiObjects.size();
     }
 
-    class SavedPoiVH extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class SavedPoiVH extends RecyclerView.ViewHolder{
         TextView poiTitle;
         TextView poiDescription;
         ImageView poiImage;
@@ -84,7 +84,6 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
         public SavedPoiVH(View itemView) {
             super(itemView);
             itemView.setClickable(true);
-            itemView.setOnClickListener(this);
             poiTitle = (TextView)itemView.findViewById(R.id.poi_title);
             poiDescription = (TextView)itemView.findViewById(R.id.poi_description);
             poiImage = (ImageView)itemView.findViewById(R.id.poi_image);
@@ -96,10 +95,11 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
             poiFavorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    cursorPoiObject = poiObjects.get(getAdapterPosition());
                     context.getContentResolver().delete(
                             InContract.PoiEntry.CONTENT_URI,
                             InContract.PoiEntry.COLUMN_POI_LAT + " = ?",
-                            new String[]{current.getPoiLatitude()});
+                            new String[]{cursorPoiObject.getPoiLatitude()});
                     Toast.makeText(context, "Removed from favorites", Toast.LENGTH_SHORT).show();
                     onItemClick.onFavoriteClicked(getAdapterPosition());
                 }
@@ -126,13 +126,6 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
                 }
             });
 
-        }
-
-        @Override
-        public void onClick(View view) {
-            if (view.getId() == poiWiki.getId()){
-                onItemClick.onWikiClick(getAdapterPosition());
-            }
         }
     }
 }

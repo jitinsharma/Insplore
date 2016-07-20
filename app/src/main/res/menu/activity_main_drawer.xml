@@ -11,11 +11,6 @@
             android:icon="@drawable/ic_pin_drop_black_24dp"
             android:title="Places of Interest" />
         <item
-            android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Settings" />
-
-        <item
             android:id="@+id/nav_saved_poi"
             android:title="My Saved Places"
             android:icon="@drawable/ic_favorite_black_24dp"/>

@@ -5,6 +5,11 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="Background" parent="AppTheme.NoActionBar">
+        <item name="android:background">@drawable/blur_bg_3</item>
     </style>
 </resources>

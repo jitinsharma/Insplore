@@ -2,9 +2,14 @@ package io.github.jitinsharma.insplore.fragment;
 
 
 import android.content.Context;
-import android.database.Cursor;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.customtabs.CustomTabsIntent;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ShareCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -22,6 +27,7 @@ import io.github.jitinsharma.insplore.R;
 import io.github.jitinsharma.insplore.adapter.PoiAdapter;
 import io.github.jitinsharma.insplore.data.InContract;
 import io.github.jitinsharma.insplore.model.AsyncTaskListener;
+import io.github.jitinsharma.insplore.model.Constants;
 import io.github.jitinsharma.insplore.model.OnItemClick;
 import io.github.jitinsharma.insplore.model.PoiObject;
 import io.github.jitinsharma.insplore.service.PoiTask;
@@ -32,19 +38,13 @@ import io.github.jitinsharma.insplore.service.PoiTask;
  * create an instance of this fragment.
  */
 public class PlaceOfInterestFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
     private AutoCompleteTextView placeList;
     private RecyclerView recyclerView;
     PoiAdapter poiAdapter;
-    Cursor cursor;
     ProgressBar progressBar;
+    ArrayList<PoiObject> poiObjects;
+    String cityName = null;
     public static final String[] POI_COLUMNS = {
             InContract.PoiEntry._ID,
             InContract.PoiEntry.COLUMN_POI_TITLE,
@@ -59,20 +59,10 @@ public class PlaceOfInterestFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PlaceOfInterestFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PlaceOfInterestFragment newInstance(String param1, String param2) {
+    public static PlaceOfInterestFragment newInstance(String city) {
         PlaceOfInterestFragment fragment = new PlaceOfInterestFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(Constants.POI_CITY, city);
         fragment.setArguments(args);
         return fragment;
     }
@@ -81,9 +71,14 @@ public class PlaceOfInterestFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            cityName = getArguments().getString(Constants.POI_CITY);
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList(Constants.RECEIVE_LIST, poiObjects);
+        super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -93,71 +88,40 @@ public class PlaceOfInterestFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_place_of_interest, container, false);
         progressBar = (ProgressBar)root.findViewById(R.id.poi_progress);
         placeList = (AutoCompleteTextView)root.findViewById(R.id.poi_search);
-        String places[] = getContext().getResources().getStringArray(R.array.yapq_cities);
-        ArrayAdapter<String> placeArrayAdapter = new ArrayAdapter<String>(getContext(),
-                android.R.layout.simple_dropdown_item_1line, places);
-        placeList.setAdapter(placeArrayAdapter);
         recyclerView = (RecyclerView)root.findViewById(R.id.poi_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        /*testList = new ArrayList<>(10);
+        recyclerView.setNestedScrollingEnabled(false);
 
-        for (int i = 0; i < 10; i++) {
-            PoiObject object = new PoiObject();
-            object.setTitle("Test");
-            object.setPoiDescription(getContext().getResources().getString(R.string.city_short));
-            object.setPoiLatitude("28.5933");
-            object.setPoiLongitude("77.2506");
-            object.setWikipediaLink("www.wikipedia.org");
-            object.setMainImageUrl("www.google.com");
-            object.setGeoNameId("456566");
-            testList.add(object);
+        if (cityName!=null && poiObjects==null){
+            progressBar.setVisibility(View.VISIBLE);
+            placeList.setVisibility(View.GONE);
+            PoiTask poiTask = new PoiTask(getContext(), new PoiListener());
+            poiTask.execute(cityName);
+        }
+        else {
+            String places[] = getContext().getResources().getStringArray(R.array.yapq_cities);
+            ArrayAdapter<String> placeArrayAdapter = new ArrayAdapter<String>(getContext(),
+                    android.R.layout.simple_dropdown_item_1line, places);
+            placeList.setAdapter(placeArrayAdapter);
+
+            placeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    progressBar.setVisibility(View.VISIBLE);
+                    recyclerView.setVisibility(View.GONE);
+                    InputMethodManager in = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    in.hideSoftInputFromWindow(view.getApplicationWindowToken(), 0);
+                    PoiTask poiTask = new PoiTask(getContext(), new PoiListener());
+                    poiTask.execute((String) adapterView.getItemAtPosition(i));
+
+                }
+            });
         }
 
-        poiAdapter = new PoiAdapter(getContext(), testList, new OnItemClick() {
-            @Override
-            public void onViewClicked(int position) {
-
-            }
-
-            @Override
-            public void onFavoriteClicked(int position) {
-
-            }
-
-            @Override
-            public void onMapClicked(int position) {
-                Uri gmmIntentUri = Uri.parse("geo:0,0?q=28.5933,77.2506");
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                mapIntent.setPackage("com.google.android.apps.maps");
-                if (mapIntent.resolveActivity(getContext().getPackageManager()) != null) {
-                    startActivity(mapIntent);
-                }
-            }
-        });
-        recyclerView.setAdapter(poiAdapter);
-        recyclerView.setNestedScrollingEnabled(false);*/
-        placeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                progressBar.setVisibility(View.VISIBLE);
-                recyclerView.setVisibility(View.GONE);
-                InputMethodManager in = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                in.hideSoftInputFromWindow(view.getApplicationWindowToken(), 0);
-                PoiTask poiTask = new PoiTask(getContext(), new PoiListener());
-                poiTask.execute((String) adapterView.getItemAtPosition(i));
-
-            }
-        });
-        return root;
-    }
-
-    class PoiListener implements AsyncTaskListener<ArrayList<PoiObject>>{
-
-        @Override
-        public void onTaskComplete(ArrayList<PoiObject> result) {
+        if (poiObjects!=null && poiObjects.size()>0){
             progressBar.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
-            poiAdapter = new PoiAdapter(getContext(), result, new OnItemClick() {
+            poiAdapter = new PoiAdapter(getContext(), poiObjects, new OnItemClick() {
                 @Override
                 public void onFavoriteClicked(int position) {
 
@@ -165,20 +129,87 @@ public class PlaceOfInterestFragment extends Fragment {
 
                 @Override
                 public void onMapClicked(int position) {
-
+                    openMap(position);
                 }
 
                 @Override
                 public void onWikiClick(int position) {
-
+                    openWikipediaPage(position);
                 }
+
                 @Override
                 public void onShareIconClick(int position) {
-
+                    createShareIntent(position);
                 }
             });
             recyclerView.setAdapter(poiAdapter);
-            recyclerView.setNestedScrollingEnabled(false);
         }
+        return root;
+    }
+
+    class PoiListener implements AsyncTaskListener<ArrayList<PoiObject>>{
+
+        @Override
+        public void onTaskComplete(ArrayList<PoiObject> result) {
+            if (result!=null && result.size()>0) {
+                poiObjects = result;
+                progressBar.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
+                poiAdapter = new PoiAdapter(getContext(), result, new OnItemClick() {
+                    @Override
+                    public void onFavoriteClicked(int position) {
+
+                    }
+
+                    @Override
+                    public void onMapClicked(int position) {
+                        openMap(position);
+                    }
+
+                    @Override
+                    public void onWikiClick(int position) {
+                        openWikipediaPage(position);
+                    }
+
+                    @Override
+                    public void onShareIconClick(int position) {
+                        createShareIntent(position);
+                    }
+                });
+                recyclerView.setAdapter(poiAdapter);
+                recyclerView.setNestedScrollingEnabled(false);
+            }
+            else{
+                Snackbar.make(getView(), "An error occurred with your search. Please try again later", Snackbar.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    public void openMap(int position){
+        Uri gmmIntentUri = Uri.parse("geo:" + poiObjects.get(position).getPoiLatitude()
+                +","+poiObjects.get(position).getPoiLongitude()+"?z=15");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getContext().getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
+    }
+
+    public void openWikipediaPage(int position){
+        String url = poiObjects.get(position).getWikipediaLink();
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        builder.setToolbarColor(ContextCompat.getColor(getContext(), R.color.colorPrimary));
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.launchUrl(getActivity(), Uri.parse(url));
+    }
+
+    public void createShareIntent(int position){
+        PoiObject poiObject = poiObjects.get(position);
+        startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
+                .setType("text/plain")
+                .setText("Explore " + poiObject.getTitle() + "\n"
+                        + "Map: http://maps.google.com?q=" + poiObject.getPoiLatitude() +","+poiObject.getPoiLongitude()
+                        + "\n" + "Wikipedia: " + poiObject.getWikipediaLink())
+                .getIntent(), getString(R.string.action_share)));
     }
 }

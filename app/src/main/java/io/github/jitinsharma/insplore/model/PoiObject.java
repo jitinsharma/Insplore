@@ -27,8 +27,10 @@ public class PoiObject implements Parcelable{
         poiLongitude = in.readString();
         poiDescription = in.readString();
         geoNameId = in.readString();
-        imageArray = new byte[in.readInt()];
-        in.readByteArray(imageArray);
+        /*if (imageArray.length>0) {
+            imageArray = new byte[in.readInt()];
+        }
+        in.readByteArray(imageArray);*/
     }
 
     public static final Creator<PoiObject> CREATOR = new Creator<PoiObject>() {
@@ -121,7 +123,7 @@ public class PoiObject implements Parcelable{
         parcel.writeString(poiLongitude);
         parcel.writeString(poiDescription);
         parcel.writeString(geoNameId);
-        parcel.writeByteArray(imageArray);
+        //parcel.writeByteArray(imageArray);
     }
 }
 

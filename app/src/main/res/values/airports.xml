@@ -1,0 +1,3889 @@
+<resources>
+  <string-array name='airport_cities'>
+    <item>"AAA, Anaa"</item>
+    <item>"AAE, El Tarf"</item>
+    <item>"AAL, Norresundby"</item>
+    <item>"AAM, Mala Mala"</item>
+    <item>"AAN, Ayn al Faydah"</item>
+    <item>"AAQ, Novorossiysk"</item>
+    <item>"AAR, Kolind"</item>
+    <item>"AAT, Altay"</item>
+    <item>"AAX, Araxá"</item>
+    <item>"AAY, Al Ghaydah"</item>
+    <item>"ABA, Abakan"</item>
+    <item>"ABC, Albacete"</item>
+    <item>"ABD, Abadan"</item>
+    <item>"ABE, Allentown"</item>
+    <item>"ABI, Abilene"</item>
+    <item>"ABJ, Abidjan"</item>
+    <item>"ABK, Kabri Dar"</item>
+    <item>"ABL, Kiana"</item>
+    <item>"ABM, Seisia"</item>
+    <item>"ABQ, Albuquerque"</item>
+    <item>"ABR, Aberdeen"</item>
+    <item>"ABS, Abu Simbel"</item>
+    <item>"ABT, Al Aqiq"</item>
+    <item>"ABV, Gwagwa"</item>
+    <item>"ABX, Albury"</item>
+    <item>"ABY, Albany"</item>
+    <item>"ABZ, Aberdeen"</item>
+    <item>"ACA, Acapulco"</item>
+    <item>"ACC, Accra"</item>
+    <item>"ACE, San Bartolomé"</item>
+    <item>"ACH, Altenrhein"</item>
+    <item>"ACI, St. Peter Port"</item>
+    <item>"ACK, Nantucket"</item>
+    <item>"ACP, Sahand"</item>
+    <item>"ACS, Achinsk"</item>
+    <item>"ACT, Waco"</item>
+    <item>"ACV, Mckinleyville"</item>
+    <item>"ACX, Xingyi"</item>
+    <item>"ACY, Egg Harbor City"</item>
+    <item>"ACZ, Zabol"</item>
+    <item>"ADA, Adana"</item>
+    <item>"ADB, Azmir"</item>
+    <item>"ADD, Addis Ababa"</item>
+    <item>"ADE, Ash Shaykh Uthman"</item>
+    <item>"ADF, Adiyaman"</item>
+    <item>"ADJ, Amman"</item>
+    <item>"ADK, Adak"</item>
+    <item>"ADL, Adelaide"</item>
+    <item>"ADQ, Kodiak"</item>
+    <item>"ADU, Ardabil"</item>
+    <item>"ADX, St. Andrews"</item>
+    <item>"ADZ, San Andrés"</item>
+    <item>"AEH, Abéché"</item>
+    <item>"AEP, Buenos Aires"</item>
+    <item>"AER, Sochi"</item>
+    <item>"AES, Vigra"</item>
+    <item>"AET, Allakaket"</item>
+    <item>"AEX, Alexandria"</item>
+    <item>"AEY, Akureyri"</item>
+    <item>"AFA, San Rafael"</item>
+    <item>"AFL, Alta Floresta"</item>
+    <item>"AFS, Zarafshan"</item>
+    <item>"AFT, Afutara"</item>
+    <item>"AFZ, Sabzevar"</item>
+    <item>"AGA, Agadir"</item>
+    <item>"AGF, Laplume"</item>
+    <item>"AGH, Angelholm"</item>
+    <item>"AGL, Wanigela"</item>
+    <item>"AGM, Angmassalik"</item>
+    <item>"AGN, Angoon"</item>
+    <item>"AGP, Malaga"</item>
+    <item>"AGR, Agra"</item>
+    <item>"AGS, Augusta"</item>
+    <item>"AGT, Presidente Franco"</item>
+    <item>"AGU, Aguascalientes"</item>
+    <item>"AGV, Acarigua"</item>
+    <item>"AGX, Agatti Island"</item>
+    <item>"AHB, Hajlah"</item>
+    <item>"AHC, Herlong"</item>
+    <item>"AHE, Ahe"</item>
+    <item>"AHO, Alghero"</item>
+    <item>"AHS, Auas"</item>
+    <item>"AHU, Al Hoceima"</item>
+    <item>"AIA, Alliance"</item>
+    <item>"AIN, Wainwright"</item>
+    <item>"AIT, Aitutaki"</item>
+    <item>"AIU, Atiu Island"</item>
+    <item>"AJA, Ajaccio"</item>
+    <item>"AJF, Sakakah"</item>
+    <item>"AJI, Agrı"</item>
+    <item>"AJL, Aizawl"</item>
+    <item>"AJN, Anjouan"</item>
+    <item>"AJR, Arvidsjaur"</item>
+    <item>"AJU, Aracaju"</item>
+    <item>"AKA, Ankang"</item>
+    <item>"AKB, Atka"</item>
+    <item>"AKF, Kufrah"</item>
+    <item>"AKI, Bethel"</item>
+    <item>"AKJ, Asahikawa-shi"</item>
+    <item>"AKK, Kodiak"</item>
+    <item>"AKL, Manukau City"</item>
+    <item>"AKN, King Salmon"</item>
+    <item>"AKP, Anaktuvuk Pass"</item>
+    <item>"AKS, Kroonstad"</item>
+    <item>"AKU, Aksu"</item>
+    <item>"AKV, Chisasibi"</item>
+    <item>"AKX, Aqtobe"</item>
+    <item>"AKY, Sittwe"</item>
+    <item>"ALA, Almaty"</item>
+    <item>"ALB, Latham"</item>
+    <item>"ALC, Elx"</item>
+    <item>"ALF, Alta"</item>
+    <item>"ALG, Algiers"</item>
+    <item>"ALH, Albany"</item>
+    <item>"ALM, Alamogordo"</item>
+    <item>"ALO, Waterloo"</item>
+    <item>"ALP, Djibrine"</item>
+    <item>"ALS, Alamosa"</item>
+    <item>"ALW, Walla Walla"</item>
+    <item>"ALY, Alexandria"</item>
+    <item>"ALZ, Alitak"</item>
+    <item>"AMA, Amarillo"</item>
+    <item>"AMD, Ahmedabad"</item>
+    <item>"AMH, Arba Mintch"</item>
+    <item>"AMI, Mataram"</item>
+    <item>"AMM, Amman"</item>
+    <item>"AMQ, Ambon"</item>
+    <item>"AMS, Schiphol Zuid"</item>
+    <item>"AMV, Nar'yan-Mar"</item>
+    <item>"AMY, Ambatomainty"</item>
+    <item>"ANC, Anchorage"</item>
+    <item>"ANE, Seiches-sur-le-Loir"</item>
+    <item>"ANF, Antofagasta"</item>
+    <item>"ANG, Champniers"</item>
+    <item>"ANI, Bethel"</item>
+    <item>"ANM, Antalaha"</item>
+    <item>"ANR, Antwerp"</item>
+    <item>"ANU, Carlisle"</item>
+    <item>"ANV, Anvik"</item>
+    <item>"ANX, Andenes"</item>
+    <item>"AOC, Altenburg"</item>
+    <item>"AOE, Eskişehir"</item>
+    <item>"AOI, Falconara Marittima"</item>
+    <item>"AOJ, Aomori-shi"</item>
+    <item>"AOK, Karpathos"</item>
+    <item>"AOO, Martinsburg"</item>
+    <item>"AOR, Kepala Batas"</item>
+    <item>"AOS, Amook"</item>
+    <item>"APA, Englewood"</item>
+    <item>"APF, Naples"</item>
+    <item>"APK, Apataki"</item>
+    <item>"APL, Nampula"</item>
+    <item>"APN, Alpena"</item>
+    <item>"APO, Apartadó"</item>
+    <item>"APW, Apia"</item>
+    <item>"AQG, Anqing"</item>
+    <item>"AQI, Qaisumah"</item>
+    <item>"AQJ, Aqaba"</item>
+    <item>"AQP, Arequipa"</item>
+    <item>"ARC, Arctic Village"</item>
+    <item>"ARD, Alor Island"</item>
+    <item>"ARH, Arkhangel'sk"</item>
+    <item>"ARI, Arica"</item>
+    <item>"ARK, Arusha"</item>
+    <item>"ARM, Armidale"</item>
+    <item>"ARN, Märst"</item>
+    <item>"ART, Dexter"</item>
+    <item>"ARU, Araçatuba"</item>
+    <item>"ARV, Woodruff"</item>
+    <item>"ARW, Arad"</item>
+    <item>"ASA, Assab"</item>
+    <item>"ASB, Ashgabat"</item>
+    <item>"ASD, Fresh Creek"</item>
+    <item>"ASE, Aspen"</item>
+    <item>"ASF, Astrakhan'"</item>
+    <item>"ASI, Georgetown, Ascension Island"</item>
+    <item>"ASJ, Amami O Shima"</item>
+    <item>"ASM, Asmara"</item>
+    <item>"ASO, Asosa"</item>
+    <item>"ASP, Alice Springs"</item>
+    <item>"ASR, Kayseri"</item>
+    <item>"ASU, Colonia Mariano Roque Alonso"</item>
+    <item>"ASV, Amboseli"</item>
+    <item>"ASW, Aswan"</item>
+    <item>"ATB, Atbara"</item>
+    <item>"ATC, Arthur Town"</item>
+    <item>"ATD, Atoifi"</item>
+    <item>"ATH, Athens"</item>
+    <item>"ATK, Atqasuk"</item>
+    <item>"ATL, Atlanta"</item>
+    <item>"ATM, Altamira"</item>
+    <item>"ATQ, Raja Sansi"</item>
+    <item>"ATR, Atar"</item>
+    <item>"ATT, Atmautluak"</item>
+    <item>"ATW, Appleton"</item>
+    <item>"ATY, Watertown"</item>
+    <item>"ATZ, Asyut"</item>
+    <item>"AUA, Aruba"</item>
+    <item>"AUC, Arauca"</item>
+    <item>"AUG, Augusta"</item>
+    <item>"AUH, Abu Dhabi"</item>
+    <item>"AUK, Alakanuk"</item>
+    <item>"AUQ, Atuona"</item>
+    <item>"AUR, Aurillac"</item>
+    <item>"AUS, Austin"</item>
+    <item>"AUX, Araguaina"</item>
+    <item>"AUY, Aneityum"</item>
+    <item>"AVL, Fletcher"</item>
+    <item>"AVN, Avignon"</item>
+    <item>"AVP, Pittston"</item>
+    <item>"AVU, Avu Avu"</item>
+    <item>"AVV, Lara"</item>
+    <item>"AWB, Awaba"</item>
+    <item>"AWD, Aniwa"</item>
+    <item>"AWZ, Ahvaz"</item>
+    <item>"AXA, Anguilla"</item>
+    <item>"AXD, Alexandroupolis"</item>
+    <item>"AXM, La Tebaida"</item>
+    <item>"AXP, Spring Point"</item>
+    <item>"AXR, Arutua"</item>
+    <item>"AXT, Akita-shi"</item>
+    <item>"AXU, Axum"</item>
+    <item>"AYQ, Ayers Rock"</item>
+    <item>"AYT, Antalya"</item>
+    <item>"AZA, Phoenix"</item>
+    <item>"AZD, Yezd"</item>
+    <item>"AZN, Andijon"</item>
+    <item>"AZO, Kalamazoo"</item>
+    <item>"AZR, Adrar"</item>
+    <item>"AZS, Samana"</item>
+    <item>"BAG, Baguio City"</item>
+    <item>"BAH, Al Muharraq"</item>
+    <item>"BAL, Batman"</item>
+    <item>"BAQ, Soledad"</item>
+    <item>"BAS, Balalae"</item>
+    <item>"BAU, Bauru"</item>
+    <item>"BAV, Baotou"</item>
+    <item>"BAX, Barnaul"</item>
+    <item>"BAY, Baia Mare"</item>
+    <item>"BBA, Balmaceda"</item>
+    <item>"BBI, Bhubaneswar"</item>
+    <item>"BBK, Kasane"</item>
+    <item>"BBN, Nanga Medamit"</item>
+    <item>"BBO, Berbera"</item>
+    <item>"BBS, Camberley"</item>
+    <item>"BBU, Bucharest"</item>
+    <item>"BCA, Baracoa"</item>
+    <item>"BCD, Bacolod City"</item>
+    <item>"BCI, Barcaldine"</item>
+    <item>"BCL, Colorado"</item>
+    <item>"BCM, Bacæu"</item>
+    <item>"BCN, El Prat de Llobregat"</item>
+    <item>"BDA, St. George"</item>
+    <item>"BDB, Bundaberg"</item>
+    <item>"BDD, Badu Island"</item>
+    <item>"BDH, Bandar Abbas"</item>
+    <item>"BDJ, Banjarmasin"</item>
+    <item>"BDL, Windsor Locks"</item>
+    <item>"BDO, Bandung"</item>
+    <item>"BDP, Bhadrapur"</item>
+    <item>"BDQ, Vadodara"</item>
+    <item>"BDR, Stratford"</item>
+    <item>"BDS, Brindisi"</item>
+    <item>"BDU, Bardufoss"</item>
+    <item>"BEB, Balivanich"</item>
+    <item>"BEG, Surčin"</item>
+    <item>"BEL, Belem"</item>
+    <item>"BEN, Benghazi"</item>
+    <item>"BES, Guipavas"</item>
+    <item>"BET, Bethel"</item>
+    <item>"BEU, Bedourie"</item>
+    <item>"BEW, Beira"</item>
+    <item>"BEY, Beirut"</item>
+    <item>"BFD, Lewis Run"</item>
+    <item>"BFE, Bielefeld"</item>
+    <item>"BFF, Scottsbluff"</item>
+    <item>"BFI, Seattle"</item>
+    <item>"BFL, Bakersfield"</item>
+    <item>"BFN, Bloemfontein"</item>
+    <item>"BFS, Crumlin"</item>
+    <item>"BFV, Buri Ram"</item>
+    <item>"BGA, Bucaramanga"</item>
+    <item>"BGF, Bangui"</item>
+    <item>"BGI, Bridgetown"</item>
+    <item>"BGM, Johnson City"</item>
+    <item>"BGO, Blomsterdalen"</item>
+    <item>"BGR, Bangor"</item>
+    <item>"BGW, Baghdad"</item>
+    <item>"BGY, Grassobbio"</item>
+    <item>"BHB, Ellsworth"</item>
+    <item>"BHD, Belfast"</item>
+    <item>"BHE, Blenheim"</item>
+    <item>"BHG, Brus Laguna"</item>
+    <item>"BHH, Bisha"</item>
+    <item>"BHI, Punta Alta"</item>
+    <item>"BHJ, Bhuj"</item>
+    <item>"BHK, Bukhara"</item>
+    <item>"BHM, Birmingham"</item>
+    <item>"BHO, Bhopal"</item>
+    <item>"BHQ, Broken Hill"</item>
+    <item>"BHR, Bharatpur"</item>
+    <item>"BHS, Bathurst"</item>
+    <item>"BHU, Bhavnagar"</item>
+    <item>"BHV, Bahawalpur"</item>
+    <item>"BHX, Birmingham"</item>
+    <item>"BHY, Beihai"</item>
+    <item>"BIA, Borgo"</item>
+    <item>"BID, Block Island"</item>
+    <item>"BII, Bikini Atoll"</item>
+    <item>"BIK, Biak"</item>
+    <item>"BIL, Billings"</item>
+    <item>"BIM, Bailey's Town"</item>
+    <item>"BIO, Loiu"</item>
+    <item>"BIQ, Anglet"</item>
+    <item>"BIR, Biratnagur"</item>
+    <item>"BIS, Bismarck"</item>
+    <item>"BJA, Bejaia"</item>
+    <item>"BJB, Bojnord"</item>
+    <item>"BJF, Baasfjord"</item>
+    <item>"BJI, Bemidji"</item>
+    <item>"BJL, Yundum"</item>
+    <item>"BJM, Bujumbura"</item>
+    <item>"BJR, Bahar Dar"</item>
+    <item>"BJV, Bodrum"</item>
+    <item>"BJW, Ende"</item>
+    <item>"BJX, Silao"</item>
+    <item>"BJZ, Badajoz"</item>
+    <item>"BKA, Lyubertsy"</item>
+    <item>"BKC, Buckland"</item>
+    <item>"BKI, Kota Kinabalu"</item>
+    <item>"BKK, Lak Si"</item>
+    <item>"BKL, Cleveland"</item>
+    <item>"BKM, Bakalalan"</item>
+    <item>"BKO, Kalaban"</item>
+    <item>"BKQ, Mount Enniskillen"</item>
+    <item>"BKS, Bengkulu"</item>
+    <item>"BKW, Beaver"</item>
+    <item>"BKY, Bukavu"</item>
+    <item>"BLA, Pariaguán"</item>
+    <item>"BLE, Borlange"</item>
+    <item>"BLI, Bellingham"</item>
+    <item>"BLJ, Batna"</item>
+    <item>"BLK, Blackpool"</item>
+    <item>"BLL, Billund"</item>
+    <item>"BLQ, Bologna"</item>
+    <item>"BLR, Bangalore"</item>
+    <item>"BLT, Baralaba"</item>
+    <item>"BLV, Belleville"</item>
+    <item>"BLZ, Lunzu"</item>
+    <item>"BMA, Bromma"</item>
+    <item>"BME, Broome"</item>
+    <item>"BMI, Bloomington"</item>
+    <item>"BMK, Borkum"</item>
+    <item>"BMO, Bhamo"</item>
+    <item>"BMU, Raba"</item>
+    <item>"BMV, Banmethuot"</item>
+    <item>"BMW, Bordj Badji Mokhtar"</item>
+    <item>"BMY, Belep Island"</item>
+    <item>"BNA, Nashville"</item>
+    <item>"BND, Bandar Abbas"</item>
+    <item>"BNE, Brisbane"</item>
+    <item>"BNI, Benin City"</item>
+    <item>"BNJ, Bonn"</item>
+    <item>"BNK, Ballina"</item>
+    <item>"BNN, Bronnoysund"</item>
+    <item>"BNS, Barinas"</item>
+    <item>"BNX, Banja Luka"</item>
+    <item>"BNY, Bellona"</item>
+    <item>"BOB, Papeete"</item>
+    <item>"BOC, Bocas del Toro"</item>
+    <item>"BOD, Merignac"</item>
+    <item>"BOG, Fontibón"</item>
+    <item>"BOH, Christchurch"</item>
+    <item>"BOI, Boise"</item>
+    <item>"BOJ, Burgas"</item>
+    <item>"BOM, Mumbai"</item>
+    <item>"BON, Kralendijk"</item>
+    <item>"BOO, Bodo"</item>
+    <item>"BOS, Boston"</item>
+    <item>"BOW, Bartow"</item>
+    <item>"BOY, Bobo-Dioulasso"</item>
+    <item>"BPN, Balikpapan"</item>
+    <item>"BPS, Porto Seguro"</item>
+    <item>"BPT, Beaumont"</item>
+    <item>"BPX, Qamdo"</item>
+    <item>"BPY, Besalampy"</item>
+    <item>"BQK, Brunswick"</item>
+    <item>"BQL, Boulia"</item>
+    <item>"BQN, Aguadilla"</item>
+    <item>"BQS, Blagoveshchensk"</item>
+    <item>"BRA, Barreiras"</item>
+    <item>"BRC, San Carlos DeBariloche"</item>
+    <item>"BRD, Brainerd"</item>
+    <item>"BRE, Bremen"</item>
+    <item>"BRF, Bradford"</item>
+    <item>"BRI, Bari"</item>
+    <item>"BRK, Bourke"</item>
+    <item>"BRL, Burlington"</item>
+    <item>"BRM, Barquisimeto"</item>
+    <item>"BRN, Belp"</item>
+    <item>"BRO, Brownsville"</item>
+    <item>"BRQ, Brno"</item>
+    <item>"BRR, Barra"</item>
+    <item>"BRS, Bristol"</item>
+    <item>"BRU, Bruxelles"</item>
+    <item>"BRV, Bad Bederkesa"</item>
+    <item>"BRW, Barrow"</item>
+    <item>"BSA, Bossaso"</item>
+    <item>"BSB, Lago Sul"</item>
+    <item>"BSC, Bahía Solano"</item>
+    <item>"BSD, Baoshan"</item>
+    <item>"BSG, Bata"</item>
+    <item>"BSH, Brighton"</item>
+    <item>"BSK, Biskra"</item>
+    <item>"BSL, St-Ludwig"</item>
+    <item>"BSO, Basco"</item>
+    <item>"BSR, Gawad"</item>
+    <item>"BSX, Bassein"</item>
+    <item>"BTH, Batam"</item>
+    <item>"BTI, Kaktovik"</item>
+    <item>"BTJ, Banda Aceh"</item>
+    <item>"BTK, Bratsk"</item>
+    <item>"BTL, Battle Creek"</item>
+    <item>"BTM, Butte"</item>
+    <item>"BTR, Baton Rouge"</item>
+    <item>"BTS, Bratislava"</item>
+    <item>"BTT, Bettles"</item>
+    <item>"BTU, Bintulu"</item>
+    <item>"BTV, South Burlington"</item>
+    <item>"BTZ, Bursa"</item>
+    <item>"BUA, Buka"</item>
+    <item>"BUC, Burketown"</item>
+    <item>"BUD, Budapest"</item>
+    <item>"BUF, Buffalo"</item>
+    <item>"BUL, Bulolo"</item>
+    <item>"BUN, Buenaventura"</item>
+    <item>"BUO, Burao"</item>
+    <item>"BUQ, Bulawayo"</item>
+    <item>"BUR, Burbank"</item>
+    <item>"BUS, Batumi"</item>
+    <item>"BUX, Bunia"</item>
+    <item>"BUZ, Bandar-e Bushehr"</item>
+    <item>"BVA, Beauvais"</item>
+    <item>"BVB, Boa Vista"</item>
+    <item>"BVC, Boa Vista"</item>
+    <item>"BVE, Brive-la-Gaillarde"</item>
+    <item>"BVG, Berlevaag"</item>
+    <item>"BVH, Vilhena"</item>
+    <item>"BVI, Birdsville"</item>
+    <item>"BWA, Bhairawa"</item>
+    <item>"BWE, Braunschweig"</item>
+    <item>"BWF, Barrow in Furness"</item>
+    <item>"BWI, Baltimore"</item>
+    <item>"BWK, Bol"</item>
+    <item>"BWN, Bandar Seri Begawan"</item>
+    <item>"BWT, Doctors Rocks"</item>
+    <item>"BWW, Santa Clara"</item>
+    <item>"BXR, Bam"</item>
+    <item>"BXU, Buenavista"</item>
+    <item>"BYM, Bayamo"</item>
+    <item>"BYN, Bayankhongor"</item>
+    <item>"BZE, Hattieville"</item>
+    <item>"BZG, Białe Błota"</item>
+    <item>"BZK, Briansk"</item>
+    <item>"BZL, Barisal"</item>
+    <item>"BZN, Bozeman"</item>
+    <item>"BZO, Botzen"</item>
+    <item>"BZR, Villeneuve"</item>
+    <item>"BZV, Brazzaville"</item>
+    <item>"BZZ, Carterton"</item>
+    <item>"CAB, Cabinda"</item>
+    <item>"CAC, Cascavel"</item>
+    <item>"CAE, West Columbia"</item>
+    <item>"CAG, Sardara"</item>
+    <item>"CAH, Ca Mau"</item>
+    <item>"CAI, Cairo"</item>
+    <item>"CAK, Canton"</item>
+    <item>"CAL, Campbeltown"</item>
+    <item>"CAN, Guangzhou"</item>
+    <item>"CAP, Cap-Haïtien"</item>
+    <item>"CAX, Carlisle"</item>
+    <item>"CAY, Cayenne"</item>
+    <item>"CAZ, Canbelego"</item>
+    <item>"CBB, Cochabamba"</item>
+    <item>"CBG, Cambridge"</item>
+    <item>"CBH, Bechar"</item>
+    <item>"CBO, Sultan Kudarat"</item>
+    <item>"CBQ, Duke Town"</item>
+    <item>"CBR, Canberra"</item>
+    <item>"CBT, Catumbela"</item>
+    <item>"CCC, Cayo Coco"</item>
+    <item>"CCF, Carcassonne"</item>
+    <item>"CCJ, Pallikkal"</item>
+    <item>"CCK, West Island"</item>
+    <item>"CCM, Forquilhinha"</item>
+    <item>"CCP, Hualpencillo"</item>
+    <item>"CCS, Catia la Mar"</item>
+    <item>"CCU, Kolkata"</item>
+    <item>"CCV, Craig Cove"</item>
+    <item>"CCZ, Chub Cay"</item>
+    <item>"CDB, Cold Bay"</item>
+    <item>"CDC, Cedar City"</item>
+    <item>"CDG, Le Mesnil-Amelot"</item>
+    <item>"CDR, Chadron"</item>
+    <item>"CDV, Cordova"</item>
+    <item>"CDW, Fairfield"</item>
+    <item>"CEB, Cebu"</item>
+    <item>"CEC, Crescent City"</item>
+    <item>"CED, Ceduna"</item>
+    <item>"CEE, Cherepovets"</item>
+    <item>"CEG, Chester"</item>
+    <item>"CEI, Chiang Rai"</item>
+    <item>"CEK, Zlatoust"</item>
+    <item>"CEM, Circle"</item>
+    <item>"CEN, Ciudad Obregón"</item>
+    <item>"CEZ, Cortez"</item>
+    <item>"CFC, Caçador"</item>
+    <item>"CFE, Aulnat"</item>
+    <item>"CFK, Chlef"</item>
+    <item>"CFN, Mullaghduff"</item>
+    <item>"CFR, Carpiquet"</item>
+    <item>"CFS, Coffs Harbour"</item>
+    <item>"CFU, Corcyra"</item>
+    <item>"CGA, Craig"</item>
+    <item>"CGB, Cuiaba"</item>
+    <item>"CGD, Changde"</item>
+    <item>"CGH, Sao Paulo"</item>
+    <item>"CGI, Scott City"</item>
+    <item>"CGK, Tangerang"</item>
+    <item>"CGM, Camiguin"</item>
+    <item>"CGN, Cologne"</item>
+    <item>"CGO, Zhengzhou"</item>
+    <item>"CGP, Chittagong"</item>
+    <item>"CGQ, Changchun"</item>
+    <item>"CGR, Campo Grande"</item>
+    <item>"CGY, Cagayan de Oro"</item>
+    <item>"CHA, Chattanooga"</item>
+    <item>"CHC, Christchurch"</item>
+    <item>"CHO, Earlysville"</item>
+    <item>"CHQ, Canea"</item>
+    <item>"CHS, North Charleston"</item>
+    <item>"CHT, Chatham Island"</item>
+    <item>"CHU, Chuathbaluk"</item>
+    <item>"CHY, Choiseul Bay"</item>
+    <item>"CIA, Rome"</item>
+    <item>"CIC, Chico"</item>
+    <item>"CID, Cedar Rapids"</item>
+    <item>"CIF, Chifeng"</item>
+    <item>"CIH, Changzhi"</item>
+    <item>"CIJ, Cobija"</item>
+    <item>"CIK, Chalkyitsik"</item>
+    <item>"CIP, Chipata"</item>
+    <item>"CIT, Shimkent"</item>
+    <item>"CIU, Kincheloe"</item>
+    <item>"CIW, Canouan Island"</item>
+    <item>"CIX, Chiclayo"</item>
+    <item>"CJA, Cajamarca"</item>
+    <item>"CJB, Coimbatore"</item>
+    <item>"CJC, Calama"</item>
+    <item>"CJJ, Naesu-Eup"</item>
+    <item>"CJL, Chitral"</item>
+    <item>"CJS, Ciudad Juarez"</item>
+    <item>"CJU, Jeju-Si"</item>
+    <item>"CKB, Clarksburg"</item>
+    <item>"CKD, Aniak"</item>
+    <item>"CKG, Chongqing"</item>
+    <item>"CKH, Chokurdah"</item>
+    <item>"CKS, Carajas"</item>
+    <item>"CKX, Tok"</item>
+    <item>"CKY, Conakry"</item>
+    <item>"CKZ, Canakkale"</item>
+    <item>"CLD, Carlsbad"</item>
+    <item>"CLE, Cleveland"</item>
+    <item>"CLJ, Clausemburgo"</item>
+    <item>"CLL, College Station"</item>
+    <item>"CLM, Port Angeles"</item>
+    <item>"CLO, Obando"</item>
+    <item>"CLP, Clarks Point"</item>
+    <item>"CLQ, Cuauhtémoc"</item>
+    <item>"CLT, Charlotte"</item>
+    <item>"CLY, Calenzana"</item>
+    <item>"CMA, Cunnamulla"</item>
+    <item>"CMB, Gampaha"</item>
+    <item>"CME, Carmen Olorón"</item>
+    <item>"CMF, La Motte"</item>
+    <item>"CMG, Corumba"</item>
+    <item>"CMH, Columbus"</item>
+    <item>"CMI, Savoy"</item>
+    <item>"CMN, Casablanca"</item>
+    <item>"CMU, Kundiawa"</item>
+    <item>"CMW, Camagüey"</item>
+    <item>"CMX, Hancock"</item>
+    <item>"CNB, Coonamble"</item>
+    <item>"CNC, Coconut Island"</item>
+    <item>"CND, Kustenje"</item>
+    <item>"CNF, Confins"</item>
+    <item>"CNJ, Cloncurry"</item>
+    <item>"CNM, Carlsbad"</item>
+    <item>"CNP, Neerlerit Inaat"</item>
+    <item>"CNQ, Corrientes"</item>
+    <item>"CNS, Cairns"</item>
+    <item>"CNX, Chiang Mai"</item>
+    <item>"CNY, Thompson"</item>
+    <item>"COD, Cody/Yellowstone"</item>
+    <item>"COK, Kochi"</item>
+    <item>"COL, Isle of coll"</item>
+    <item>"COO, Cotonou"</item>
+    <item>"COQ, Choibalsan"</item>
+    <item>"COR, Cordoba"</item>
+    <item>"COS, Colorado Springs"</item>
+    <item>"COU, Columbia"</item>
+    <item>"CPC, San Martin DeLos Andes"</item>
+    <item>"CPD, Coober Pedy"</item>
+    <item>"CPE, Campeche"</item>
+    <item>"CPH, Kastrup"</item>
+    <item>"CPO, Copiapó"</item>
+    <item>"CPQ, Campinas"</item>
+    <item>"CPR, Casper"</item>
+    <item>"CPT, Cape Town"</item>
+    <item>"CPV, Campina Grande"</item>
+    <item>"CPX, Culebra"</item>
+    <item>"CQD, Shahre-Kord"</item>
+    <item>"CRA, Croiova"</item>
+    <item>"CRD, Comodoro Rivadavia"</item>
+    <item>"CRI, Colonel Hill"</item>
+    <item>"CRK, Mabalacat"</item>
+    <item>"CRL, Charleroi"</item>
+    <item>"CRM, Catarman"</item>
+    <item>"CRP, Corpus Christi"</item>
+    <item>"CRW, Charleston"</item>
+    <item>"CSA, Isle Of Colonsay"</item>
+    <item>"CSG, Columbus"</item>
+    <item>"CSH, Solovetsky"</item>
+    <item>"CSK, Cap Skirring"</item>
+    <item>"CSX, Changsha"</item>
+    <item>"CSY, Cheboksary"</item>
+    <item>"CTA, Catania"</item>
+    <item>"CTC, San Isidro"</item>
+    <item>"CTG, La Boquilla"</item>
+    <item>"CTL, Charleville"</item>
+    <item>"CTM, Chetumal"</item>
+    <item>"CTS, Chitose-shi"</item>
+    <item>"CTU, Chengdu"</item>
+    <item>"CUC, Cúcuta"</item>
+    <item>"CUE, Cuenca"</item>
+    <item>"CUF, Fossano"</item>
+    <item>"CUK, Caye Caulker"</item>
+    <item>"CUL, Culiacan"</item>
+    <item>"CUM, Cumaná"</item>
+    <item>"CUN, Cancun"</item>
+    <item>"CUP, El Pilar"</item>
+    <item>"CUR, Curacao"</item>
+    <item>"CUU, Chihuahua"</item>
+    <item>"CUZ, San Sebastián"</item>
+    <item>"CVG, Hebron"</item>
+    <item>"CVM, Güémez"</item>
+    <item>"CVN, Texico"</item>
+    <item>"CVQ, Carnarvon"</item>
+    <item>"CVT, Coventry"</item>
+    <item>"CVU, Corvo"</item>
+    <item>"CWA, Mosinee"</item>
+    <item>"CWB, Sao Jose dos Pinhais"</item>
+    <item>"CWC, Chernivtsi"</item>
+    <item>"CWL, Barry"</item>
+    <item>"CXB, Cox's Bazar"</item>
+    <item>"CXH, Vancouver"</item>
+    <item>"CXI, Christmas Island"</item>
+    <item>"CXJ, Caxias do Sul"</item>
+    <item>"CXR, Nha Trang"</item>
+    <item>"CYB, Cayman Brac Is"</item>
+    <item>"CYF, Chefornak"</item>
+    <item>"CYI, Chiayi City"</item>
+    <item>"CYO, Cayo Largo Del Sur"</item>
+    <item>"CYP, Calbayog"</item>
+    <item>"CYS, Cheyenne"</item>
+    <item>"CYU, Cuyo"</item>
+    <item>"CYX, Cherskiy"</item>
+    <item>"CYZ, Cauayan"</item>
+    <item>"CZE, La Vela de Coro"</item>
+    <item>"CZH, Corozal"</item>
+    <item>"CZL, Constantine"</item>
+    <item>"CZM, San Miguel de Cozumel"</item>
+    <item>"CZN, Gakona"</item>
+    <item>"CZS, Cruzeiro Do Sul"</item>
+    <item>"CZU, Morroa"</item>
+    <item>"CZX, Changzhou"</item>
+    <item>"DAB, Daytona Beach"</item>
+    <item>"DAC, Dhaka"</item>
+    <item>"DAD, Tourane"</item>
+    <item>"DAL, Dallas"</item>
+    <item>"DAM, Damascus"</item>
+    <item>"DAR, Dar es Salaam"</item>
+    <item>"DAT, Datong"</item>
+    <item>"DAU, Daru"</item>
+    <item>"DAX, Daxian"</item>
+    <item>"DAY, Dayton"</item>
+    <item>"DBA, Dalbandin"</item>
+    <item>"DBO, Dubbo"</item>
+    <item>"DBQ, Dubuque"</item>
+    <item>"DBV, Dubrovnik"</item>
+    <item>"DCA, Arlington"</item>
+    <item>"DCF, Portsmouth"</item>
+    <item>"DCM, Labruguière"</item>
+    <item>"DDC, Dodge City"</item>
+    <item>"DDG, Dandong"</item>
+    <item>"DEA, Dera Ghazi Khan"</item>
+    <item>"DEC, Decatur"</item>
+    <item>"DED, Dehra Dun"</item>
+    <item>"DEF, Dezful"</item>
+    <item>"DEL, New Delhi"</item>
+    <item>"DEN, Denver"</item>
+    <item>"DEZ, Dayr az Zawr"</item>
+    <item>"DFW, Dallas"</item>
+    <item>"DGA, Dangriga"</item>
+    <item>"DGE, Apple Tree Flat"</item>
+    <item>"DGM, Dongguan"</item>
+    <item>"DGO, Durango"</item>
+    <item>"DGT, Sibulan"</item>
+    <item>"DHM, Dharamsala"</item>
+    <item>"DHN, Dothan"</item>
+    <item>"DIB, Dikhari"</item>
+    <item>"DIE, Antseranana"</item>
+    <item>"DIG, Diqing"</item>
+    <item>"DIK, Dickinson"</item>
+    <item>"DIL, Dili"</item>
+    <item>"DIN, Dien Bien Phu"</item>
+    <item>"DIR, Dire Dawa"</item>
+    <item>"DIS, Loubomo"</item>
+    <item>"DIU, Diu"</item>
+    <item>"DIY, Diyaribakir"</item>
+    <item>"DJB, Jambi"</item>
+    <item>"DJE, Hawmat as Suq"</item>
+    <item>"DJG, Illizi"</item>
+    <item>"DJJ, Jayapura"</item>
+    <item>"DKR, Ngor"</item>
+    <item>"DLA, Douala"</item>
+    <item>"DLC, Dalian"</item>
+    <item>"DLG, Dillingham"</item>
+    <item>"DLH, Duluth"</item>
+    <item>"DLI, Lam Dong"</item>
+    <item>"DLM, Ortaca"</item>
+    <item>"DLU, Dali City"</item>
+    <item>"DLY, Dillons Bay"</item>
+    <item>"DLZ, Dalanzadgad"</item>
+    <item>"DMD, Doomadgee"</item>
+    <item>"DME, Podol'sk"</item>
+    <item>"DMK, Don Muang"</item>
+    <item>"DMM, Khuwaylidiyah"</item>
+    <item>"DMU, Dimapur"</item>
+    <item>"DND, Dundee"</item>
+    <item>"DNH, Dunhuang"</item>
+    <item>"DNK, Dnipropetrovs'k"</item>
+    <item>"DNR, Pleurtuit"</item>
+    <item>"DNZ, Denizli"</item>
+    <item>"DOG, Dongola"</item>
+    <item>"DOH, Doha"</item>
+    <item>"DOK, Donets'k"</item>
+    <item>"DOM, Marigot"</item>
+    <item>"DOP, Dolpa"</item>
+    <item>"DOU, Dourados"</item>
+    <item>"DOY, Dongying"</item>
+    <item>"DPL, Polanco"</item>
+    <item>"DPO, Devonport"</item>
+    <item>"DPS, Denpasar"</item>
+    <item>"DRG, Deering"</item>
+    <item>"DRO, Durango"</item>
+    <item>"DRS, Ottendorf-Okrilla"</item>
+    <item>"DRT, Del Rio"</item>
+    <item>"DRW, Darwin"</item>
+    <item>"DSA, Doncaster Sheffield"</item>
+    <item>"DSM, Des Moines"</item>
+    <item>"DSN, Dongsheng"</item>
+    <item>"DTM, Dortmund"</item>
+    <item>"DTW, Detroit"</item>
+    <item>"DUB, Cloghran"</item>
+    <item>"DUD, Outram"</item>
+    <item>"DUE, Dundo"</item>
+    <item>"DUJ, Reynoldsville"</item>
+    <item>"DUQ, Duncan"</item>
+    <item>"DUR, Durban"</item>
+    <item>"DUS, Dusseldorf"</item>
+    <item>"DUT, Unalaska"</item>
+    <item>"DVL, Devils Lake"</item>
+    <item>"DVO, Davao City"</item>
+    <item>"DWB, Soalala"</item>
+    <item>"DWD, Dawadmi"</item>
+    <item>"DXB, Dubai"</item>
+    <item>"DYG, Dayong"</item>
+    <item>"DYR, Anadyr'"</item>
+    <item>"DYU, Dushanbe"</item>
+    <item>"DZA, Mamoudzou"</item>
+    <item>"DZN, Zhezqazghan"</item>
+    <item>"EAA, Tok"</item>
+    <item>"EAE, Emae"</item>
+    <item>"EAL, Kwajalein Atoll"</item>
+    <item>"EAM, Najran"</item>
+    <item>"EAR, Kearney"</item>
+    <item>"EAS, Hondarribia"</item>
+    <item>"EAT, East Wenatchee"</item>
+    <item>"EAU, Eau Claire"</item>
+    <item>"EBA, Pianosa"</item>
+    <item>"EBB, Entebbe"</item>
+    <item>"EBD, Al Ubayyid"</item>
+    <item>"EBJ, Esbjerg"</item>
+    <item>"EBL, Erbil"</item>
+    <item>"ECN, Nicosia"</item>
+    <item>"EDA, Ketchikan"</item>
+    <item>"EDI, Edinburgh"</item>
+    <item>"EDL, Nakuru"</item>
+    <item>"EDO, Edremit"</item>
+    <item>"EDR, Edward River"</item>
+    <item>"EEK, Eek"</item>
+    <item>"EFL, Dhilianata"</item>
+    <item>"EGC, Bergerac"</item>
+    <item>"EGE, Gypsum"</item>
+    <item>"EGN, Geneina"</item>
+    <item>"EGO, Belgorod"</item>
+    <item>"EGS, Egilsstadir"</item>
+    <item>"EGV, Eagle River"</item>
+    <item>"EGX, Egegik"</item>
+    <item>"EIB, Eisenach"</item>
+    <item>"EIE, Eniseysk"</item>
+    <item>"EIK, Tonsberg"</item>
+    <item>"EIN, Eindhoven"</item>
+    <item>"EIS, Beef Island"</item>
+    <item>"EJA, Barrancabermeja"</item>
+    <item>"EJH, Wedjh"</item>
+    <item>"EKO, Elko"</item>
+    <item>"EKS, "</item>
+    <item>"ELC, Darwin"</item>
+    <item>"ELF, El Fasher"</item>
+    <item>"ELG, El Golea"</item>
+    <item>"ELH, The Bluff"</item>
+    <item>"ELI, Elim"</item>
+    <item>"ELM, Horseheads"</item>
+    <item>"ELP, El Paso"</item>
+    <item>"ELQ, Al Qara'"</item>
+    <item>"ELS, East London"</item>
+    <item>"ELU, El Oued"</item>
+    <item>"ELV, Elfin Cove"</item>
+    <item>"ELY, Ely"</item>
+    <item>"EMA, Derby"</item>
+    <item>"EMD, Emerald"</item>
+    <item>"EME, Emden"</item>
+    <item>"EMK, Alakanuk"</item>
+    <item>"ENA, Kenai"</item>
+    <item>"ENE, Ende"</item>
+    <item>"ENF, Leppäjärvi"</item>
+    <item>"ENH, Enshi"</item>
+    <item>"ENI, El Nido"</item>
+    <item>"ENS, Enschede"</item>
+    <item>"ENU, Enugu"</item>
+    <item>"ENW, Kenosha"</item>
+    <item>"ENY, Yan'an"</item>
+    <item>"EOH, Medellin"</item>
+    <item>"EOZ, Elorza"</item>
+    <item>"EPR, Gibson"</item>
+    <item>"EQS, Esquel"</item>
+    <item>"ERC, Erzincan"</item>
+    <item>"ERF, Erfurt"</item>
+    <item>"ERH, Errachidia"</item>
+    <item>"ERI, Erie"</item>
+    <item>"ERM, Erechim"</item>
+    <item>"ERS, Windhoek"</item>
+    <item>"ERZ, Erzurum"</item>
+    <item>"ESB, Çubuk"</item>
+    <item>"ESC, Escanaba"</item>
+    <item>"ESD, Eastsound"</item>
+    <item>"ESM, Tachina"</item>
+    <item>"ESR, Diego de Almagro"</item>
+    <item>"ESS, Mulheim-on-Ruhr"</item>
+    <item>"ESU, Essaouira"</item>
+    <item>"ETH, Elat"</item>
+    <item>"ETZ, Verny"</item>
+    <item>"EUA, Eua"</item>
+    <item>"EUG, Eugene"</item>
+    <item>"EUM, Bordesholm"</item>
+    <item>"EUN, Laayoune"</item>
+    <item>"EUX, Oranjestad"</item>
+    <item>"EVE, Tarnstad"</item>
+    <item>"EVG, Sveg"</item>
+    <item>"EVN, Yerevan"</item>
+    <item>"EVV, Evansville"</item>
+    <item>"EWB, New Bedford"</item>
+    <item>"EWD, Wildman Lake"</item>
+    <item>"EWN, New Bern"</item>
+    <item>"EWR, Newark"</item>
+    <item>"EXT, Exeter"</item>
+    <item>"EYP, Yopal"</item>
+    <item>"EYW, Key West"</item>
+    <item>"EZE, Ezeiza"</item>
+    <item>"EZS, Elazığ"</item>
+    <item>"FAB, Farnborough"</item>
+    <item>"FAE, Faroe Islands"</item>
+    <item>"FAI, Fairbanks"</item>
+    <item>"FAO, Faro"</item>
+    <item>"FAR, Fargo"</item>
+    <item>"FAT, Fresno"</item>
+    <item>"FAV, Fakarava"</item>
+    <item>"FAY, Fayetteville"</item>
+    <item>"FBM, Lubumbashi"</item>
+    <item>"FCA, Kalispell"</item>
+    <item>"FCN, Cuxhaven"</item>
+    <item>"FCO, Rome"</item>
+    <item>"FDE, Bygstad"</item>
+    <item>"FDF, Ducos"</item>
+    <item>"FDH, Meckenbeuren"</item>
+    <item>"FEG, Fergana"</item>
+    <item>"FEN, Vila dos Remédios"</item>
+    <item>"FEZ, Fez"</item>
+    <item>"FGU, Fangatau"</item>
+    <item>"FHZ, Fakahina"</item>
+    <item>"FIH, Kinshasa"</item>
+    <item>"FJR, Al Fujayrah"</item>
+    <item>"FKB, Rheinmünster"</item>
+    <item>"FKI, Kisangani"</item>
+    <item>"FKL, Franklin"</item>
+    <item>"FKQ, Fak Fak"</item>
+    <item>"FKS, Sukagawa-shi"</item>
+    <item>"FLA, Florencia"</item>
+    <item>"FLG, Flagstaff"</item>
+    <item>"FLL, Dania Beach"</item>
+    <item>"FLN, Florianopolis"</item>
+    <item>"FLO, Florence"</item>
+    <item>"FLR, Florence"</item>
+    <item>"FLW, Flores Island"</item>
+    <item>"FMA, Formosa"</item>
+    <item>"FMM, Memmingen"</item>
+    <item>"FMN, Farmington"</item>
+    <item>"FMO, Greven"</item>
+    <item>"FMY, Fort Myers"</item>
+    <item>"FNA, Freetown"</item>
+    <item>"FNC, Madeira"</item>
+    <item>"FNI, St-Gilles-du-Gard"</item>
+    <item>"FNJ, Sunan"</item>
+    <item>"FNL, Loveland"</item>
+    <item>"FNT, Flint"</item>
+    <item>"FOC, Fuzhou"</item>
+    <item>"FOD, Fort Dodge"</item>
+    <item>"FOG, Foggia"</item>
+    <item>"FOR, Fortaleza"</item>
+    <item>"FPO, Freeport City"</item>
+    <item>"FRA, Frankfurt"</item>
+    <item>"FRC, Franca"</item>
+    <item>"FRD, Friday Harbor"</item>
+    <item>"FRE, Fera Island"</item>
+    <item>"FRL, Forli"</item>
+    <item>"FRO, Floro"</item>
+    <item>"FRS, Flores"</item>
+    <item>"FRU, Bishkek"</item>
+    <item>"FRW, Francistown"</item>
+    <item>"FSC, Figari"</item>
+    <item>"FSD, Sioux Falls"</item>
+    <item>"FSM, Fort Smith"</item>
+    <item>"FSP, St Pierre"</item>
+    <item>"FTA, Futuna Island"</item>
+    <item>"FTE, El Calafate"</item>
+    <item>"FTU, Faradofay"</item>
+    <item>"FUE, Antigua"</item>
+    <item>"FUG, Fuyang"</item>
+    <item>"FUJ, Goto-shi"</item>
+    <item>"FUK, Fukuoka-shi"</item>
+    <item>"FUN, Funafuti"</item>
+    <item>"FUT, Futuna Island"</item>
+    <item>"FWA, Fort Wayne"</item>
+    <item>"FWM, Fort William"</item>
+    <item>"FYU, Fort Yukon"</item>
+    <item>"FZO, Bristol"</item>
+    <item>"GAE, Gabes"</item>
+    <item>"GAF, Gafsa"</item>
+    <item>"GAJ, Higashine-shi"</item>
+    <item>"GAL, Galena"</item>
+    <item>"GAM, Gambell"</item>
+    <item>"GAN, Hithadhoo"</item>
+    <item>"GAO, Guantanamo"</item>
+    <item>"GAU, Gawahati"</item>
+    <item>"GAX, Gamba"</item>
+    <item>"GAY, Gaya"</item>
+    <item>"GBD, Great Bend"</item>
+    <item>"GBE, Tlokweng"</item>
+    <item>"GBJ, Grand-Bourg"</item>
+    <item>"GBT, Gorgan"</item>
+    <item>"GCC, Gillette"</item>
+    <item>"GCI, St. Peter Port"</item>
+    <item>"GCK, Pierceville"</item>
+    <item>"GCM, Georgetown"</item>
+    <item>"GDE, Gode/Iddidole"</item>
+    <item>"GDL, Tlajomulco de Zúñiga"</item>
+    <item>"GDN, Gdansk"</item>
+    <item>"GDO, Barinas"</item>
+    <item>"GDQ, Azezo"</item>
+    <item>"GDT, Grand Turk"</item>
+    <item>"GDX, Magadan"</item>
+    <item>"GEA, Noumea"</item>
+    <item>"GEG, Spokane"</item>
+    <item>"GEL, Santo Angelo"</item>
+    <item>"GEO, Hyde Park"</item>
+    <item>"GER, Nueva Gerona"</item>
+    <item>"GES, General Santos City"</item>
+    <item>"GET, Geraldton"</item>
+    <item>"GEV, Koskullskulle"</item>
+    <item>"GFF, Griffith"</item>
+    <item>"GFK, Grand Forks"</item>
+    <item>"GFN, Grafton"</item>
+    <item>"GGG, Longview"</item>
+    <item>"GGT, George Town"</item>
+    <item>"GHA, Ghardaia"</item>
+    <item>"GHB, Governor Harbour"</item>
+    <item>"GHT, Ghat"</item>
+    <item>"GIB, Gibraltar"</item>
+    <item>"GIC, Kubin Village"</item>
+    <item>"GIG, Rio de Janeiro"</item>
+    <item>"GIL, Gilgit"</item>
+    <item>"GIS, Gisborne"</item>
+    <item>"GIZ, Jizan"</item>
+    <item>"GJA, Guanaja"</item>
+    <item>"GJL, Jijel"</item>
+    <item>"GJT, Grand Junction"</item>
+    <item>"GKA, Goroka"</item>
+    <item>"GLA, Paisley"</item>
+    <item>"GLF, Palmar Sur"</item>
+    <item>"GLH, Greenville"</item>
+    <item>"GLK, Gaalkacyo"</item>
+    <item>"GLN, Goulimime"</item>
+    <item>"GLO, Cheltenham"</item>
+    <item>"GLT, Gladstone"</item>
+    <item>"GLV, Golovin"</item>
+    <item>"GMA, Gemena"</item>
+    <item>"GMB, Gambela"</item>
+    <item>"GMP, Seoul"</item>
+    <item>"GMR, Gambier Is"</item>
+    <item>"GMZ, Alajeró"</item>
+    <item>"GNB, Sillans"</item>
+    <item>"GND, Grenada"</item>
+    <item>"GNU, Goodnews Bay"</item>
+    <item>"GNV, Gainesville"</item>
+    <item>"GOA, Genoa"</item>
+    <item>"GOH, Nuuk"</item>
+    <item>"GOI, Vasco Da Gama"</item>
+    <item>"GOJ, Dzerzinsk"</item>
+    <item>"GOM, Goma"</item>
+    <item>"GOP, Gorakhpur"</item>
+    <item>"GOQ, Golmud"</item>
+    <item>"GOT, Härryda"</item>
+    <item>"GOU, Garoua"</item>
+    <item>"GOV, Gove"</item>
+    <item>"GPA, Lakkopetra"</item>
+    <item>"GPI, Guapí"</item>
+    <item>"GPS, Puerto Ayora"</item>
+    <item>"GPT, Gulfport"</item>
+    <item>"GRB, Green Bay"</item>
+    <item>"GRJ, George"</item>
+    <item>"GRK, Killeen"</item>
+    <item>"GRO, Vilobí d'Onyar"</item>
+    <item>"GRQ, Eelde"</item>
+    <item>"GRR, Grand Rapids"</item>
+    <item>"GRU, Guarulhos"</item>
+    <item>"GRV, Groznyy"</item>
+    <item>"GRW, Graciosa Island"</item>
+    <item>"GRX, Chauchina"</item>
+    <item>"GRY, Akureyri"</item>
+    <item>"GRZ, Feldkirchen"</item>
+    <item>"GSE, Kyrkobyn"</item>
+    <item>"GSM, Gheshm"</item>
+    <item>"GSO, Greensboro"</item>
+    <item>"GSP, Greer"</item>
+    <item>"GST, Gustavus"</item>
+    <item>"GSY, Market Rasen"</item>
+    <item>"GTA, Gatokae"</item>
+    <item>"GTE, Darwin"</item>
+    <item>"GTF, Great Falls"</item>
+    <item>"GTO, Gorontalo"</item>
+    <item>"GTR, Columbus"</item>
+    <item>"GTS, Granites"</item>
+    <item>"GUA, Guatemala City"</item>
+    <item>"GUC, Gunnison"</item>
+    <item>"GUM, Hagåtña"</item>
+    <item>"GUR, Alotau"</item>
+    <item>"GUW, Atyrau"</item>
+    <item>"GVA, Geneva"</item>
+    <item>"GVR, Governador Valadares"</item>
+    <item>"GWD, Gawadar"</item>
+    <item>"GWL, Gwalior"</item>
+    <item>"GWT, Westerland"</item>
+    <item>"GWY, Carnmore"</item>
+    <item>"GXF, Seiyun"</item>
+    <item>"GXG, Negage"</item>
+    <item>"GYA, Guayaramerín"</item>
+    <item>"GYD, Baku"</item>
+    <item>"GYE, Guayaquil"</item>
+    <item>"GYL, Argyle"</item>
+    <item>"GYM, Guaymas"</item>
+    <item>"GYN, Goiania"</item>
+    <item>"GZO, Gizo"</item>
+    <item>"GZT, Oğuzeli"</item>
+    <item>"HAA, Hasvik"</item>
+    <item>"HAC, Hachijo-machi"</item>
+    <item>"HAD, Hamstad"</item>
+    <item>"HAE, Havasupai"</item>
+    <item>"HAH, Hahaia"</item>
+    <item>"HAJ, Langenhagen"</item>
+    <item>"HAK, Haikou"</item>
+    <item>"HAM, Hamburg"</item>
+    <item>"HAN, Hanoi"</item>
+    <item>"HAQ, Hanimaadhoo"</item>
+    <item>"HAS, Ha'il"</item>
+    <item>"HAU, Avaldsnes"</item>
+    <item>"HAV, Wajay"</item>
+    <item>"HBA, Hobart"</item>
+    <item>"HBE, Alexandria"</item>
+    <item>"HBT, Hafr Albatin"</item>
+    <item>"HBX, Hubli"</item>
+    <item>"HCN, Hengchun"</item>
+    <item>"HCR, Holy Cross"</item>
+    <item>"HDB, Heidelberg"</item>
+    <item>"HDD, Hyderabad"</item>
+    <item>"HDF, Heringsdorf"</item>
+    <item>"HDM, Hamadan"</item>
+    <item>"HDN, Hayden"</item>
+    <item>"HDS, Phalaborwa"</item>
+    <item>"HDY, Hat Yai"</item>
+    <item>"HEA, Herat"</item>
+    <item>"HEH, Heho"</item>
+    <item>"HEI, Heide-Buesum"</item>
+    <item>"HEK, Heihe"</item>
+    <item>"HEL, Vantaa"</item>
+    <item>"HER, Iraklio"</item>
+    <item>"HET, Hohhot"</item>
+    <item>"HFA, Hefa"</item>
+    <item>"HFE, Hefei"</item>
+    <item>"HFS, Hagfors"</item>
+    <item>"HFT, Hammerfest"</item>
+    <item>"HGA, Hargeysa"</item>
+    <item>"HGD, Hughenden"</item>
+    <item>"HGH, Hangzhou"</item>
+    <item>"HGL, Helgoland"</item>
+    <item>"HGN, Mae Hong Son"</item>
+    <item>"HGU, Mount Hagen"</item>
+    <item>"HHH, Hilton Head Island"</item>
+    <item>"HHN, Dickenschied"</item>
+    <item>"HHQ, Hua Hin"</item>
+    <item>"HHZ, Hikueru"</item>
+    <item>"HIB, Hibbing"</item>
+    <item>"HID, Horn Island"</item>
+    <item>"HIJ, Mihara-shi"</item>
+    <item>"HIL, Shillavo"</item>
+    <item>"HIN, Sacheon-Si"</item>
+    <item>"HIR, Honiara"</item>
+    <item>"HIS, Hayman Island"</item>
+    <item>"HJJ, Zhi Jiang"</item>
+    <item>"HJR, Khajuraho"</item>
+    <item>"HKB, Healy Lake"</item>
+    <item>"HKD, Hakodate-shi"</item>
+    <item>"HKG, Hong Kong"</item>
+    <item>"HKK, Hokitika"</item>
+    <item>"HKN, Kimbe"</item>
+    <item>"HKT, Thalang"</item>
+    <item>"HLA, Johannesburg"</item>
+    <item>"HLD, Hailar"</item>
+    <item>"HLH, Ulan Hot"</item>
+    <item>"HLN, Helena"</item>
+    <item>"HLY, Holyhead"</item>
+    <item>"HLZ, Hamilton"</item>
+    <item>"HMA, Khanty-Mansiysk"</item>
+    <item>"HME, Ouargla"</item>
+    <item>"HMO, Hermosillo"</item>
+    <item>"HMV, Hemavan"</item>
+    <item>"HNA, Hanamaki-shi"</item>
+    <item>"HND, Tokyo"</item>
+    <item>"HNH, Hoonah"</item>
+    <item>"HNL, Honolulu"</item>
+    <item>"HNM, Hana"</item>
+    <item>"HNS, Haines"</item>
+    <item>"HOB, Hobbs"</item>
+    <item>"HOD, Al Hudaydah"</item>
+    <item>"HOE, Houeisay"</item>
+    <item>"HOF, Alahsa"</item>
+    <item>"HOG, San Pedro de Cacocum"</item>
+    <item>"HOH, Hohenems"</item>
+    <item>"HOI, Papeete"</item>
+    <item>"HOM, Homer"</item>
+    <item>"HON, Huron"</item>
+    <item>"HOQ, Hof"</item>
+    <item>"HOR, Horta"</item>
+    <item>"HOU, Houston"</item>
+    <item>"HOV, Hovdebygda"</item>
+    <item>"HPA, Pangai"</item>
+    <item>"HPB, Hooper Bay"</item>
+    <item>"HPH, Häi Phòng"</item>
+    <item>"HPN, Purchase"</item>
+    <item>"HRB, Harbin"</item>
+    <item>"HRE, Harare"</item>
+    <item>"HRG, Bor Safajah"</item>
+    <item>"HRK, Kharkiv"</item>
+    <item>"HRL, Harlingen"</item>
+    <item>"HRT, Harrogate"</item>
+    <item>"HSG, Saga"</item>
+    <item>"HSL, Huslia"</item>
+    <item>"HSN, Shenjiamen Town"</item>
+    <item>"HSV, Huntsville"</item>
+    <item>"HTA, Chita"</item>
+    <item>"HTG, Dudinka"</item>
+    <item>"HTI, Hamilton Island"</item>
+    <item>"HTN, Hotan"</item>
+    <item>"HTS, Huntington"</item>
+    <item>"HUH, Papeete"</item>
+    <item>"HUI, Hue"</item>
+    <item>"HUN, Hualien City"</item>
+    <item>"HUQ, Houn"</item>
+    <item>"HUS, Hughes"</item>
+    <item>"HUV, Hudiksvall"</item>
+    <item>"HUX, Santo Domingo de Morelos"</item>
+    <item>"HUY, Ulceby"</item>
+    <item>"HUZ, Huizhou"</item>
+    <item>"HVA, Analalava"</item>
+    <item>"HVB, Hervey Bay"</item>
+    <item>"HVD, Khovd"</item>
+    <item>"HVG, Honningsvåg"</item>
+    <item>"HVN, East Haven"</item>
+    <item>"HVR, Havre"</item>
+    <item>"HYA, Hyannis"</item>
+    <item>"HYD, Hyderabad"</item>
+    <item>"HYG, Hydaburg"</item>
+    <item>"HYL, Hollis"</item>
+    <item>"HYN, Huangyan"</item>
+    <item>"HYS, Hays"</item>
+    <item>"HZG, Hanzhong"</item>
+    <item>"HZH, Liping City"</item>
+    <item>"IAA, Igarka"</item>
+    <item>"IAD, Washington"</item>
+    <item>"IAG, Niagara Falls"</item>
+    <item>"IAH, Houston"</item>
+    <item>"IAM, Illizi"</item>
+    <item>"IAN, Kiana"</item>
+    <item>"IAS, Ilasi"</item>
+    <item>"IBA, Ibadan"</item>
+    <item>"IBE, Ibague"</item>
+    <item>"IBZ, San José"</item>
+    <item>"ICI, Cicia"</item>
+    <item>"ICN, Incheon"</item>
+    <item>"ICT, Wichita"</item>
+    <item>"IDA, Idaho Falls"</item>
+    <item>"IDR, Indore"</item>
+    <item>"IEG, Babimost"</item>
+    <item>"IEV, Kiev"</item>
+    <item>"IFJ, Isafjordur"</item>
+    <item>"IFN, Esfahan"</item>
+    <item>"IFO, Ivano-Frankivs'k"</item>
+    <item>"IFP, Bullhead City"</item>
+    <item>"IGA, Matthew Town"</item>
+    <item>"IGG, Igiugig"</item>
+    <item>"IGM, Kingman"</item>
+    <item>"IGR, Puerto Esperanza"</item>
+    <item>"IGS, Ingolstadt-Manching"</item>
+    <item>"IGU, Foz do Iguacu"</item>
+    <item>"IHR, Iran Shahr"</item>
+    <item>"IIL, Ilaam"</item>
+    <item>"IJK, Izhevsk"</item>
+    <item>"IKA, Tehran"</item>
+    <item>"IKO, Nikolski"</item>
+    <item>"IKS, Tiksi"</item>
+    <item>"IKT, Irkutsk"</item>
+    <item>"ILF, Nelson House"</item>
+    <item>"ILI, Iliamna"</item>
+    <item>"ILM, Wilmington"</item>
+    <item>"ILN, Wilmington"</item>
+    <item>"ILO, Iloilo"</item>
+    <item>"ILP, Vao"</item>
+    <item>"ILR, Ilorin"</item>
+    <item>"ILY, Glenegedale"</item>
+    <item>"ILZ, Bytča"</item>
+    <item>"IMF, Lilong (Imphal West)"</item>
+    <item>"IMK, Simikot"</item>
+    <item>"IMP, Imperatriz"</item>
+    <item>"IMT, Kingsford"</item>
+    <item>"INC, Yinchuan"</item>
+    <item>"IND, Indianapolis"</item>
+    <item>"INH, Inhambane"</item>
+    <item>"INI, Nis"</item>
+    <item>"INL, International Falls"</item>
+    <item>"INN, Innsbruck"</item>
+    <item>"INT, Winston-Salem"</item>
+    <item>"INU, Yaren"</item>
+    <item>"INV, Inverness"</item>
+    <item>"INZ, In Salah"</item>
+    <item>"IOA, Ioannina"</item>
+    <item>"IOM, Castletown"</item>
+    <item>"ION, Impfondo"</item>
+    <item>"IOS, Ilhéus"</item>
+    <item>"IPA, Ipota"</item>
+    <item>"IPC, Easter Island"</item>
+    <item>"IPH, Ipoh"</item>
+    <item>"IPI, Ipiales"</item>
+    <item>"IPL, Imperial"</item>
+    <item>"IPN, Santana do Paraíso"</item>
+    <item>"IPT, Montoursville"</item>
+    <item>"IPW, Ipswich"</item>
+    <item>"IQM, Qiemo"</item>
+    <item>"IQN, Qingyang"</item>
+    <item>"IQQ, Alto Hospicio"</item>
+    <item>"IQT, Iquitos"</item>
+    <item>"IRA, Kirakira"</item>
+    <item>"IRC, Circle"</item>
+    <item>"IRJ, Chamical"</item>
+    <item>"IRM, Irma"</item>
+    <item>"ISA, Mount Isa"</item>
+    <item>"ISB, Råwalpindi"</item>
+    <item>"ISC, Rams Valley"</item>
+    <item>"ISG, Ishigaki-shi"</item>
+    <item>"ISN, Williston"</item>
+    <item>"ISO, Kinston"</item>
+    <item>"ISP, Ronkonkoma"</item>
+    <item>"IST, Bakırköy"</item>
+    <item>"ITH, Ithaca"</item>
+    <item>"ITM, Itami-shi"</item>
+    <item>"ITO, Hilo"</item>
+    <item>"IUE, Niue Island"</item>
+    <item>"IVC, Invercargill"</item>
+    <item>"IVL, Ivalo"</item>
+    <item>"IVR, Inverell"</item>
+    <item>"IWD, Ironwood"</item>
+    <item>"IWJ, Iwami"</item>
+    <item>"IXA, Gandhigram"</item>
+    <item>"IXB, Bagdogra"</item>
+    <item>"IXC, Bhabat"</item>
+    <item>"IXD, Allahabad"</item>
+    <item>"IXE, Mulur"</item>
+    <item>"IXG, Kangrali"</item>
+    <item>"IXI, Lilabari"</item>
+    <item>"IXJ, Jammu Cantt"</item>
+    <item>"IXL, Leh"</item>
+    <item>"IXM, Harveypatti"</item>
+    <item>"IXR, Ranchi"</item>
+    <item>"IXS, Tarapur"</item>
+    <item>"IXU, Aurangabad"</item>
+    <item>"IXW, Jamshedpur"</item>
+    <item>"IXY, Gandhidham"</item>
+    <item>"IXZ, Port Blair"</item>
+    <item>"IYK, Inyokern"</item>
+    <item>"IZO, Hikawa-cho"</item>
+    <item>"JAC, Jackson"</item>
+    <item>"JAI, Jaipur"</item>
+    <item>"JAL, Jalapa"</item>
+    <item>"JAN, Pearl"</item>
+    <item>"JAV, Ilulissat"</item>
+    <item>"JAX, Jacksonville"</item>
+    <item>"JCB, Joaçaba"</item>
+    <item>"JCH, Qasigiannguit"</item>
+    <item>"JCK, Julia Creek"</item>
+    <item>"JCU, Ceuta"</item>
+    <item>"JDF, Juiz de Fora"</item>
+    <item>"JDH, Jodhpur"</item>
+    <item>"JDO, Juazeiro do Norte"</item>
+    <item>"JDZ, Jingdezhen"</item>
+    <item>"JED, Jeddah"</item>
+    <item>"JEF, Holts Summit"</item>
+    <item>"JEG, Aasiaat"</item>
+    <item>"JEJ, Jeh"</item>
+    <item>"JER, St. Peter"</item>
+    <item>"JFK, Jamaica"</item>
+    <item>"JFR, Paamiut"</item>
+    <item>"JGA, Jamnagar"</item>
+    <item>"JGC, Williams"</item>
+    <item>"JGN, Jiayuguan"</item>
+    <item>"JGO, Qeqertarsuaq"</item>
+    <item>"JGS, Ji An"</item>
+    <item>"JHB, Senai"</item>
+    <item>"JHG, Jinghong"</item>
+    <item>"JHM, Lahaina"</item>
+    <item>"JHS, Sisimiut"</item>
+    <item>"JHW, Jamestown"</item>
+    <item>"JIB, Djibouti City"</item>
+    <item>"JIJ, Jijiga"</item>
+    <item>"JIK, Evdilos"</item>
+    <item>"JIM, Jimma"</item>
+    <item>"JIU, Jiujiang"</item>
+    <item>"JJN, Jinjiang"</item>
+    <item>"JJU, Qaqortoq"</item>
+    <item>"JKG, Jonkoping"</item>
+    <item>"JKH, Khios"</item>
+    <item>"JKL, Jackson"</item>
+    <item>"JLD, Landskrona"</item>
+    <item>"JLN, Webb City"</item>
+    <item>"JLR, Bilpura"</item>
+    <item>"JMK, Mikonos"</item>
+    <item>"JMS, Jamestown"</item>
+    <item>"JMU, Jiamusi"</item>
+    <item>"JNB, Johannesburg"</item>
+    <item>"JNN, Nanortalik"</item>
+    <item>"JNS, Narsaq"</item>
+    <item>"JNU, Juneau"</item>
+    <item>"JNX, Naxos"</item>
+    <item>"JNZ, Jinzhou"</item>
+    <item>"JOE, Ylämylly"</item>
+    <item>"JOG, Yogyakarta"</item>
+    <item>"JOI, Joinville"</item>
+    <item>"JOL, Jolo"</item>
+    <item>"JPA, Santa Rita"</item>
+    <item>"JPR, Ji-Paraná"</item>
+    <item>"JQA, Qaarsut"</item>
+    <item>"JRB, New York"</item>
+    <item>"JRH, Senchoa Gaon"</item>
+    <item>"JRO, Sanya"</item>
+    <item>"JSA, Jaisalmer"</item>
+    <item>"JSH, Seteia"</item>
+    <item>"JSI, Skiathos"</item>
+    <item>"JSR, Jessore"</item>
+    <item>"JST, Johnstown"</item>
+    <item>"JSU, Maitsoq"</item>
+    <item>"JSY, Ano Siros"</item>
+    <item>"JTR, Emborion"</item>
+    <item>"JTY, Astypalaea"</item>
+    <item>"JUB, Juba"</item>
+    <item>"JUJ, Santa Catalina"</item>
+    <item>"JUL, Juliaca"</item>
+    <item>"JUM, Jumla"</item>
+    <item>"JUV, Upernavik"</item>
+    <item>"JUZ, Juzhou"</item>
+    <item>"JVA, Ankavandra"</item>
+    <item>"JYR, Jiroft"</item>
+    <item>"JYV, Tikkakoski"</item>
+    <item>"JZH, Song Pan"</item>
+    <item>"KAB, Kariba"</item>
+    <item>"KAC, Al Qamishli"</item>
+    <item>"KAD, Afaka"</item>
+    <item>"KAJ, Paltaniemi"</item>
+    <item>"KAL, Kaltag"</item>
+    <item>"KAN, "</item>
+    <item>"KAO, Kuusamo"</item>
+    <item>"KAT, Kaitaia"</item>
+    <item>"KAW, Kawthaung"</item>
+    <item>"KAX, Kalbarri"</item>
+    <item>"KBC, Birch Creek"</item>
+    <item>"KBL, Kabul"</item>
+    <item>"KBP, Kiev"</item>
+    <item>"KBR, Kota Baharu"</item>
+    <item>"KBV, Krabi"</item>
+    <item>"KCA, Kuqa"</item>
+    <item>"KCC, Coffman Cove"</item>
+    <item>"KCF, Kadanwari"</item>
+    <item>"KCG, Chignik Lagoon"</item>
+    <item>"KCH, Kuching"</item>
+    <item>"KCL, Chignik Lagoon"</item>
+    <item>"KCM, Kahramanmaraş"</item>
+    <item>"KCQ, Chignik"</item>
+    <item>"KCZ, Nankoku-shi"</item>
+    <item>"KDH, Alaqadari Daman"</item>
+    <item>"KDI, Kendari"</item>
+    <item>"KDL, Kerdlya"</item>
+    <item>"KDM, Kaadedhdhoo"</item>
+    <item>"KDO, Kadhdhoo"</item>
+    <item>"KDU, Skardu"</item>
+    <item>"KDV, Kandavu"</item>
+    <item>"KEB, Nanwalek"</item>
+    <item>"KEF, Reykjavik"</item>
+    <item>"KEJ, Kemerovo"</item>
+    <item>"KEK, Ekwok"</item>
+    <item>"KEM, Kemi"</item>
+    <item>"KEP, Nepalganj"</item>
+    <item>"KER, Kerman"</item>
+    <item>"KET, Keng Tung"</item>
+    <item>"KEW, Keewaywin"</item>
+    <item>"KFA, Kiffa"</item>
+    <item>"KFP, False Pass"</item>
+    <item>"KGA, Kananga"</item>
+    <item>"KGC, Kingscote"</item>
+    <item>"KGD, Kaliningrad"</item>
+    <item>"KGE, Kagau"</item>
+    <item>"KGF, Qaraghandy"</item>
+    <item>"KGI, Kalgoorlie"</item>
+    <item>"KGK, New Koliganek"</item>
+    <item>"KGL, Kigali"</item>
+    <item>"KGP, Kogalym"</item>
+    <item>"KGS, Antimacheia"</item>
+    <item>"KGX, Grayling"</item>
+    <item>"KHG, Kashi"</item>
+    <item>"KHH, Kaohsiung City"</item>
+    <item>"KHI, Karachi"</item>
+    <item>"KHM, Khamti"</item>
+    <item>"KHN, Nanchang"</item>
+    <item>"KHS, Khasab"</item>
+    <item>"KHV, Khabarovsk"</item>
+    <item>"KHY, Khoy"</item>
+    <item>"KHZ, Kauehi"</item>
+    <item>"KID, Tollarp"</item>
+    <item>"KIF, Casummit Lake"</item>
+    <item>"KIH, Bandar Abbas"</item>
+    <item>"KIJ, Niigata-shi"</item>
+    <item>"KIK, Kirkuk"</item>
+    <item>"KIM, Kimberley"</item>
+    <item>"KIN, Kingston"</item>
+    <item>"KIR, Farranfore"</item>
+    <item>"KIS, Kisumu"</item>
+    <item>"KIT, Potamos Kythiron"</item>
+    <item>"KIV, Chisinau"</item>
+    <item>"KIX, Tajiri-cho"</item>
+    <item>"KJA, Kansk"</item>
+    <item>"KKA, Koyuk"</item>
+    <item>"KKB, Kitoi Bay"</item>
+    <item>"KKC, Khon Kaen"</item>
+    <item>"KKD, Kokoda"</item>
+    <item>"KKE, Kerikeri"</item>
+    <item>"KKH, Kongiganak"</item>
+    <item>"KKI, Akiachak"</item>
+    <item>"KKJ, Kita Kyushu"</item>
+    <item>"KKN, Hesseng"</item>
+    <item>"KKR, Kaukura Atoll"</item>
+    <item>"KKU, Clarks Point"</item>
+    <item>"KLG, Kalskag"</item>
+    <item>"KLH, Kolhapur"</item>
+    <item>"KLL, Levelock"</item>
+    <item>"KLN, Larsen Bay"</item>
+    <item>"KLO, Kalibo"</item>
+    <item>"KLR, Kalmar"</item>
+    <item>"KLU, Celovec"</item>
+    <item>"KLV, Carlsbad"</item>
+    <item>"KLW, Klawock"</item>
+    <item>"KLX, Kalamae"</item>
+    <item>"KMA, Kerema"</item>
+    <item>"KMC, King Khalid Mil. City"</item>
+    <item>"KME, Kamembe"</item>
+    <item>"KMG, Kunming"</item>
+    <item>"KMI, Miyazaki-shi"</item>
+    <item>"KMJ, Kikuyo-machi"</item>
+    <item>"KMO, Manokotak"</item>
+    <item>"KMQ, Komatsu-shi"</item>
+    <item>"KMS, New Tafo"</item>
+    <item>"KMV, Kalemyo"</item>
+    <item>"KMY, Moser Bay"</item>
+    <item>"KND, Kindu"</item>
+    <item>"KNF, Kings Lynn"</item>
+    <item>"KNG, Kaimana"</item>
+    <item>"KNH, Kinmen"</item>
+    <item>"KNK, Kakhonak"</item>
+    <item>"KNQ, Kone"</item>
+    <item>"KNS, King Island"</item>
+    <item>"KNU, Kanpur"</item>
+    <item>"KNW, New Stuyahok"</item>
+    <item>"KNX, Durack"</item>
+    <item>"KOA, Kailua Kona"</item>
+    <item>"KOC, Koumac"</item>
+    <item>"KOE, Kupang"</item>
+    <item>"KOI, Kirkwall"</item>
+    <item>"KOJ, Kirishima-shi"</item>
+    <item>"KOK, Kruunupyy"</item>
+    <item>"KOP, Nakhon Phanom"</item>
+    <item>"KOT, Kotlik"</item>
+    <item>"KOU, Koulamoutou"</item>
+    <item>"KOW, Ganzhou"</item>
+    <item>"KOY, Olga Bay"</item>
+    <item>"KOZ, Ouzinkie"</item>
+    <item>"KPB, Point Baker"</item>
+    <item>"KPC, Brevig Mission"</item>
+    <item>"KPN, Kipnuk"</item>
+    <item>"KPO, Pohang-Si"</item>
+    <item>"KPR, Port Williams"</item>
+    <item>"KPV, Perryville"</item>
+    <item>"KPY, Port Bailey"</item>
+    <item>"KQA, Akutan"</item>
+    <item>"KRF, Nyland"</item>
+    <item>"KRI, Kikori"</item>
+    <item>"KRK, Zabierzów"</item>
+    <item>"KRL, Korla"</item>
+    <item>"KRN, Kiruna"</item>
+    <item>"KRP, Kårup"</item>
+    <item>"KRR, Krasnodar"</item>
+    <item>"KRS, Kjevic"</item>
+    <item>"KRT, Khartoum"</item>
+    <item>"KRY, Karamay"</item>
+    <item>"KSA, Tofol"</item>
+    <item>"KSC, Kosice"</item>
+    <item>"KSD, Karlstad"</item>
+    <item>"KSF, Kalden"</item>
+    <item>"KSH, Kermanshah"</item>
+    <item>"KSJ, St. Marina"</item>
+    <item>"KSL, Kassala"</item>
+    <item>"KSM, Saint Marys"</item>
+    <item>"KSN, Qostanay"</item>
+    <item>"KSO, Argos Orestiko"</item>
+    <item>"KSQ, Qarshi"</item>
+    <item>"KSU, Kristiansund Nord"</item>
+    <item>"KSY, Kars"</item>
+    <item>"KSZ, Vel'sk"</item>
+    <item>"KTA, Karratha"</item>
+    <item>"KTB, Thorne Bay"</item>
+    <item>"KTE, Kerteh"</item>
+    <item>"KTM, Kathmandu"</item>
+    <item>"KTN, Ketchikan"</item>
+    <item>"KTS, Teller Mission"</item>
+    <item>"KTT, Kittila"</item>
+    <item>"KTW, Ożarowice"</item>
+    <item>"KUA, Gambang"</item>
+    <item>"KUD, Kudat"</item>
+    <item>"KUF, Syzran'"</item>
+    <item>"KUG, Kubin Island"</item>
+    <item>"KUH, Kushiro"</item>
+    <item>"KUK, Kasigluk"</item>
+    <item>"KUL, Sepang"</item>
+    <item>"KUN, Kovno"</item>
+    <item>"KUO, Toivala"</item>
+    <item>"KUS, Kulusuk"</item>
+    <item>"KUT, Kutaisi"</item>
+    <item>"KUU, Bhuntar"</item>
+    <item>"KUV, Gunsan-Si"</item>
+    <item>"KVA, Khrysoupolis"</item>
+    <item>"KVB, Väring"</item>
+    <item>"KVC, King Cove"</item>
+    <item>"KVD, Gyandzha"</item>
+    <item>"KVG, Kavieng"</item>
+    <item>"KVK, Kirovsk"</item>
+    <item>"KVL, Kivalina"</item>
+    <item>"KVR, Carpiquet"</item>
+    <item>"KWA, Kwajalein"</item>
+    <item>"KWE, Guiyang"</item>
+    <item>"KWI, Kuwait City"</item>
+    <item>"KWJ, Gwangju"</item>
+    <item>"KWK, Kwigillingok"</item>
+    <item>"KWL, Guilin"</item>
+    <item>"KWM, Kowanyama"</item>
+    <item>"KWN, Quinhagak"</item>
+    <item>"KWP, West Point"</item>
+    <item>"KWT, Kwethluk"</item>
+    <item>"KWZ, Kolwezi"</item>
+    <item>"KXA, Kasaan"</item>
+    <item>"KXF, Koro Island"</item>
+    <item>"KXK, Komsomol'sk-na-Amure"</item>
+    <item>"KXU, Katiu"</item>
+    <item>"KYA, Konya"</item>
+    <item>"KYK, Kodiak"</item>
+    <item>"KYN, Milton Keynes"</item>
+    <item>"KYP, Kyaukpyu"</item>
+    <item>"KYS, Kayes"</item>
+    <item>"KYU, Koyukuk"</item>
+    <item>"KYZ, Kyzyl"</item>
+    <item>"KZB, Zachar Bay"</item>
+    <item>"KZI, Kozani"</item>
+    <item>"KZN, Zelenodol'sk"</item>
+    <item>"KZO, Kzyl-Orda"</item>
+    <item>"KZS, Kastelorizo"</item>
+    <item>"LAD, Luanda"</item>
+    <item>"LAE, Lae"</item>
+    <item>"LAI, Lannion"</item>
+    <item>"LAJ, Lages"</item>
+    <item>"LAK, Hay River"</item>
+    <item>"LAN, Lansing"</item>
+    <item>"LAO, San Nicolas"</item>
+    <item>"LAP, La Paz"</item>
+    <item>"LAQ, Beida"</item>
+    <item>"LAR, Laramie"</item>
+    <item>"LAS, Las Vegas"</item>
+    <item>"LAU, Lamu"</item>
+    <item>"LAW, Lawton"</item>
+    <item>"LAX, Los Angeles"</item>
+    <item>"LBA, Leeds"</item>
+    <item>"LBB, Lubbock"</item>
+    <item>"LBC, Lubeque"</item>
+    <item>"LBD, Khudzhand"</item>
+    <item>"LBE, Latrobe"</item>
+    <item>"LBF, North Platte"</item>
+    <item>"LBJ, Ende"</item>
+    <item>"LBL, Liberal"</item>
+    <item>"LBP, Long Banga"</item>
+    <item>"LBS, Labasa"</item>
+    <item>"LBU, Victoria"</item>
+    <item>"LBV, Libreville"</item>
+    <item>"LCA, Larnaca"</item>
+    <item>"LCE, La Ceiba"</item>
+    <item>"LCG, S Esteban"</item>
+    <item>"LCH, Lake Charles"</item>
+    <item>"LCJ, Lodz"</item>
+    <item>"LCK, Columbus"</item>
+    <item>"LCR, La Chorrera"</item>
+    <item>"LCX, Longyan"</item>
+    <item>"LCY, London"</item>
+    <item>"LDB, Londrina"</item>
+    <item>"LDE, Juillan"</item>
+    <item>"LDG, Leshukonskoye"</item>
+    <item>"LDH, Lord Howe Island"</item>
+    <item>"LDN, Lamidanda"</item>
+    <item>"LDU, Lahad Datu"</item>
+    <item>"LDV, Landivisiau"</item>
+    <item>"LDY, Londonderry"</item>
+    <item>"LEA, Learmonth"</item>
+    <item>"LEB, West Lebanon"</item>
+    <item>"LED, St. Petersburg"</item>
+    <item>"LEH, Le Havre"</item>
+    <item>"LEI, Almeria"</item>
+    <item>"LEJ, Schkeuditz"</item>
+    <item>"LEN, Leon"</item>
+    <item>"LER, Sir Samuel"</item>
+    <item>"LET, Leticia"</item>
+    <item>"LEV, Bureta"</item>
+    <item>"LEX, Lexington"</item>
+    <item>"LFM, Lamerd"</item>
+    <item>"LFT, Lafayette"</item>
+    <item>"LFW, Lome"</item>
+    <item>"LGA, Flushing"</item>
+    <item>"LGB, Long Beach"</item>
+    <item>"LGG, Velroux"</item>
+    <item>"LGI, Deadmans Cay"</item>
+    <item>"LGK, Kuah"</item>
+    <item>"LGL, Long Lellang"</item>
+    <item>"LGP, Daraga"</item>
+    <item>"LGQ, Lago Agrio"</item>
+    <item>"LGW, Horley"</item>
+    <item>"LHE, Lahore"</item>
+    <item>"LHG, Lightning Ridge"</item>
+    <item>"LHR, Hounslow"</item>
+    <item>"LHW, Lanzhou"</item>
+    <item>"LIF, Wé"</item>
+    <item>"LIG, Limoges"</item>
+    <item>"LIH, Lihue"</item>
+    <item>"LIL, Fretin"</item>
+    <item>"LIM, Ventanilla"</item>
+    <item>"LIN, Peschiera Borromeo"</item>
+    <item>"LIO, Pto. Limon"</item>
+    <item>"LIR, Liberia"</item>
+    <item>"LIS, Lisbon"</item>
+    <item>"LIT, Little Rock"</item>
+    <item>"LIW, Loi-kaw"</item>
+    <item>"LJG, Lijiang City"</item>
+    <item>"LJU, Ljubljana"</item>
+    <item>"LKA, Larantuka"</item>
+    <item>"LKB, Lakeba"</item>
+    <item>"LKE, Seattle"</item>
+    <item>"LKG, Lokichoggio"</item>
+    <item>"LKH, Long Akah"</item>
+    <item>"LKL, Lakeselv"</item>
+    <item>"LKN, Leknes"</item>
+    <item>"LKO, Lucknow"</item>
+    <item>"LLA, Lulea"</item>
+    <item>"LLF, LingLing"</item>
+    <item>"LLI, Lalibela"</item>
+    <item>"LLU, Alluitsup Paa"</item>
+    <item>"LLW, Lumbadzi"</item>
+    <item>"LMA, Lake Minchumina"</item>
+    <item>"LMC, San Juan de Arama"</item>
+    <item>"LMM, Ahome"</item>
+    <item>"LMN, Limbang"</item>
+    <item>"LMP, Caltabellotta"</item>
+    <item>"LMT, Klamath Falls"</item>
+    <item>"LMY, Lake Murray"</item>
+    <item>"LNB, Lamen Bay"</item>
+    <item>"LNE, Panngi"</item>
+    <item>"LNJ, Lincang"</item>
+    <item>"LNK, Lincoln"</item>
+    <item>"LNO, Leonora"</item>
+    <item>"LNV, Lihir Island"</item>
+    <item>"LNY, Lanai City"</item>
+    <item>"LNZ, Hoersching"</item>
+    <item>"LOD, Longana"</item>
+    <item>"LOH, Loja"</item>
+    <item>"LOS, Ikeja"</item>
+    <item>"LOU, Louisville"</item>
+    <item>"LOV, Frontera"</item>
+    <item>"LPA, Telde"</item>
+    <item>"LPB, La Paz"</item>
+    <item>"LPD, La Pedrera"</item>
+    <item>"LPI, Linkoping"</item>
+    <item>"LPK, Lipetsk"</item>
+    <item>"LPL, Liverpool"</item>
+    <item>"LPM, Lamap"</item>
+    <item>"LPP, Lappeenranta"</item>
+    <item>"LPQ, Louangphrabang"</item>
+    <item>"LPS, Lopez Island"</item>
+    <item>"LPT, Lampang"</item>
+    <item>"LPX, Liepaya"</item>
+    <item>"LPY, Le Puy"</item>
+    <item>"LQM, Puerto Leguízamo"</item>
+    <item>"LRD, Laredo"</item>
+    <item>"LRE, Longreach"</item>
+    <item>"LRH, La Rochelle"</item>
+    <item>"LRM, La Romana"</item>
+    <item>"LRR, Lar"</item>
+    <item>"LRS, Lero"</item>
+    <item>"LRT, Ploemeur"</item>
+    <item>"LSA, Losuia"</item>
+    <item>"LSC, Compañía Alta"</item>
+    <item>"LSE, La Crosse"</item>
+    <item>"LSH, Lashio"</item>
+    <item>"LSI, Shetland"</item>
+    <item>"LSP, Las Piedras"</item>
+    <item>"LSS, Trois-Rivières"</item>
+    <item>"LST, Blessington"</item>
+    <item>"LSY, Lismore"</item>
+    <item>"LTD, Ghadames"</item>
+    <item>"LTI, Altai"</item>
+    <item>"LTK, Djeble"</item>
+    <item>"LTN, Luton"</item>
+    <item>"LTO, Comondú"</item>
+    <item>"LTT, Grimaud"</item>
+    <item>"LTX, Latacunga"</item>
+    <item>"LUA, Solukhumbu"</item>
+    <item>"LUD, Luderitz"</item>
+    <item>"LUF, Webb"</item>
+    <item>"LUG, Agno"</item>
+    <item>"LUM, Luxi"</item>
+    <item>"LUN, Lusaka"</item>
+    <item>"LUO, Luena"</item>
+    <item>"LUP, Kalaupapa"</item>
+    <item>"LUQ, Villa General Roca"</item>
+    <item>"LUR, Point Hope"</item>
+    <item>"LUV, Langgur"</item>
+    <item>"LUX, Sandweiler"</item>
+    <item>"LVI, Livingstone"</item>
+    <item>"LVO, Laverton"</item>
+    <item>"LWB, Lewisburg"</item>
+    <item>"LWE, Lewoleba"</item>
+    <item>"LWN, Gyumri"</item>
+    <item>"LWO, L'viv"</item>
+    <item>"LWS, Lewiston"</item>
+    <item>"LWT, Lewistown"</item>
+    <item>"LWY, Lawas"</item>
+    <item>"LXA, Lhasa"</item>
+    <item>"LXG, Luang Namtha"</item>
+    <item>"LXR, Luxor"</item>
+    <item>"LXS, Moudhros"</item>
+    <item>"LYA, Luoyang"</item>
+    <item>"LYB, Little Cayman"</item>
+    <item>"LYC, Lyoksele"</item>
+    <item>"LYG, Lianyungang"</item>
+    <item>"LYH, Lynchburg"</item>
+    <item>"LYI, Linyi"</item>
+    <item>"LYP, Shah Faisalabad"</item>
+    <item>"LYR, Longyearbyen"</item>
+    <item>"LYS, Colombier"</item>
+    <item>"LZC, Arteaga"</item>
+    <item>"LZH, Linzhou"</item>
+    <item>"LZN, Nangan"</item>
+    <item>"LZO, Luzhou"</item>
+    <item>"MAA, Kanchipuram"</item>
+    <item>"MAB, Marabá"</item>
+    <item>"MAD, Madrid"</item>
+    <item>"MAF, Midland"</item>
+    <item>"MAG, Madang"</item>
+    <item>"MAH, Mao"</item>
+    <item>"MAJ, Majuro"</item>
+    <item>"MAK, Malakal"</item>
+    <item>"MAM, Matamoros"</item>
+    <item>"MAN, Manchester"</item>
+    <item>"MAO, Manaus"</item>
+    <item>"MAR, Maracaibo"</item>
+    <item>"MAS, Lorengau"</item>
+    <item>"MAU, Papeete"</item>
+    <item>"MAZ, Mayaguez"</item>
+    <item>"MBA, Mombasa"</item>
+    <item>"MBD, Mmabatho"</item>
+    <item>"MBE, Monbetsu-shi"</item>
+    <item>"MBH, Maryborough"</item>
+    <item>"MBJ, Montego Bay"</item>
+    <item>"MBL, Manistee"</item>
+    <item>"MBS, Freeland"</item>
+    <item>"MBT, Masbate"</item>
+    <item>"MBU, Mbambanakira"</item>
+    <item>"MCE, Merced"</item>
+    <item>"MCG, Mcgrath"</item>
+    <item>"MCI, Kansas City"</item>
+    <item>"MCK, Mccook"</item>
+    <item>"MCM, Monaco-Ville"</item>
+    <item>"MCN, Macon"</item>
+    <item>"MCO, Orlando"</item>
+    <item>"MCP, Macapá"</item>
+    <item>"MCT, Muscat"</item>
+    <item>"MCV, Mcarthur River"</item>
+    <item>"MCW, Clear Lake"</item>
+    <item>"MCX, Khasavyurt"</item>
+    <item>"MCY, Mudjimba"</item>
+    <item>"MCZ, Maceio"</item>
+    <item>"MDC, Manado"</item>
+    <item>"MDE, Ríonegro"</item>
+    <item>"MDG, Mudanjiang"</item>
+    <item>"MDK, Mbandaka"</item>
+    <item>"MDL, Mandalay"</item>
+    <item>"MDQ, Mar del Plata"</item>
+    <item>"MDS, Lorimers"</item>
+    <item>"MDT, Middletown"</item>
+    <item>"MDU, Mendi"</item>
+    <item>"MDW, Chicago"</item>
+    <item>"MDZ, Mendoza"</item>
+    <item>"MEA, Macae"</item>
+    <item>"MEC, Manta"</item>
+    <item>"MED, Al Madinah"</item>
+    <item>"MEE, Tadine"</item>
+    <item>"MEG, Malanje"</item>
+    <item>"MEH, Mehavn"</item>
+    <item>"MEI, Meridian"</item>
+    <item>"MEL, Melbourne"</item>
+    <item>"MEM, Memphis"</item>
+    <item>"MES, Medan"</item>
+    <item>"MEX, Mexico City"</item>
+    <item>"MEY, Meghauli"</item>
+    <item>"MFE, Mcallen"</item>
+    <item>"MFJ, Moala"</item>
+    <item>"MFK, Matsu"</item>
+    <item>"MFM, Macau"</item>
+    <item>"MFR, Central Point"</item>
+    <item>"MFU, Mfuwe"</item>
+    <item>"MGA, Tipitapa"</item>
+    <item>"MGB, Mount Gambier"</item>
+    <item>"MGF, Maringa"</item>
+    <item>"MGH, Port Shepstone"</item>
+    <item>"MGM, Montgomery"</item>
+    <item>"MGQ, Mogadishu"</item>
+    <item>"MGS, Mangaia Island"</item>
+    <item>"MGT, Milingimbi"</item>
+    <item>"MGW, Morgantown"</item>
+    <item>"MGZ, Mergui"</item>
+    <item>"MHD, Mashhad"</item>
+    <item>"MHG, Mannheim"</item>
+    <item>"MHH, Marsh Harbour"</item>
+    <item>"MHK, Manhattan"</item>
+    <item>"MHP, Minsk"</item>
+    <item>"MHQ, Maarianhamina"</item>
+    <item>"MHR, Mather"</item>
+    <item>"MHT, Manchester"</item>
+    <item>"MIA, Miami"</item>
+    <item>"MID, Mérida"</item>
+    <item>"MIG, Mian Yang"</item>
+    <item>"MII, Marilia"</item>
+    <item>"MIM, Merimbula"</item>
+    <item>"MIR, Sidi al Ghudamisi"</item>
+    <item>"MIS, Misima Island"</item>
+    <item>"MJA, Manja"</item>
+    <item>"MJD, Mohenjodaro"</item>
+    <item>"MJF, Mosjoen"</item>
+    <item>"MJI, Mitiga"</item>
+    <item>"MJK, Monkey Mia"</item>
+    <item>"MJL, Mouila"</item>
+    <item>"MJM, Mbuji Mayi"</item>
+    <item>"MJN, Mahajanga"</item>
+    <item>"MJT, Mitilini"</item>
+    <item>"MJV, San Javier"</item>
+    <item>"MJZ, Mirnyj"</item>
+    <item>"MKC, Kansas City"</item>
+    <item>"MKE, Milwaukee"</item>
+    <item>"MKG, Muskegon"</item>
+    <item>"MKK, Hoolehua"</item>
+    <item>"MKM, Mukah"</item>
+    <item>"MKP, Makemo"</item>
+    <item>"MKQ, Merauke"</item>
+    <item>"MKR, Kumarina"</item>
+    <item>"MKU, Makokou"</item>
+    <item>"MKW, Manokwari"</item>
+    <item>"MKY, Mackay"</item>
+    <item>"MLA, Curmi"</item>
+    <item>"MLB, Melbourne"</item>
+    <item>"MLE, Male"</item>
+    <item>"MLG, Malang"</item>
+    <item>"MLH, Basel Mulhouse Freiburg"</item>
+    <item>"MLI, Coal Valley"</item>
+    <item>"MLL, Marshall"</item>
+    <item>"MLM, Álvaro Obregón"</item>
+    <item>"MLN, Melilla"</item>
+    <item>"MLO, Apollonia"</item>
+    <item>"MLU, Monroe"</item>
+    <item>"MLW, Monrovia"</item>
+    <item>"MLX, Arga"</item>
+    <item>"MLY, Manley Hot Springs"</item>
+    <item>"MMB, Ozora-cho"</item>
+    <item>"MME, Darlington"</item>
+    <item>"MMG, Mount Magnet"</item>
+    <item>"MMH, Mammoth Lakes"</item>
+    <item>"MMK, Apatity"</item>
+    <item>"MMO, Vila do Maio"</item>
+    <item>"MMX, Svedala"</item>
+    <item>"MMY, Miyako Jima"</item>
+    <item>"MNF, Mana Island"</item>
+    <item>"MNG, Maningrida"</item>
+    <item>"MNJ, Mananjary"</item>
+    <item>"MNL, Parañaque"</item>
+    <item>"MNT, Minto"</item>
+    <item>"MNU, Moulmein"</item>
+    <item>"MOA, Moa"</item>
+    <item>"MOB, Mobile"</item>
+    <item>"MOC, Montes Claros"</item>
+    <item>"MOD, Modesto"</item>
+    <item>"MOF, Maumere"</item>
+    <item>"MOG, Mong Hsat"</item>
+    <item>"MOI, Mitiaro Island"</item>
+    <item>"MOL, Bolsøya"</item>
+    <item>"MOQ, Morondava"</item>
+    <item>"MOT, Minot"</item>
+    <item>"MOU, Mountain Village"</item>
+    <item>"MOV, Moranbah"</item>
+    <item>"MOZ, Papeete"</item>
+    <item>"MPA, Mpacha"</item>
+    <item>"MPH, Caticlan"</item>
+    <item>"MPL, Mauguio"</item>
+    <item>"MPM, Maputo"</item>
+    <item>"MPN, Mount Pleasant"</item>
+    <item>"MQF, Chelyabinsk"</item>
+    <item>"MQL, Mildura"</item>
+    <item>"MQM, Mardin"</item>
+    <item>"MQN, Skonseng"</item>
+    <item>"MQP, Nelspruit"</item>
+    <item>"MQT, Marquette"</item>
+    <item>"MQX, Makale"</item>
+    <item>"MRA, Misratah"</item>
+    <item>"MRD, Ejido"</item>
+    <item>"MRE, Mara Lodges"</item>
+    <item>"MRS, Marignane"</item>
+    <item>"MRU, Mahebourg"</item>
+    <item>"MRV, Mineralnye Vody"</item>
+    <item>"MRY, Monterey"</item>
+    <item>"MRZ, Moree"</item>
+    <item>"MSA, Muskrat Dam"</item>
+    <item>"MSE, Manston"</item>
+    <item>"MSJ, Misawa-shi"</item>
+    <item>"MSL, Muscle Shoals"</item>
+    <item>"MSN, Madison"</item>
+    <item>"MSO, Missoula"</item>
+    <item>"MSP, St. Paul"</item>
+    <item>"MSQ, Minsk"</item>
+    <item>"MSR, Mush"</item>
+    <item>"MSS, Massena"</item>
+    <item>"MST, Maastricht-Airport"</item>
+    <item>"MSU, Maseru"</item>
+    <item>"MSW, Massawa"</item>
+    <item>"MSY, Kenner"</item>
+    <item>"MSZ, Namibe"</item>
+    <item>"MTJ, Montrose"</item>
+    <item>"MTM, Metlakatla"</item>
+    <item>"MTR, Los Garzones"</item>
+    <item>"MTS, Manzini"</item>
+    <item>"MTT, Minatitlan"</item>
+    <item>"MTV, Mota Lava"</item>
+    <item>"MTY, Pesquería"</item>
+    <item>"MUA, Munda"</item>
+    <item>"MUB, Maun"</item>
+    <item>"MUC, Oberding"</item>
+    <item>"MUE, Kamuela"</item>
+    <item>"MUH, Marsa Matruh"</item>
+    <item>"MUK, Mauke Island"</item>
+    <item>"MUN, Aguasay"</item>
+    <item>"MUR, Miri"</item>
+    <item>"MUX, Multan"</item>
+    <item>"MUZ, Musoma"</item>
+    <item>"MVB, Franceville"</item>
+    <item>"MVD, Montevideo"</item>
+    <item>"MVP, Mitu"</item>
+    <item>"MVR, Maroua"</item>
+    <item>"MVS, Mucuri"</item>
+    <item>"MVT, Mataiva"</item>
+    <item>"MVY, Vineyard Haven"</item>
+    <item>"MWA, Marion"</item>
+    <item>"MWF, Maewo"</item>
+    <item>"MWN, Mwadui"</item>
+    <item>"MWQ, Magwe"</item>
+    <item>"MWZ, Ilemera"</item>
+    <item>"MXH, Moro"</item>
+    <item>"MXL, Mexicali"</item>
+    <item>"MXM, Morombe"</item>
+    <item>"MXN, Morlaix"</item>
+    <item>"MXP, Cardano al Campo"</item>
+    <item>"MXT, Maintirano"</item>
+    <item>"MXV, Mörön"</item>
+    <item>"MXX, Mora"</item>
+    <item>"MXZ, Meixian"</item>
+    <item>"MYA, Bingie"</item>
+    <item>"MYD, Mombasa"</item>
+    <item>"MYE, Miyake-mura"</item>
+    <item>"MYG, Abraham Bay"</item>
+    <item>"MYI, Murray Island"</item>
+    <item>"MYJ, Matsuyama-shi"</item>
+    <item>"MYL, Mccall"</item>
+    <item>"MYR, Myrtle Beach"</item>
+    <item>"MYT, Myitkyina"</item>
+    <item>"MYU, Mekoryuk"</item>
+    <item>"MYW, Ziwani"</item>
+    <item>"MYY, Miri"</item>
+    <item>"MZG, Makung City"</item>
+    <item>"MZH, Merzifon"</item>
+    <item>"MZI, Mopti"</item>
+    <item>"MZL, Villamaría"</item>
+    <item>"MZO, Manzanillo"</item>
+    <item>"MZR, Mazar-i-Sharif"</item>
+    <item>"MZT, Mazatlán"</item>
+    <item>"MZV, Mulu"</item>
+    <item>"NAA, Bohena Creek"</item>
+    <item>"NAC, Naracoorte"</item>
+    <item>"NAG, Nagpur"</item>
+    <item>"NAJ, Nakhichevan"</item>
+    <item>"NAN, Nadi"</item>
+    <item>"NAO, Nanchong"</item>
+    <item>"NAP, Naples"</item>
+    <item>"NAQ, Qaanaaq"</item>
+    <item>"NAS, Nassau"</item>
+    <item>"NAT, Natal"</item>
+    <item>"NAU, Napuka Island"</item>
+    <item>"NAV, Nevsehir"</item>
+    <item>"NAW, Narathiwat"</item>
+    <item>"NBC, Naberevnye Chelny"</item>
+    <item>"NBO, Nairobi"</item>
+    <item>"NBW, Caimanera"</item>
+    <item>"NBX, Nabire"</item>
+    <item>"NCA, Bottle Creek Settlements"</item>
+    <item>"NCE, Nice"</item>
+    <item>"NCL, Newcastle"</item>
+    <item>"NCN, New Chenega"</item>
+    <item>"NCU, Nukus"</item>
+    <item>"NCY, Pringy"</item>
+    <item>"NDB, Port-Etienne"</item>
+    <item>"NDG, Qiqihar"</item>
+    <item>"NDJ, N'Djamena"</item>
+    <item>"NDR, Nador"</item>
+    <item>"NER, Neryungri"</item>
+    <item>"NEV, Nevis"</item>
+    <item>"NFO, "</item>
+    <item>"NGB, Jiangshan"</item>
+    <item>"NGE, Ngaoundéré"</item>
+    <item>"NGI, Ngau Island"</item>
+    <item>"NGO, Tokoname-shi"</item>
+    <item>"NGS, Omura-shi"</item>
+    <item>"NHA, Nha Trang"</item>
+    <item>"NHV, Nuku Hiva"</item>
+    <item>"NIB, Nikolai"</item>
+    <item>"NIM, Niamey"</item>
+    <item>"NIP, Jacksonville"</item>
+    <item>"NIU, Honolulu"</item>
+    <item>"NJC, Nizhnevartovsk"</item>
+    <item>"NKC, Nouakchott"</item>
+    <item>"NKG, Nanjing"</item>
+    <item>"NKI, Naukiti"</item>
+    <item>"NKM, Toyoyama-cho"</item>
+    <item>"NLA, Ndola"</item>
+    <item>"NLD, Nuevo Laredo"</item>
+    <item>"NLF, Kubin Village"</item>
+    <item>"NLG, Nelson Lagoon"</item>
+    <item>"NLK, Kingston"</item>
+    <item>"NLV, Mykolayiv"</item>
+    <item>"NMA, Namangan"</item>
+    <item>"NME, Nightmute"</item>
+    <item>"NNB, Santa Ana"</item>
+    <item>"NNG, Wuxu"</item>
+    <item>"NNL, Nondalton"</item>
+    <item>"NNM, Naryan-Mar"</item>
+    <item>"NNT, Nan"</item>
+    <item>"NNY, Nanyang"</item>
+    <item>"NOB, Nosara"</item>
+    <item>"NOC, Knock"</item>
+    <item>"NOJ, Nojabrxsk"</item>
+    <item>"NOS, Hell-Ville"</item>
+    <item>"NOU, "</item>
+    <item>"NOV, Huambo"</item>
+    <item>"NOZ, Novokuznetsk"</item>
+    <item>"NPE, Napier"</item>
+    <item>"NPL, New Plymouth"</item>
+    <item>"NQN, Neuquen"</item>
+    <item>"NQU, Nuquí"</item>
+    <item>"NQY, Newquay"</item>
+    <item>"NRA, Narrandera"</item>
+    <item>"NRK, Norrkoping"</item>
+    <item>"NRN, Weeze"</item>
+    <item>"NRT, Narita-shi"</item>
+    <item>"NSH, Now Shahr"</item>
+    <item>"NSI, Yaounde"</item>
+    <item>"NSK, Kansk"</item>
+    <item>"NSN, Nelson"</item>
+    <item>"NST, Phra Phrom"</item>
+    <item>"NTE, Bouguenais"</item>
+    <item>"NTG, Nantong"</item>
+    <item>"NTL, Ferodale"</item>
+    <item>"NTN, Normanton"</item>
+    <item>"NTQ, Anamizu-machi"</item>
+    <item>"NTT, Niuatoputapu"</item>
+    <item>"NUE, Nuremberg"</item>
+    <item>"NUI, Nuiqsut"</item>
+    <item>"NUK, Nukutavake"</item>
+    <item>"NUL, Nulato"</item>
+    <item>"NUP, Nunapitchuk"</item>
+    <item>"NUS, Norsup"</item>
+    <item>"NUX, Novy Urengoy"</item>
+    <item>"NVA, Neiva"</item>
+    <item>"NVI, Navoi"</item>
+    <item>"NVK, Narvik"</item>
+    <item>"NVR, Novgorod"</item>
+    <item>"NVT, Navegantes"</item>
+    <item>"NWA, Moheli"</item>
+    <item>"NWI, Norwich"</item>
+    <item>"NYA, Norwood Young America"</item>
+    <item>"NYK, Nyeri"</item>
+    <item>"NYM, Nadym"</item>
+    <item>"NYO, Nykoping"</item>
+    <item>"NYU, Nyaung-u"</item>
+    <item>"NZH, Manzhouli"</item>
+    <item>"OAG, Arthurville"</item>
+    <item>"OAJ, Richlands"</item>
+    <item>"OAK, Oakland"</item>
+    <item>"OAM, Oamaru"</item>
+    <item>"OAX, San Bernardo Mixtepec"</item>
+    <item>"OBN, Oban"</item>
+    <item>"OBO, Obihiro-shi"</item>
+    <item>"OBU, Kobuk"</item>
+    <item>"OBX, Obo"</item>
+    <item>"OCC, Chontapunta"</item>
+    <item>"ODN, Long Seridan"</item>
+    <item>"ODS, Odesa"</item>
+    <item>"ODW, Oak Harbor"</item>
+    <item>"ODY, Oudomxay"</item>
+    <item>"OER, Husum"</item>
+    <item>"OFI, Ouango Fitini"</item>
+    <item>"OGG, Kahului"</item>
+    <item>"OGN, Yonaguni-cho"</item>
+    <item>"OGS, Ogdensburg"</item>
+    <item>"OGX, Ouargla"</item>
+    <item>"OGZ, Mozdok"</item>
+    <item>"OHD, Ohrid"</item>
+    <item>"OHE, Hamburg"</item>
+    <item>"OHO, Okhotsk"</item>
+    <item>"OIM, Oshima-machi"</item>
+    <item>"OIT, Kunisaki-shi"</item>
+    <item>"OKA, Naha-shi"</item>
+    <item>"OKC, Oklahoma City"</item>
+    <item>"OKD, Sapporo-shi"</item>
+    <item>"OKJ, Okayama-shi"</item>
+    <item>"OKR, Yorke Island"</item>
+    <item>"OKY, Oakey"</item>
+    <item>"OLA, Orland"</item>
+    <item>"OLB, Terranova"</item>
+    <item>"OLF, Wolf Point"</item>
+    <item>"OLH, Old Harbor"</item>
+    <item>"OLJ, Olpoi"</item>
+    <item>"OLP, Roxby Downs"</item>
+    <item>"OMA, Omaha"</item>
+    <item>"OMB, Omboue"</item>
+    <item>"OMC, Ormoc"</item>
+    <item>"OMD, Oranjemund"</item>
+    <item>"OME, Nome"</item>
+    <item>"OMH, Urmieh"</item>
+    <item>"OMO, Mostar"</item>
+    <item>"OMR, Oradea-Mare"</item>
+    <item>"OMS, Omsk"</item>
+    <item>"OND, Ondangwa"</item>
+    <item>"ONG, Mornington"</item>
+    <item>"ONJ, Kitakita-shi"</item>
+    <item>"ONL, O'neill"</item>
+    <item>"ONT, Ontario"</item>
+    <item>"OOK, Toksook Bay"</item>
+    <item>"OOL, Gold Coast"</item>
+    <item>"OPF, Opa-Locka"</item>
+    <item>"OPO, Maia"</item>
+    <item>"OPS, Sinop"</item>
+    <item>"OPU, Balimo"</item>
+    <item>"ORB, Orebro"</item>
+    <item>"ORD, Chicago"</item>
+    <item>"ORF, Norfolk"</item>
+    <item>"ORH, Worcester"</item>
+    <item>"ORI, Port Lions"</item>
+    <item>"ORJ, Rera"</item>
+    <item>"ORK, Fivemilebridge"</item>
+    <item>"ORM, Northampton"</item>
+    <item>"ORN, Oran Rp"</item>
+    <item>"ORV, Noorvik"</item>
+    <item>"ORY, Paris"</item>
+    <item>"OSD, Frösö"</item>
+    <item>"OSI, Osijek"</item>
+    <item>"OSK, Fårbo"</item>
+    <item>"OSL, Gardermoen"</item>
+    <item>"OSM, Mosul"</item>
+    <item>"OSR, Mošnov"</item>
+    <item>"OSS, Osh"</item>
+    <item>"OST, Oostende"</item>
+    <item>"OSW, Orsk"</item>
+    <item>"OSY, Namsos"</item>
+    <item>"OSZ, Sianów"</item>
+    <item>"OTH, North Bend"</item>
+    <item>"OTP, Bucharest"</item>
+    <item>"OTR, Coto 47"</item>
+    <item>"OTZ, Kotzebue"</item>
+    <item>"OUA, Ouagadougou"</item>
+    <item>"OUD, Oujda"</item>
+    <item>"OUE, Ouesso"</item>
+    <item>"OUL, Oulunsalo"</item>
+    <item>"OUZ, Zouerate"</item>
+    <item>"OVB, Novosibirsk"</item>
+    <item>"OVD, Castrillón"</item>
+    <item>"OVS, Boscobel"</item>
+    <item>"OXB, Bissau"</item>
+    <item>"OXF, Kidlington"</item>
+    <item>"OXR, Oxnard"</item>
+    <item>"OYE, Oyem"</item>
+    <item>"OYG, Moyo"</item>
+    <item>"OZC, Ozamis City"</item>
+    <item>"OZH, Zaporizhzhya"</item>
+    <item>"OZZ, Ouarzazate"</item>
+    <item>"PAD, Büren"</item>
+    <item>"PAH, West Paducah"</item>
+    <item>"PAI, Pailin"</item>
+    <item>"PAP, Port Au Prince"</item>
+    <item>"PAS, Levkai"</item>
+    <item>"PAT, Patna"</item>
+    <item>"PAZ, Castillo de Teayo"</item>
+    <item>"PBC, Tlaltenango"</item>
+    <item>"PBD, Porbandar"</item>
+    <item>"PBG, Plattsburgh"</item>
+    <item>"PBH, Paro"</item>
+    <item>"PBI, West Palm Beach"</item>
+    <item>"PBJ, Paama"</item>
+    <item>"PBM, Sabakoe"</item>
+    <item>"PBO, Paraburdoo"</item>
+    <item>"PBP, Punta Islita"</item>
+    <item>"PBU, Putao"</item>
+    <item>"PCE, Painter Creek"</item>
+    <item>"PCL, Callaria"</item>
+    <item>"PCR, Puerto Carreño"</item>
+    <item>"PDA, Guaviare"</item>
+    <item>"PDB, Pedro Bay"</item>
+    <item>"PDG, Padang"</item>
+    <item>"PDL, Ponta Delgada"</item>
+    <item>"PDP, Punta del Este"</item>
+    <item>"PDS, Piedras Negras"</item>
+    <item>"PDT, Pendleton"</item>
+    <item>"PDX, Portland"</item>
+    <item>"PEC, Pelican"</item>
+    <item>"PED, Pardubice"</item>
+    <item>"PEE, Perm'"</item>
+    <item>"PEG, Assisi"</item>
+    <item>"PEI, Pereira"</item>
+    <item>"PEK, Shunyi"</item>
+    <item>"PEM, Puerto Maldonado"</item>
+    <item>"PEN, Batu Maung"</item>
+    <item>"PER, Perth"</item>
+    <item>"PES, Petrozavodsk"</item>
+    <item>"PET, Pelotas"</item>
+    <item>"PEU, Puerto Lempira"</item>
+    <item>"PEW, Peshawar"</item>
+    <item>"PEX, Ukhta"</item>
+    <item>"PEZ, Penza"</item>
+    <item>"PFB, Passo Fundo"</item>
+    <item>"PFN, Panama City"</item>
+    <item>"PFO, Paphos"</item>
+    <item>"PFQ, Parsabad"</item>
+    <item>"PGA, Page"</item>
+    <item>"PGF, Perpignan"</item>
+    <item>"PGK, Pangkalpinang"</item>
+    <item>"PGM, Port Graham"</item>
+    <item>"PGU, Asalouyeh"</item>
+    <item>"PGV, Greenville"</item>
+    <item>"PGX, St-Pierre"</item>
+    <item>"PHC, Port Harcourt"</item>
+    <item>"PHE, Port Hedland"</item>
+    <item>"PHF, Newport News"</item>
+    <item>"PHG, Port Harcourt"</item>
+    <item>"PHL, Philadelphia"</item>
+    <item>"PHO, Point Hope"</item>
+    <item>"PHS, Phitsanulok"</item>
+    <item>"PHW, Phalaborwa"</item>
+    <item>"PHX, Phoenix"</item>
+    <item>"PIA, Peoria"</item>
+    <item>"PIB, Moselle"</item>
+    <item>"PIE, Clearwater"</item>
+    <item>"PIF, Pingtung"</item>
+    <item>"PIH, Pocatello"</item>
+    <item>"PIK, Prestwick"</item>
+    <item>"PIN, Parintins"</item>
+    <item>"PIP, Pilot Point"</item>
+    <item>"PIR, Pierre"</item>
+    <item>"PIS, Vouneuil-sous-Biard"</item>
+    <item>"PIT, Coraopolis"</item>
+    <item>"PIU, Piura"</item>
+    <item>"PIW, Nelson House"</item>
+    <item>"PIX, Madalena"</item>
+    <item>"PIZ, Point Lay"</item>
+    <item>"PJA, Pajala"</item>
+    <item>"PJG, Panjgur"</item>
+    <item>"PJM, Puerto Jiménez"</item>
+    <item>"PKA, Napaskiak"</item>
+    <item>"PKB, Williamstown"</item>
+    <item>"PKC, Elizovo"</item>
+    <item>"PKE, Parkes"</item>
+    <item>"PKG, Pangkor"</item>
+    <item>"PKK, Pakokku"</item>
+    <item>"PKP, Puka Puka"</item>
+    <item>"PKR, Pokhara"</item>
+    <item>"PKU, Pekanbaru"</item>
+    <item>"PKY, Buntok"</item>
+    <item>"PKZ, Pakxe"</item>
+    <item>"PLD, Nicoya"</item>
+    <item>"PLH, Plymouth"</item>
+    <item>"PLJ, Placencia"</item>
+    <item>"PLM, Palembang"</item>
+    <item>"PLN, Pellston"</item>
+    <item>"PLO, Port Lincoln"</item>
+    <item>"PLQ, Klaipeda/Palanga"</item>
+    <item>"PLS, The Bight Settlements"</item>
+    <item>"PLU, Belo Horizonte"</item>
+    <item>"PLW, Palu"</item>
+    <item>"PLX, Semipalatinsk"</item>
+    <item>"PLZ, Port Elizabeth"</item>
+    <item>"PMA, Pemba"</item>
+    <item>"PMC, Los Quemas"</item>
+    <item>"PMD, Palmdale"</item>
+    <item>"PME, Portsmouth"</item>
+    <item>"PMF, Parma"</item>
+    <item>"PMI, Palma"</item>
+    <item>"PML, Port Moller"</item>
+    <item>"PMO, Cinisi"</item>
+    <item>"PMR, Palmerston North"</item>
+    <item>"PMV, Pampatar"</item>
+    <item>"PMW, Palmas"</item>
+    <item>"PMY, Puerto Madryn"</item>
+    <item>"PMZ, Palmar Sur"</item>
+    <item>"PNA, Noáin"</item>
+    <item>"PND, Punta Gorda"</item>
+    <item>"PNH, Phnom Penh"</item>
+    <item>"PNI, Palikir"</item>
+    <item>"PNK, Pontianak"</item>
+    <item>"PNL, Pantelleria"</item>
+    <item>"PNP, Popondetta"</item>
+    <item>"PNQ, Pune"</item>
+    <item>"PNR, Pointe-Noire"</item>
+    <item>"PNS, Pensacola"</item>
+    <item>"PNZ, Petrolina"</item>
+    <item>"POA, Porto Alegre"</item>
+    <item>"POG, Port-Gentil"</item>
+    <item>"POL, Pemba"</item>
+    <item>"POM, Port Moresby"</item>
+    <item>"POP, San Felipe de Puerto Plata"</item>
+    <item>"POR, Pori"</item>
+    <item>"POS, Trinidad"</item>
+    <item>"POZ, Poznan"</item>
+    <item>"PPB, Presidente Prudente"</item>
+    <item>"PPE, Pto. Penasco"</item>
+    <item>"PPG, Pago Pago"</item>
+    <item>"PPK, Petropavlovsk"</item>
+    <item>"PPL, Phaplu"</item>
+    <item>"PPN, Popayán"</item>
+    <item>"PPP, Brandy Creek"</item>
+    <item>"PPS, Puerto Princesa"</item>
+    <item>"PPT, Papeete"</item>
+    <item>"PPV, Port Protection"</item>
+    <item>"PQC, Kien Giang"</item>
+    <item>"PQI, Presque Isle"</item>
+    <item>"PQQ, Port Macquarie"</item>
+    <item>"PQS, Pilot Station"</item>
+    <item>"PRC, Prescott"</item>
+    <item>"PRG, Prague 6"</item>
+    <item>"PRI, Praslin Island"</item>
+    <item>"PRN, Prishtina"</item>
+    <item>"PSA, Pisa"</item>
+    <item>"PSC, Pasco"</item>
+    <item>"PSE, Coto Laurel"</item>
+    <item>"PSG, Petersburg"</item>
+    <item>"PSO, Chachagüí"</item>
+    <item>"PSP, Palm Springs"</item>
+    <item>"PSR, Pescara"</item>
+    <item>"PSS, Posadas"</item>
+    <item>"PSZ, Puerto Suárez"</item>
+    <item>"PTA, Port Alsworth"</item>
+    <item>"PTF, Malololailai"</item>
+    <item>"PTG, Pietersburg"</item>
+    <item>"PTH, Port Heiden"</item>
+    <item>"PTP, Les Abymes"</item>
+    <item>"PTU, Platinum"</item>
+    <item>"PTY, Tocumen"</item>
+    <item>"PUB, Pueblo"</item>
+    <item>"PUF, Lescar"</item>
+    <item>"PUJ, Salvaleón de Higüey"</item>
+    <item>"PUK, Pukarua"</item>
+    <item>"PUQ, Punta Arenas"</item>
+    <item>"PUS, Busan"</item>
+    <item>"PUU, Puerto Asís"</item>
+    <item>"PUW, Pullman"</item>
+    <item>"PUY, Pluj"</item>
+    <item>"PVA, San Andrés"</item>
+    <item>"PVC, Provincetown"</item>
+    <item>"PVD, Warwick"</item>
+    <item>"PVG, Huinan"</item>
+    <item>"PVH, Pôrto Velho"</item>
+    <item>"PVK, Paliambela"</item>
+    <item>"PVR, Puerto Vallarta"</item>
+    <item>"PWE, Anadyr'"</item>
+    <item>"PWK, Wheeling"</item>
+    <item>"PWM, Portland"</item>
+    <item>"PWQ, Pavlodar"</item>
+    <item>"PXM, San Pedro Juchatengo"</item>
+    <item>"PXO, Porto Santo"</item>
+    <item>"PXU, Gia Lai"</item>
+    <item>"PYH, Maroa"</item>
+    <item>"PYJ, Polyarnyj"</item>
+    <item>"PZB, Pietermaritzburg"</item>
+    <item>"PZE, Penzance"</item>
+    <item>"PZI, Pan Zhi Hua"</item>
+    <item>"PZO, Ciudad Guayana"</item>
+    <item>"PZU, Port Sudan"</item>
+    <item>"QBC, Masset"</item>
+    <item>"QDH, Ashford"</item>
+    <item>"QDU, Dusseldorf"</item>
+    <item>"QFB, Freiburg"</item>
+    <item>"QFZ, Sarrebruck"</item>
+    <item>"QJY, Jeju-Si"</item>
+    <item>"QJZ, Nantes"</item>
+    <item>"QKL, Cologne"</item>
+    <item>"QOW, Owerri"</item>
+    <item>"QQD, Dover"</item>
+    <item>"QQH, Harwich"</item>
+    <item>"QQK, London"</item>
+    <item>"QQM, Manchester"</item>
+    <item>"QQN, Birmingham"</item>
+    <item>"QQP, London"</item>
+    <item>"QQS, Britrail Rail Zone S"</item>
+    <item>"QQU, London"</item>
+    <item>"QQW, London"</item>
+    <item>"QQX, Bath"</item>
+    <item>"QQY, York"</item>
+    <item>"QRH, Rotterdam"</item>
+    <item>"QRO, Queretaro"</item>
+    <item>"QRW, Warri"</item>
+    <item>"QSF, Setif"</item>
+    <item>"QUL, Qulin"</item>
+    <item>"QWB, Sao Jose dos Pinhais"</item>
+    <item>"QXB, Aix-les-milles"</item>
+    <item>"QXG, Angers"</item>
+    <item>"QYU, Gefle"</item>
+    <item>"QYX, Uppsala"</item>
+    <item>"RAB, Rabaul"</item>
+    <item>"RAE, Arar"</item>
+    <item>"RAH, Rafha"</item>
+    <item>"RAI, Praia"</item>
+    <item>"RAJ, Rajkot"</item>
+    <item>"RAK, Marrakesh"</item>
+    <item>"RAO, Ribeirão Prêto"</item>
+    <item>"RAP, Rapid City"</item>
+    <item>"RAR, Avarua"</item>
+    <item>"RAS, Rasht"</item>
+    <item>"RBA, Rabat"</item>
+    <item>"RBH, Brooks Lodge"</item>
+    <item>"RBQ, Rurrenabaque"</item>
+    <item>"RBR, Rio Branco"</item>
+    <item>"RBV, Ramata"</item>
+    <item>"RBX, Roundup"</item>
+    <item>"RBY, Ruby"</item>
+    <item>"RCB, Empangeni"</item>
+    <item>"RCE, Friday Harbor"</item>
+    <item>"RCH, Ríohacha"</item>
+    <item>"RCL, Redcliffe"</item>
+    <item>"RCM, Bellfield"</item>
+    <item>"RCP, Cinder River"</item>
+    <item>"RDB, Red Dog"</item>
+    <item>"RDD, Redding"</item>
+    <item>"RDM, Redmond"</item>
+    <item>"RDN, Redang"</item>
+    <item>"RDU, Raleigh/Durham"</item>
+    <item>"RDV, Red Devil"</item>
+    <item>"RDZ, Marcillac"</item>
+    <item>"REA, Reao"</item>
+    <item>"REC, Recife"</item>
+    <item>"REG, Reggio di Calabria"</item>
+    <item>"REL, Trelew"</item>
+    <item>"REN, Orenburg"</item>
+    <item>"REP, Siemrap"</item>
+    <item>"RES, Makallé"</item>
+    <item>"REU, Reus"</item>
+    <item>"REX, Reynosa"</item>
+    <item>"RFD, Rockford"</item>
+    <item>"RFP, Papeete"</item>
+    <item>"RGA, Río Grande"</item>
+    <item>"RGI, Papeete"</item>
+    <item>"RGL, Río Gallegos"</item>
+    <item>"RGN, Insein"</item>
+    <item>"RHI, Rhinelander"</item>
+    <item>"RHO, Rodhos"</item>
+    <item>"RIA, Santa Maria"</item>
+    <item>"RIB, Riberalta"</item>
+    <item>"RIC, Richmond"</item>
+    <item>"RIG, Rio Grande"</item>
+    <item>"RIS, Rishirifuji-cho"</item>
+    <item>"RIV, Alessandro"</item>
+    <item>"RIW, Riverton"</item>
+    <item>"RIX, Marupe"</item>
+    <item>"RIY, Shuhayr"</item>
+    <item>"RJA, Kapavaram"</item>
+    <item>"RJK, Rijeka"</item>
+    <item>"RJL, Logrono"</item>
+    <item>"RJN, Rafsanjan"</item>
+    <item>"RKD, Owls Head"</item>
+    <item>"RKS, Rock Springs"</item>
+    <item>"RKT, "</item>
+    <item>"RKV, Reykjavik"</item>
+    <item>"RLG, Rostock-laage"</item>
+    <item>"RMA, Blythdale"</item>
+    <item>"RMF, Marsa Alam"</item>
+    <item>"RMI, Rimini"</item>
+    <item>"RMP, Rampart"</item>
+    <item>"RMQ, Taichung"</item>
+    <item>"RMT, Tatawin"</item>
+    <item>"RNA, Arona"</item>
+    <item>"RNB, Kallinge"</item>
+    <item>"RNL, Rennell"</item>
+    <item>"RNN, Ronne"</item>
+    <item>"RNO, Reno"</item>
+    <item>"RNP, Rongelap Island"</item>
+    <item>"RNS, St-Jacques"</item>
+    <item>"ROA, Roanoke"</item>
+    <item>"ROB, Harbelville"</item>
+    <item>"ROC, Rochester"</item>
+    <item>"ROI, Roi Et"</item>
+    <item>"ROK, Rockhampton"</item>
+    <item>"ROO, Rondonópolis"</item>
+    <item>"ROP, Rota"</item>
+    <item>"ROR, Koror"</item>
+    <item>"ROS, Rosario"</item>
+    <item>"ROT, Rotorua"</item>
+    <item>"ROV, Taganrog"</item>
+    <item>"ROW, Roswell"</item>
+    <item>"RPR, Banarsi"</item>
+    <item>"RRG, Rodrigues Is"</item>
+    <item>"RRS, Roros"</item>
+    <item>"RSA, Santa Rosa"</item>
+    <item>"RSD, Rock Sound"</item>
+    <item>"RSH, Russian Mission"</item>
+    <item>"RSJ, Olga"</item>
+    <item>"RST, Rochester"</item>
+    <item>"RSU, Yeosu-Si"</item>
+    <item>"RSW, Fort Myers"</item>
+    <item>"RTA, Rotuma Island"</item>
+    <item>"RTB, Roatán"</item>
+    <item>"RTG, Ruteng"</item>
+    <item>"RTM, Rotterdam"</item>
+    <item>"RTW, Saratov"</item>
+    <item>"RUA, Arua"</item>
+    <item>"RUD, Oslo"</item>
+    <item>"RUH, Riyadh"</item>
+    <item>"RUK, Rukumkot"</item>
+    <item>"RUM, Rumjatar"</item>
+    <item>"RUN, Sainte-Marie"</item>
+    <item>"RUR, Rurutu"</item>
+    <item>"RUT, North Clarendon"</item>
+    <item>"RVA, Farafangana"</item>
+    <item>"RVE, Saravena"</item>
+    <item>"RVK, Rorvik"</item>
+    <item>"RVN, Saarenkylä"</item>
+    <item>"RVT, Ravensthorpe"</item>
+    <item>"RVV, Rairua"</item>
+    <item>"RXS, Ivisan"</item>
+    <item>"RYG, Rygge"</item>
+    <item>"RYK, Rahim Yar Khan"</item>
+    <item>"RZE, Trzebownisko"</item>
+    <item>"RZP, Taytay Sandoval"</item>
+    <item>"RZR, Ramsar"</item>
+    <item>"RZS, Sawan"</item>
+    <item>"SAB, "</item>
+    <item>"SAH, Ar Raudha"</item>
+    <item>"SAL, San Luis"</item>
+    <item>"SAN, San Diego"</item>
+    <item>"SAP, San Pedro Sula"</item>
+    <item>"SAQ, San Andros"</item>
+    <item>"SAT, San Antonio"</item>
+    <item>"SAV, Savannah"</item>
+    <item>"SAW, Umraniye"</item>
+    <item>"SBA, Goleta"</item>
+    <item>"SBH, Gustavia"</item>
+    <item>"SBL, Santa Ana"</item>
+    <item>"SBN, South Bend"</item>
+    <item>"SBP, San Luis Obispo"</item>
+    <item>"SBR, Saibai Island"</item>
+    <item>"SBW, Sibu"</item>
+    <item>"SBY, Salisbury"</item>
+    <item>"SBZ, Sibiu"</item>
+    <item>"SCC, Prudhoe Bay"</item>
+    <item>"SCE, State College"</item>
+    <item>"SCK, Stockton"</item>
+    <item>"SCL, Lo Amor"</item>
+    <item>"SCM, Scammon Bay"</item>
+    <item>"SCN, Sarrebruck"</item>
+    <item>"SCO, Aktau"</item>
+    <item>"SCQ, Santiago"</item>
+    <item>"SCT, Socotra"</item>
+    <item>"SCU, "</item>
+    <item>"SCV, "</item>
+    <item>"SCW, Syktyvkar"</item>
+    <item>"SCX, Salina Cruz"</item>
+    <item>"SCY, Puerto Baquerizo Moreno"</item>
+    <item>"SCZ, Santa Cruz Is"</item>
+    <item>"SDD, Lubango"</item>
+    <item>"SDE, Frías"</item>
+    <item>"SDF, Louisville"</item>
+    <item>"SDG, Sanandaj"</item>
+    <item>"SDJ, Natori-shi"</item>
+    <item>"SDK, Sandakan"</item>
+    <item>"SDL, Bergeforsen"</item>
+    <item>"SDN, Sandene"</item>
+    <item>"SDP, Sand Point"</item>
+    <item>"SDQ, Santo Domingo"</item>
+    <item>"SDR, Santander"</item>
+    <item>"SDT, Saidu"</item>
+    <item>"SDU, Rio de Janeiro"</item>
+    <item>"SDV, Tel Aviv Yafo"</item>
+    <item>"SDY, Sidney"</item>
+    <item>"SEA, Seattle"</item>
+    <item>"SEB, Sabha"</item>
+    <item>"SEN, Southend on Sea"</item>
+    <item>"SEW, Siwa"</item>
+    <item>"SEZ, Victoria"</item>
+    <item>"SFA, Safaqis"</item>
+    <item>"SFB, Sanford"</item>
+    <item>"SFD, San Fernando de Apure"</item>
+    <item>"SFE, San Fernando"</item>
+    <item>"SFG, "</item>
+    <item>"SFJ, Kangerlussuaq"</item>
+    <item>"SFL, Sao Filipe"</item>
+    <item>"SFN, Santa Fe"</item>
+    <item>"SFO, San Francisco"</item>
+    <item>"SFT, Skelleftea"</item>
+    <item>"SGC, Khanty-Mansiysk"</item>
+    <item>"SGD, Sonderborg"</item>
+    <item>"SGF, Springfield"</item>
+    <item>"SGN, Ho Chi Minh City"</item>
+    <item>"SGO, St George"</item>
+    <item>"SGU, St. George"</item>
+    <item>"SGX, Songea"</item>
+    <item>"SGY, Skagway"</item>
+    <item>"SHA, Shanghai"</item>
+    <item>"SHB, Nakashibetsu-cho"</item>
+    <item>"SHC, Indaselassie"</item>
+    <item>"SHD, Weyers Cave"</item>
+    <item>"SHE, Shenyang"</item>
+    <item>"SHG, Shungnak"</item>
+    <item>"SHH, Shishmaref"</item>
+    <item>"SHJ, Ajman"</item>
+    <item>"SHL, Shillong"</item>
+    <item>"SHM, Shirahama-cho"</item>
+    <item>"SHP, Qinhuangdao"</item>
+    <item>"SHR, Sheridan"</item>
+    <item>"SHV, Shreveport"</item>
+    <item>"SHW, As-Saraura"</item>
+    <item>"SHX, Shageluk"</item>
+    <item>"SHY, Shinyanga"</item>
+    <item>"SIA, Xi'an"</item>
+    <item>"SIC, Sinop"</item>
+    <item>"SID, Santa Maria"</item>
+    <item>"SIF, Simara"</item>
+    <item>"SIG, San Juan"</item>
+    <item>"SIN, Singapore"</item>
+    <item>"SIP, Simferopol'"</item>
+    <item>"SIT, Sitka"</item>
+    <item>"SJC, San Jose"</item>
+    <item>"SJD, S. Jose del Cabo"</item>
+    <item>"SJE, San Jose del Guavuare"</item>
+    <item>"SJI, San Jose"</item>
+    <item>"SJJ, Ilidža"</item>
+    <item>"SJK, Sao Jose dos Campos"</item>
+    <item>"SJO, Heredia"</item>
+    <item>"SJP, São José do Rio Prêto"</item>
+    <item>"SJT, San Angelo"</item>
+    <item>"SJU, Carolina"</item>
+    <item>"SJW, Shijiazhuang"</item>
+    <item>"SJY, Seinajoki"</item>
+    <item>"SJZ, Velas"</item>
+    <item>"SKB, Basseterre"</item>
+    <item>"SKC, Suki"</item>
+    <item>"SKD, Samarkand"</item>
+    <item>"SKE, Skien"</item>
+    <item>"SKG, Thessaloniki"</item>
+    <item>"SKH, Surkhet"</item>
+    <item>"SKK, Shaktoolik"</item>
+    <item>"SKN, Stokkmarknes"</item>
+    <item>"SKO, Shunni"</item>
+    <item>"SKP, Skopje"</item>
+    <item>"SKT, Sialkot"</item>
+    <item>"SKU, Skiros"</item>
+    <item>"SKZ, Sukkur"</item>
+    <item>"SLA, La Caldera"</item>
+    <item>"SLC, Salt Lake City"</item>
+    <item>"SLE, Salem"</item>
+    <item>"SLH, Sola"</item>
+    <item>"SLI, Solwezi"</item>
+    <item>"SLK, Saranac Lake"</item>
+    <item>"SLL, Salalah"</item>
+    <item>"SLM, Villagonzalo de Tormes"</item>
+    <item>"SLN, Salina"</item>
+    <item>"SLP, S. Luis Potosi"</item>
+    <item>"SLQ, Sleetmute"</item>
+    <item>"SLU, St Lucia"</item>
+    <item>"SLV, Jutogh"</item>
+    <item>"SLW, General Cepeda"</item>
+    <item>"SLX, Salt Cay"</item>
+    <item>"SLY, Salekhard"</item>
+    <item>"SLZ, Salvador"</item>
+    <item>"SMA, Vila do Porto"</item>
+    <item>"SMF, Sacramento"</item>
+    <item>"SMI, Pithagorion"</item>
+    <item>"SMK, St Michael"</item>
+    <item>"SML, Simms"</item>
+    <item>"SMN, Salmon"</item>
+    <item>"SMR, "</item>
+    <item>"SMS, Toamasina"</item>
+    <item>"SMX, Santa Maria"</item>
+    <item>"SNA, Santa Ana"</item>
+    <item>"SNC, Salinas"</item>
+    <item>"SNE, Ribeira Brava"</item>
+    <item>"SNN, Shannon Airport"</item>
+    <item>"SNO, Sakon Nakhon"</item>
+    <item>"SNP, Saint Paul Island"</item>
+    <item>"SNR, Montoir-de-Bretagne"</item>
+    <item>"SNU, Esperanza"</item>
+    <item>"SNW, Thandwe"</item>
+    <item>"SOB, Zalavár"</item>
+    <item>"SOC, Surakarta"</item>
+    <item>"SOF, Sofia"</item>
+    <item>"SOG, Kaupanger"</item>
+    <item>"SOJ, Sørkjosen"</item>
+    <item>"SOM, Cantaura"</item>
+    <item>"SON, "</item>
+    <item>"SOO, Soderhamn"</item>
+    <item>"SOQ, Sorong"</item>
+    <item>"SOU, Southampton"</item>
+    <item>"SOV, Seldovia"</item>
+    <item>"SOW, Show Low"</item>
+    <item>"SPB, Charlotte Amalie"</item>
+    <item>"SPC, Breña Alta"</item>
+    <item>"SPD, Dinajpur"</item>
+    <item>"SPI, Springfield"</item>
+    <item>"SPL, Vila do Porto"</item>
+    <item>"SPN, Saipan"</item>
+    <item>"SPP, Menongue"</item>
+    <item>"SPR, San Pedro"</item>
+    <item>"SPS, Wichita Falls"</item>
+    <item>"SPU, Split"</item>
+    <item>"SQO, Storuman"</item>
+    <item>"SRA, Santa Rosa"</item>
+    <item>"SRE, Sucre"</item>
+    <item>"SRG, Semarang"</item>
+    <item>"SRJ, San Borja"</item>
+    <item>"SRP, Skjold"</item>
+    <item>"SRQ, Sarasota"</item>
+    <item>"SRV, Stony River"</item>
+    <item>"SRX, Sert"</item>
+    <item>"SRY, Sary"</item>
+    <item>"SRZ, Santa Cruz de la Sierra"</item>
+    <item>"SSA, Salvador"</item>
+    <item>"SSB, Christiansted"</item>
+    <item>"SSG, Malabo"</item>
+    <item>"SSH, Al Arish"</item>
+    <item>"SSJ, Sandnessjoen"</item>
+    <item>"SSR, Sara"</item>
+    <item>"SSY, M'banza Congo"</item>
+    <item>"STC, St. Cloud"</item>
+    <item>"STD, Santa Ana del Tachira"</item>
+    <item>"STG, St George Island"</item>
+    <item>"STI, La Lomota"</item>
+    <item>"STL, St. Louis"</item>
+    <item>"STM, Santarém"</item>
+    <item>"STN, Stansted Mountfitchet"</item>
+    <item>"STR, Stuttgart"</item>
+    <item>"STS, Windsor"</item>
+    <item>"STT, Charlotte Amalie"</item>
+    <item>"STV, Un"</item>
+    <item>"STW, Stavropol'"</item>
+    <item>"STX, Frederiksted"</item>
+    <item>"SUB, Sidoarjo"</item>
+    <item>"SUF, Case Cervi"</item>
+    <item>"SUG, Surigao City"</item>
+    <item>"SUJ, Satu Mare"</item>
+    <item>"SUN, Hailey"</item>
+    <item>"SUR, Summer Beaver"</item>
+    <item>"SUV, Nausori"</item>
+    <item>"SUX, Sioux City"</item>
+    <item>"SVA, Savoonga"</item>
+    <item>"SVB, Sambava"</item>
+    <item>"SVC, Silver City"</item>
+    <item>"SVD, Kingstown"</item>
+    <item>"SVG, Rage"</item>
+    <item>"SVI, San Vicente del Caguán"</item>
+    <item>"SVJ, Svolvar"</item>
+    <item>"SVL, Savonlinna"</item>
+    <item>"SVO, Zelenograd"</item>
+    <item>"SVQ, Seville"</item>
+    <item>"SVS, Stevens Village"</item>
+    <item>"SVU, Labasa"</item>
+    <item>"SVX, Yekaterinburg"</item>
+    <item>"SVZ, Táriba"</item>
+    <item>"SWA, Chenghai"</item>
+    <item>"SWF, New Windsor"</item>
+    <item>"SWJ, South West Bay"</item>
+    <item>"SWK, Trezzano sul Naviglio"</item>
+    <item>"SWO, Stillwater"</item>
+    <item>"SWQ, Sumbawa Besar"</item>
+    <item>"SWS, Swansea"</item>
+    <item>"SXB, Entzheim"</item>
+    <item>"SXF, Schönefeld"</item>
+    <item>"SXL, Larass"</item>
+    <item>"SXM, "</item>
+    <item>"SXP, Sheldon Point"</item>
+    <item>"SXR, Srinagar"</item>
+    <item>"SYB, Kodiak"</item>
+    <item>"SYD, Sydney"</item>
+    <item>"SYJ, Sirjan"</item>
+    <item>"SYM, Simao"</item>
+    <item>"SYO, Shonai"</item>
+    <item>"SYR, Syracuse"</item>
+    <item>"SYU, Sue Island"</item>
+    <item>"SYX, Sanya"</item>
+    <item>"SYY, Isle of lewis"</item>
+    <item>"SYZ, Shiraz"</item>
+    <item>"SZA, Santo António do Zaire"</item>
+    <item>"SZB, Kampong Baru Subang"</item>
+    <item>"SZD, Sheffield"</item>
+    <item>"SZF, Samsun"</item>
+    <item>"SZG, Salzburg"</item>
+    <item>"SZV, Suzhou"</item>
+    <item>"SZX, Shenzhen"</item>
+    <item>"SZZ, Goleniów"</item>
+    <item>"TAB, Plymouth"</item>
+    <item>"TAC, Tacloban City"</item>
+    <item>"TAE, Daegu"</item>
+    <item>"TAG, Tagbilaran City"</item>
+    <item>"TAH, Isangel"</item>
+    <item>"TAI, Al-Ganad"</item>
+    <item>"TAK, Takamatsu"</item>
+    <item>"TAL, Tanana"</item>
+    <item>"TAM, Tampico"</item>
+    <item>"TAO, Wanggezhuang"</item>
+    <item>"TAP, Tapachula"</item>
+    <item>"TAS, Tashkent"</item>
+    <item>"TAT, Poprad"</item>
+    <item>"TBB, Tuy Hoa"</item>
+    <item>"TBG, Tabubil"</item>
+    <item>"TBH, Alcantara"</item>
+    <item>"TBI, New Bight"</item>
+    <item>"TBJ, Jundobah"</item>
+    <item>"TBN, Fort Leonard Wood"</item>
+    <item>"TBO, Tabora"</item>
+    <item>"TBP, Tumbes"</item>
+    <item>"TBS, Tbilisi"</item>
+    <item>"TBU, Nuku'alofa"</item>
+    <item>"TBW, Tambov"</item>
+    <item>"TBZ, Tabriz"</item>
+    <item>"TCB, Green Turtle Cay"</item>
+    <item>"TCE, Tulcea"</item>
+    <item>"TCH, Tchibanga"</item>
+    <item>"TCO, Tumaco"</item>
+    <item>"TCP, Taba"</item>
+    <item>"TCQ, Tacna"</item>
+    <item>"TCR, Tuticorin"</item>
+    <item>"TCT, Takotna"</item>
+    <item>"TDD, Trinidad"</item>
+    <item>"TDX, Trat"</item>
+    <item>"TEB, Teterboro"</item>
+    <item>"TEE, Tebessa"</item>
+    <item>"TEK, Valdez"</item>
+    <item>"TEN, Tongren"</item>
+    <item>"TER, Praia da Vitória"</item>
+    <item>"TET, Tete"</item>
+    <item>"TEX, Telluride"</item>
+    <item>"TFI, Tufi"</item>
+    <item>"TFN, Tegueste"</item>
+    <item>"TFS, Granadilla"</item>
+    <item>"TGC, Milan"</item>
+    <item>"TGD, Podgorica"</item>
+    <item>"TGG, Kuala Terengganu"</item>
+    <item>"TGH, "</item>
+    <item>"TGJ, Tiga"</item>
+    <item>"TGM, "</item>
+    <item>"TGO, Tongliao"</item>
+    <item>"TGR, Ouargla"</item>
+    <item>"TGU, Tegucigalpa"</item>
+    <item>"TGZ, San Fernando"</item>
+    <item>"THE, Teresina"</item>
+    <item>"THF, Berlin"</item>
+    <item>"THL, Tachilek"</item>
+    <item>"THN, Trollhatan"</item>
+    <item>"THO, Thorshofn"</item>
+    <item>"THR, Tehran"</item>
+    <item>"THS, Sawankhalok"</item>
+    <item>"THU, Pituffik"</item>
+    <item>"TIA, Krna"</item>
+    <item>"TIF, "</item>
+    <item>"TIH, Tikehau Atoll"</item>
+    <item>"TIJ, Tijuana"</item>
+    <item>"TIM, Nabire"</item>
+    <item>"TIN, Tindouf"</item>
+    <item>"TIP, Tripoli"</item>
+    <item>"TIQ, Tinian"</item>
+    <item>"TIR, Renigunta"</item>
+    <item>"TIS, Kubin Village"</item>
+    <item>"TIU, Timaru"</item>
+    <item>"TIV, Teodo"</item>
+    <item>"TIZ, Mendi"</item>
+    <item>"TJA, Tarija"</item>
+    <item>"TJM, Tyumen'"</item>
+    <item>"TJN, Takume"</item>
+    <item>"TJQ, Tanjungpandan"</item>
+    <item>"TKE, Tenakee Springs"</item>
+    <item>"TKG, Tanjungkarang"</item>
+    <item>"TKJ, Tok"</item>
+    <item>"TKK, Weno"</item>
+    <item>"TKN, Amagi-cho"</item>
+    <item>"TKP, Takapoto"</item>
+    <item>"TKQ, Kigoma"</item>
+    <item>"TKS, Matsushige-cho"</item>
+    <item>"TKU, Turku"</item>
+    <item>"TKV, Tatakoto"</item>
+    <item>"TKX, Takaroa"</item>
+    <item>"TLA, Teller"</item>
+    <item>"TLC, Toluca de Lerdo"</item>
+    <item>"TLE, Toliara"</item>
+    <item>"TLH, Tallahassee"</item>
+    <item>"TLJ, Tatalina"</item>
+    <item>"TLL, Tallinn"</item>
+    <item>"TLM, Tlemcen"</item>
+    <item>"TLN, Hyeres"</item>
+    <item>"TLS, Blagnac"</item>
+    <item>"TLT, Tuluksak"</item>
+    <item>"TLV, Petaẖ Tiqwa"</item>
+    <item>"TMC, Tambolaka"</item>
+    <item>"TME, Tame"</item>
+    <item>"TMJ, Termiz"</item>
+    <item>"TML, Savelugu"</item>
+    <item>"TMM, Toamasina"</item>
+    <item>"TMP, Pitkäniemi"</item>
+    <item>"TMR, Tamanrasset"</item>
+    <item>"TMS, Sao Tome"</item>
+    <item>"TMT, Trombetas"</item>
+    <item>"TMU, Lepanto"</item>
+    <item>"TMW, Barry"</item>
+    <item>"TMX, Timimoun"</item>
+    <item>"TNA, Jinan"</item>
+    <item>"TNC, Tin City"</item>
+    <item>"TNG, Tangiers"</item>
+    <item>"TNJ, Tanjungpinang"</item>
+    <item>"TNK, Tununak"</item>
+    <item>"TNN, Tainan City"</item>
+    <item>"TNO, Liberia"</item>
+    <item>"TNR, Ambohidratrimo"</item>
+    <item>"TNZ, Tosontsengel"</item>
+    <item>"TOD, Kampung Genting"</item>
+    <item>"TOE, Tawzar"</item>
+    <item>"TOF, Tomsk"</item>
+    <item>"TOG, Togiak Village"</item>
+    <item>"TOH, Torres"</item>
+    <item>"TOL, Swanton"</item>
+    <item>"TOM, "</item>
+    <item>"TOS, Tromso"</item>
+    <item>"TOU, Touho"</item>
+    <item>"TOY, Toyama-shi"</item>
+    <item>"TPA, Tampa"</item>
+    <item>"TPE, Taoyuan City"</item>
+    <item>"TPJ, Taplejung"</item>
+    <item>"TPP, Tarapoto"</item>
+    <item>"TPQ, Tepic"</item>
+    <item>"TPS, Trapani"</item>
+    <item>"TQR, San Domino Island"</item>
+    <item>"TRC, Torreón"</item>
+    <item>"TRD, Stjordal"</item>
+    <item>"TRE, Crossapol"</item>
+    <item>"TRF, Sandefjord"</item>
+    <item>"TRG, Tauranga"</item>
+    <item>"TRI, Blountville"</item>
+    <item>"TRK, Tarakan"</item>
+    <item>"TRN, Caselle"</item>
+    <item>"TRO, Taree"</item>
+    <item>"TRS, Ronchi"</item>
+    <item>"TRU, Huanchaco"</item>
+    <item>"TRV, Thiruvananthapuram"</item>
+    <item>"TRW, Tarawa"</item>
+    <item>"TRZ, Tiruchirapally"</item>
+    <item>"TSA, Taipei City"</item>
+    <item>"TSE, Aqmola"</item>
+    <item>"TSF, Treviso"</item>
+    <item>"TSJ, Tsushima-shi"</item>
+    <item>"TSL, Ciudad Valles"</item>
+    <item>"TSN, Tanggu"</item>
+    <item>"TSO, Isles Of Scilly"</item>
+    <item>"TSR, "</item>
+    <item>"TSS, New York"</item>
+    <item>"TST, Muang Trang"</item>
+    <item>"TSV, Townsville"</item>
+    <item>"TTA, Tan Tan"</item>
+    <item>"TTE, Ternate"</item>
+    <item>"TTJ, Tottori-shi"</item>
+    <item>"TTQ, Colorado"</item>
+    <item>"TTT, Taitung City"</item>
+    <item>"TTU, Tetouan"</item>
+    <item>"TUA, Urbina"</item>
+    <item>"TUB, Tubuai"</item>
+    <item>"TUC, Banda del Río Salí"</item>
+    <item>"TUD, Tambacounda"</item>
+    <item>"TUF, Tours"</item>
+    <item>"TUG, Tuguegarao"</item>
+    <item>"TUI, Turayf"</item>
+    <item>"TUK, Turbat"</item>
+    <item>"TUL, Tulsa"</item>
+    <item>"TUN, Tunis"</item>
+    <item>"TUO, Taupo"</item>
+    <item>"TUP, Tupelo"</item>
+    <item>"TUR, Tucuruí"</item>
+    <item>"TUS, Tucson"</item>
+    <item>"TUU, Tabuk"</item>
+    <item>"TVC, Traverse City"</item>
+    <item>"TVF, Thief River Falls"</item>
+    <item>"TVU, Taveuni"</item>
+    <item>"TVY, Dawe"</item>
+    <item>"TWA, Twin Hills"</item>
+    <item>"TWB, Toowoomba"</item>
+    <item>"TWF, Twin Falls"</item>
+    <item>"TWT, Tawitawi"</item>
+    <item>"TWU, Tawau"</item>
+    <item>"TXK, Texarkana"</item>
+    <item>"TXL, Berlin"</item>
+    <item>"TXN, Haiyang"</item>
+    <item>"TYF, Torsby"</item>
+    <item>"TYN, Taiyuan"</item>
+    <item>"TYR, Tyler"</item>
+    <item>"TYS, Knoxville"</item>
+    <item>"TZA, Hattieville"</item>
+    <item>"TZN, Mangrove Cay"</item>
+    <item>"TZX, Trabzon"</item>
+    <item>"UAH, Ua Huka"</item>
+    <item>"UAK, Narsarssurk"</item>
+    <item>"UAP, Ua Pou"</item>
+    <item>"UAQ, 9 de Julio"</item>
+    <item>"UAS, Samburu"</item>
+    <item>"UBA, Uberaba"</item>
+    <item>"UBJ, Ube-shi"</item>
+    <item>"UBP, Don Mot Daeng"</item>
+    <item>"UCT, Ukhta"</item>
+    <item>"UDI, Uberlandia"</item>
+    <item>"UDJ, Uzhhorod"</item>
+    <item>"UDR, Debari"</item>
+    <item>"UEL, Quelimane"</item>
+    <item>"UEO, Kumejima-cho"</item>
+    <item>"UET, "</item>
+    <item>"UFA, Oufa"</item>
+    <item>"UGB, Pilot Point"</item>
+    <item>"UGC, Urgench"</item>
+    <item>"UGI, Kodiak"</item>
+    <item>"UIB, Quibdó"</item>
+    <item>"UIH, Qui Nhon"</item>
+    <item>"UII, Utila"</item>
+    <item>"UIN, Quincy"</item>
+    <item>"UIO, Quito"</item>
+    <item>"UIP, Plomelin"</item>
+    <item>"UKB, Kobe-shi"</item>
+    <item>"UKK, Ust-kamenogorsk"</item>
+    <item>"ULB, Port-Vato"</item>
+    <item>"ULN, Ulan Bator"</item>
+    <item>"ULO, Ulaangom"</item>
+    <item>"ULP, Quilpie"</item>
+    <item>"ULU, Gulu"</item>
+    <item>"ULY, Dimitrovgrad"</item>
+    <item>"UMD, Uummannaq"</item>
+    <item>"UME, Umea"</item>
+    <item>"UNG, Kiunga"</item>
+    <item>"UNK, Unalakleet"</item>
+    <item>"UNN, Ranong"</item>
+    <item>"UPB, Havana"</item>
+    <item>"UPG, Maros"</item>
+    <item>"URA, Oral"</item>
+    <item>"URC, Urumqi"</item>
+    <item>"URE, Kingissepa"</item>
+    <item>"URG, Uruguaiana"</item>
+    <item>"URJ, Uraj"</item>
+    <item>"URO, St-Pierre"</item>
+    <item>"URS, Kursk"</item>
+    <item>"URT, Phun Phin"</item>
+    <item>"URY, Gurayat"</item>
+    <item>"USH, Ushuaia"</item>
+    <item>"USK, Usinsk"</item>
+    <item>"USM, Ko Samui"</item>
+    <item>"USN, Ulsan"</item>
+    <item>"USQ, Usak"</item>
+    <item>"USU, Coron"</item>
+    <item>"UTH, Changwat Udon Thani; Udon Thani"</item>
+    <item>"UTN, Upington"</item>
+    <item>"UTP, Ban Chang"</item>
+    <item>"UTT, Umtata"</item>
+    <item>"UUD, Kabansk"</item>
+    <item>"UUN, Baruun-Urt"</item>
+    <item>"UUS, Kholmsk"</item>
+    <item>"UVE, Fayaoué"</item>
+    <item>"UVF, Vieux Fort"</item>
+    <item>"UWE, Wiesbaden"</item>
+    <item>"UYL, Nyala"</item>
+    <item>"UYN, Yulin"</item>
+    <item>"VAA, Vaasa"</item>
+    <item>"VAI, Vanimo"</item>
+    <item>"VAK, Hooper Bay"</item>
+    <item>"VAN, Van"</item>
+    <item>"VAO, Suavanao"</item>
+    <item>"VAR, Varna"</item>
+    <item>"VAS, Sivas"</item>
+    <item>"VAV, Neiafu"</item>
+    <item>"VAW, Vardo"</item>
+    <item>"VBM, Blue Mountain"</item>
+    <item>"VBS, Verona"</item>
+    <item>"VBV, Vanuabalavu"</item>
+    <item>"VBY, Visby"</item>
+    <item>"VCE, Venice"</item>
+    <item>"VCL, Tamky"</item>
+    <item>"VCP, Campinas"</item>
+    <item>"VCS, Con Dao"</item>
+    <item>"VCT, Victoria"</item>
+    <item>"VCV, Victorville"</item>
+    <item>"VDA, Ovda"</item>
+    <item>"VDB, Fagernes"</item>
+    <item>"VDC, Vitória da Conquista"</item>
+    <item>"VDE, Valverde"</item>
+    <item>"VDM, Viedma"</item>
+    <item>"VDS, Vadso"</item>
+    <item>"VDZ, Valdez"</item>
+    <item>"VEE, Venetie"</item>
+    <item>"VEL, Vernal"</item>
+    <item>"VER, Teocelo"</item>
+    <item>"VEY, Vestmannaeyjar"</item>
+    <item>"VFA, "</item>
+    <item>"VGA, Manthena"</item>
+    <item>"VGO, Vigo"</item>
+    <item>"VGZ, Villagarzon"</item>
+    <item>"VHC, Saurimo"</item>
+    <item>"VHM, Vilhelmina"</item>
+    <item>"VHZ, Vahitahi"</item>
+    <item>"VIE, Klein-Neusiedl"</item>
+    <item>"VIG, El Vigia"</item>
+    <item>"VII, Vinh City"</item>
+    <item>"VIJ, Virgin Gorda"</item>
+    <item>"VIL, Ad Dakhla"</item>
+    <item>"VIS, Visalia"</item>
+    <item>"VIT, Vitoria"</item>
+    <item>"VIX, Vitoria"</item>
+    <item>"VKG, Kien Giang"</item>
+    <item>"VKO, Podol'sk"</item>
+    <item>"VKT, Ukhta"</item>
+    <item>"VLC, Manises"</item>
+    <item>"VLD, Valdosta"</item>
+    <item>"VLI, Port-Vila"</item>
+    <item>"VLL, Valladolid"</item>
+    <item>"VLN, Valencia"</item>
+    <item>"VLS, Valesdir"</item>
+    <item>"VLV, Siquisique"</item>
+    <item>"VLY, Anglesey"</item>
+    <item>"VNO, Vilnius"</item>
+    <item>"VNS, Baragaon"</item>
+    <item>"VNX, Vilanculos"</item>
+    <item>"VOG, Kamyshin"</item>
+    <item>"VOL, Almiros"</item>
+    <item>"VOZ, Semiluki"</item>
+    <item>"VPE, Ongiva"</item>
+    <item>"VPN, Egilsstadir"</item>
+    <item>"VPS, Eglin Village"</item>
+    <item>"VPY, Chimoio"</item>
+    <item>"VQS, Puerto Ferro"</item>
+    <item>"VRA, Varadero"</item>
+    <item>"VRC, Virac"</item>
+    <item>"VRK, Varkaus"</item>
+    <item>"VRN, Sommacampagna"</item>
+    <item>"VRY, Varoy"</item>
+    <item>"VSA, Villahermosa"</item>
+    <item>"VSG, Luhans'k"</item>
+    <item>"VST, Vasteras"</item>
+    <item>"VTE, Vientiane"</item>
+    <item>"VTU, Becerra"</item>
+    <item>"VTZ, Visakhapatnam"</item>
+    <item>"VUP, Valledupar"</item>
+    <item>"VVC, Villavicencio"</item>
+    <item>"VVI, Santa Cruz"</item>
+    <item>"VVO, Nakhodka"</item>
+    <item>"VVZ, Illizi"</item>
+    <item>"VXC, Lichinga"</item>
+    <item>"VXE, Mindelo"</item>
+    <item>"VXO, Vaxjo"</item>
+    <item>"WAA, Wales"</item>
+    <item>"WAE, Wadi Ad Dawasir"</item>
+    <item>"WAG, Wanganui"</item>
+    <item>"WAQ, Antsalova"</item>
+    <item>"WAT, Waterford"</item>
+    <item>"WAW, Warsaw"</item>
+    <item>"WBB, Stebbins"</item>
+    <item>"WBQ, Beaver"</item>
+    <item>"WDH, "</item>
+    <item>"WEF, Weifang"</item>
+    <item>"WEH, Weihai"</item>
+    <item>"WEI, Weipa"</item>
+    <item>"WGA, Forest Hill"</item>
+    <item>"WGE, Walgett"</item>
+    <item>"WGP, Waingapu"</item>
+    <item>"WHF, Wadi Halfa"</item>
+    <item>"WHK, Whakatane"</item>
+    <item>"WIC, Wick"</item>
+    <item>"WIL, Nairobi"</item>
+    <item>"WIN, Corfield"</item>
+    <item>"WJA, Woja"</item>
+    <item>"WJU, WonJu"</item>
+    <item>"WKA, Wanaka"</item>
+    <item>"WKJ, Wakkanai-shi"</item>
+    <item>"WKK, Aleknagik"</item>
+    <item>"WLG, Wellington"</item>
+    <item>"WLH, Walaha"</item>
+    <item>"WLK, Selawik"</item>
+    <item>"WLS, Wallis Island"</item>
+    <item>"WMK, Meyers Chuck"</item>
+    <item>"WMN, Maroantsetra"</item>
+    <item>"WMO, White Mountain"</item>
+    <item>"WMR, Mananara"</item>
+    <item>"WNA, Napakiak"</item>
+    <item>"WNN, Casummit Lake"</item>
+    <item>"WNP, Pili"</item>
+    <item>"WNR, Tanbar"</item>
+    <item>"WNS, Nawabshah"</item>
+    <item>"WNZ, Wenzhou"</item>
+    <item>"WPM, Wipim"</item>
+    <item>"WRE, Whangarei"</item>
+    <item>"WRG, Wrangell"</item>
+    <item>"WRL, Worland"</item>
+    <item>"WRO, Wroclaw"</item>
+    <item>"WSN, South Naknek"</item>
+    <item>"WST, Westerly"</item>
+    <item>"WSX, Westsound"</item>
+    <item>"WSZ, Westport"</item>
+    <item>"WTK, Noatak"</item>
+    <item>"WTL, Tuntutuliak"</item>
+    <item>"WTS, Tsiroanomandidy"</item>
+    <item>"WUA, Wu Hai"</item>
+    <item>"WUH, Wuhan"</item>
+    <item>"WUN, Wiluna"</item>
+    <item>"WUS, Wuyishan"</item>
+    <item>"WUX, Wuxi"</item>
+    <item>"WVB, Walvis Bay"</item>
+    <item>"WWK, Wewak"</item>
+    <item>"WWP, Whale Pass"</item>
+    <item>"WWT, Newtok"</item>
+    <item>"WXN, Wanxian"</item>
+    <item>"WYA, Whyalla"</item>
+    <item>"WYS, West Yellowstone"</item>
+    <item>"XAD, Oro-Medonte"</item>
+    <item>"XAP, Chapeco"</item>
+    <item>"XAW, Capreol"</item>
+    <item>"XAX, Dorval"</item>
+    <item>"XAZ, Cambellton"</item>
+    <item>"XBE, Casummit Lake"</item>
+    <item>"XBJ, Birjand"</item>
+    <item>"XBR, Brockville"</item>
+    <item>"XCH, The Settlement"</item>
+    <item>"XCI, Oro-Medonte"</item>
+    <item>"XCM, Chatham"</item>
+    <item>"XCR, Coole"</item>
+    <item>"XDB, Lille"</item>
+    <item>"XDD, "</item>
+    <item>"XDG, Halifax"</item>
+    <item>"XDH, "</item>
+    <item>"XDM, Drummondville"</item>
+    <item>"XDP, Moncton"</item>
+    <item>"XDQ, London"</item>
+    <item>"XDS, Oro-Medonte"</item>
+    <item>"XDU, "</item>
+    <item>"XDV, Prince George"</item>
+    <item>"XDW, Prince Rupert"</item>
+    <item>"XDX, Sarina"</item>
+    <item>"XDY, Sudbury"</item>
+    <item>"XDZ, The Pas"</item>
+    <item>"XEA, Vancouver"</item>
+    <item>"XEC, Windsor"</item>
+    <item>"XED, Paris"</item>
+    <item>"XEE, Lac Edouard"</item>
+    <item>"XEF, Winnipeg"</item>
+    <item>"XEG, Kingston"</item>
+    <item>"XEH, Ladysmith"</item>
+    <item>"XEK, Melville"</item>
+    <item>"XEL, New Carlisle"</item>
+    <item>"XER, Strasbourg"</item>
+    <item>"XET, London"</item>
+    <item>"XEV, Stockholm"</item>
+    <item>"XEZ, Sodertalje"</item>
+    <item>"XFD, Stratford"</item>
+    <item>"XFE, Parent"</item>
+    <item>"XFG, Perce"</item>
+    <item>"XFJ, Eskilstuna"</item>
+    <item>"XFK, Senneterre"</item>
+    <item>"XFL, Shawinigan"</item>
+    <item>"XFM, Cowichan Valley"</item>
+    <item>"XFN, Xiangfan"</item>
+    <item>"XFP, Malmo"</item>
+    <item>"XFQ, Weymont"</item>
+    <item>"XFR, Malmo"</item>
+    <item>"XFS, Alexandria"</item>
+    <item>"XFU, Tierp"</item>
+    <item>"XFV, Brantford"</item>
+    <item>"XFW, Hamburg"</item>
+    <item>"XFY, Quebec"</item>
+    <item>"XFZ, Charny"</item>
+    <item>"XGC, Lund"</item>
+    <item>"XGJ, Cobourg"</item>
+    <item>"XGK, Coteau"</item>
+    <item>"XGM, Grantham"</item>
+    <item>"XGR, Chisasibi"</item>
+    <item>"XGY, Grimsby"</item>
+    <item>"XHJ, Aix La Chapelle"</item>
+    <item>"XHK, Valence"</item>
+    <item>"XHM, Georgetown"</item>
+    <item>"XHN, Liege"</item>
+    <item>"XHS, Chemainus"</item>
+    <item>"XIA, Guelph"</item>
+    <item>"XIB, Ingersoll"</item>
+    <item>"XIC, Xichang"</item>
+    <item>"XID, Maxville"</item>
+    <item>"XIF, Napanee"</item>
+    <item>"XIL, Xilin Hot"</item>
+    <item>"XIM, Saint Hyacinthe"</item>
+    <item>"XIO, St Marys"</item>
+    <item>"XIP, Woodstock"</item>
+    <item>"XIT, London"</item>
+    <item>"XIY, Xianyang"</item>
+    <item>"XJL, Joliette"</item>
+    <item>"XJQ, Jonquiere"</item>
+    <item>"XKH, Xieng Khouang"</item>
+    <item>"XKL, Kuala Lumpur"</item>
+    <item>"XKS, Casummit Lake"</item>
+    <item>"XKV, Sackville"</item>
+    <item>"XLB, Lac Brochet"</item>
+    <item>"XLJ, Quebec"</item>
+    <item>"XLM, Montreal"</item>
+    <item>"XLQ, Guildwood"</item>
+    <item>"XLS, "</item>
+    <item>"XLV, Niagara Falls"</item>
+    <item>"XLY, Aldershot"</item>
+    <item>"XLZ, Truro"</item>
+    <item>"XMH, Manihi"</item>
+    <item>"XMN, Xiamen"</item>
+    <item>"XMS, Zúñac"</item>
+    <item>"XMY, Yam Island"</item>
+    <item>"XNA, Bentonville"</item>
+    <item>"XNB, Santo Antônio do Içá"</item>
+    <item>"XNM, Nottingham"</item>
+    <item>"XNN, Xining"</item>
+    <item>"XNO, Northallerton"</item>
+    <item>"XNV, Nuneaton"</item>
+    <item>"XNY, New York"</item>
+    <item>"XOK, Oakville"</item>
+    <item>"XOP, Poitiers"</item>
+    <item>"XPB, Parksville"</item>
+    <item>"XPF, Penrith"</item>
+    <item>"XPG, Paris"</item>
+    <item>"XPJ, Montpellier"</item>
+    <item>"XPN, Brampton"</item>
+    <item>"XPQ, Port Klang"</item>
+    <item>"XPT, Preston"</item>
+    <item>"XPX, Pointe-aux-Trembles"</item>
+    <item>"XQE, London"</item>
+    <item>"XQG, Berwick"</item>
+    <item>"XQH, Nottingham"</item>
+    <item>"XQL, Lancaster"</item>
+    <item>"XQP, Quepos"</item>
+    <item>"XQU, Qualicum Beach"</item>
+    <item>"XRC, Runcorn"</item>
+    <item>"XRF, Marseille"</item>
+    <item>"XRP, Pine Ridge"</item>
+    <item>"XRU, Rugby"</item>
+    <item>"XRY, Jerez"</item>
+    <item>"XSC, Cockburn Harbour"</item>
+    <item>"XSH, Tours"</item>
+    <item>"XSI, Nelson House"</item>
+    <item>"XSP, Singapore"</item>
+    <item>"XSR, Salisbury"</item>
+    <item>"XTG, Thargomindah"</item>
+    <item>"XTK, Thirsk"</item>
+    <item>"XTL, Nelson House"</item>
+    <item>"XTY, Strathroy"</item>
+    <item>"XUZ, Xuzhou"</item>
+    <item>"XVA, Stockport"</item>
+    <item>"XVB, Stafford"</item>
+    <item>"XVC, Crewe"</item>
+    <item>"XVG, Longville"</item>
+    <item>"XVH, Peterborough"</item>
+    <item>"XVJ, Stevenage"</item>
+    <item>"XVU, Durham"</item>
+    <item>"XVV, Belleville"</item>
+    <item>"XVW, Belleville"</item>
+    <item>"XWD, Wakefield Westgate"</item>
+    <item>"XWH, Stroke on Trent"</item>
+    <item>"XWK, Karlskrona"</item>
+    <item>"XWL, Gothenburg"</item>
+    <item>"XWM, Hallsberg"</item>
+    <item>"XWN, Warrington"</item>
+    <item>"XWP, Hassleholm"</item>
+    <item>"XWQ, Enkoping"</item>
+    <item>"XWR, Orebro"</item>
+    <item>"XWS, Swindon"</item>
+    <item>"XWV, Varberg"</item>
+    <item>"XWY, Wyoming"</item>
+    <item>"XWZ, Nykoping"</item>
+    <item>"XXA, Alvesta"</item>
+    <item>"XXD, Degerfors"</item>
+    <item>"XXK, Katrineholm"</item>
+    <item>"XXM, Mjolby"</item>
+    <item>"XXN, Riyadh"</item>
+    <item>"XXO, Leksand"</item>
+    <item>"XXT, Valbonne"</item>
+    <item>"XXU, Hedemora"</item>
+    <item>"XXZ, Sundsvall"</item>
+    <item>"XYA, Yandina"</item>
+    <item>"XYB, Borlänge"</item>
+    <item>"XYC, Herrljunga"</item>
+    <item>"XYD, Lyon"</item>
+    <item>"XYF, Falkoping"</item>
+    <item>"XYH, Helsingborg"</item>
+    <item>"XYI, Flen"</item>
+    <item>"XYK, Norrkoping"</item>
+    <item>"XYN, Kristinehamn"</item>
+    <item>"XYP, Avesta Krylbo"</item>
+    <item>"XYQ, Angelholm/Helsingborg"</item>
+    <item>"XYX, Sala"</item>
+    <item>"XYY, Arvika"</item>
+    <item>"XYZ, Harnosand"</item>
+    <item>"XZB, Casselman"</item>
+    <item>"XZC, Glencoe"</item>
+    <item>"XZJ, Rail (Generic)"</item>
+    <item>"XZL, Edmonton"</item>
+    <item>"XZM, Macau"</item>
+    <item>"XZN, Avignon"</item>
+    <item>"XZO, Oslo"</item>
+    <item>"XZU, Rail (Generic)"</item>
+    <item>"XZV, Toulon"</item>
+    <item>"YAA, Alexis Creek"</item>
+    <item>"YAC, Casummit Lake"</item>
+    <item>"YAG, Fort Frances"</item>
+    <item>"YAK, Yakutat"</item>
+    <item>"YAM, Sault Ste. Marie"</item>
+    <item>"YAO, Yaounde"</item>
+    <item>"YAP, Colonia"</item>
+    <item>"YAT, Winisk"</item>
+    <item>"YAX, Casummit Lake"</item>
+    <item>"YAY, St. Anthony"</item>
+    <item>"YAZ, Lake Cowichan"</item>
+    <item>"YBB, Cambridge Bay"</item>
+    <item>"YBC, Betsiamites"</item>
+    <item>"YBG, Saguenay"</item>
+    <item>"YBI, St. Anthony"</item>
+    <item>"YBK, Chesterfield Inlet"</item>
+    <item>"YBL, Gold River"</item>
+    <item>"YBP, Yibin"</item>
+    <item>"YBR, Killarney"</item>
+    <item>"YBT, Brochet"</item>
+    <item>"YBV, Nelson House"</item>
+    <item>"YBW, Bedwell Harbor"</item>
+    <item>"YBX, Havre-St-Pierre"</item>
+    <item>"YBZ, Toronto"</item>
+    <item>"YCA, Courtenay"</item>
+    <item>"YCB, Cambridge Bay"</item>
+    <item>"YCC, Moose Creek"</item>
+    <item>"YCD, Nanaimo"</item>
+    <item>"YCG, Castlegar"</item>
+    <item>"YCK, Hay River"</item>
+    <item>"YCM, Fonthill"</item>
+    <item>"YCO, Cambridge Bay"</item>
+    <item>"YCR, Nelson House"</item>
+    <item>"YCS, Chesterfield Inlet"</item>
+    <item>"YCU, Chesterfield Inlet"</item>
+    <item>"YCY, Iqaluit"</item>
+    <item>"YDA, Dawson"</item>
+    <item>"YDF, St. Anthony"</item>
+    <item>"YDN, Dauphin"</item>
+    <item>"YDP, Happy Valley-Goose Bay"</item>
+    <item>"YDQ, Dawson Creek"</item>
+    <item>"YEG, Leduc"</item>
+    <item>"YEI, Bursa"</item>
+    <item>"YEK, Chesterfield Inlet"</item>
+    <item>"YER, Casummit Lake"</item>
+    <item>"YES, Yasouj"</item>
+    <item>"YEV, Hay River"</item>
+    <item>"YFA, Winisk"</item>
+    <item>"YFB, Iqaluit"</item>
+    <item>"YFC, Fredericton"</item>
+    <item>"YFH, Marathon"</item>
+    <item>"YFJ, Snare Lake"</item>
+    <item>"YFO, Flin Flon"</item>
+    <item>"YFS, Hay River"</item>
+    <item>"YFX, St. Anthony"</item>
+    <item>"YGB, Gibsons"</item>
+    <item>"YGG, Saltspring Island"</item>
+    <item>"YGH, Hay River"</item>
+    <item>"YGJ, Sakaiminato-shi"</item>
+    <item>"YGK, Kingston"</item>
+    <item>"YGL, Chisasibi"</item>
+    <item>"YGO, Nelson House"</item>
+    <item>"YGP, Gaspé"</item>
+    <item>"YGR, Fatima"</item>
+    <item>"YGT, Iqaluit"</item>
+    <item>"YGV, Havre St Pierre"</item>
+    <item>"YGW, Chisasibi"</item>
+    <item>"YGX, Nelson House"</item>
+    <item>"YGZ, Iqaluit"</item>
+    <item>"YHA, St. Anthony"</item>
+    <item>"YHB, Melfort"</item>
+    <item>"YHD, Dryden"</item>
+    <item>"YHG, St. Anthony"</item>
+    <item>"YHI, Holman"</item>
+    <item>"YHK, Cambridge Bay"</item>
+    <item>"YHM, Beamsville"</item>
+    <item>"YHO, Happy Valley-Goose Bay"</item>
+    <item>"YHP, Casummit Lake"</item>
+    <item>"YHR, Havre-St-Pierre"</item>
+    <item>"YHS, Gibsons"</item>
+    <item>"YHU, St-Hubert"</item>
+    <item>"YHY, Hay River"</item>
+    <item>"YHZ, Fall River"</item>
+    <item>"YIF, Havre-St-Pierre"</item>
+    <item>"YIH, Yichang"</item>
+    <item>"YIK, Chisasibi"</item>
+    <item>"YIN, Yining"</item>
+    <item>"YIO, Iqaluit"</item>
+    <item>"YIP, Ypsilanti"</item>
+    <item>"YIV, Nelson House"</item>
+    <item>"YIW, Yiwu"</item>
+    <item>"YJT, Stephenville"</item>
+    <item>"YKA, Kamloops"</item>
+    <item>"YKF, Kitchener"</item>
+    <item>"YKG, Chisasibi"</item>
+    <item>"YKL, Chisasibi"</item>
+    <item>"YKM, Yakima"</item>
+    <item>"YKQ, Chisasibi"</item>
+    <item>"YKS, Yakutsk"</item>
+    <item>"YKT, Masset"</item>
+    <item>"YKU, Chisasibi"</item>
+    <item>"YLC, Iqaluit"</item>
+    <item>"YLE, Hay River"</item>
+    <item>"YLH, Marathon"</item>
+    <item>"YLL, Vegreville"</item>
+    <item>"YLQ, La Tuque"</item>
+    <item>"YLW, Kelowna"</item>
+    <item>"YMH, St. Anthony"</item>
+    <item>"YMM, Fort Chipewyan"</item>
+    <item>"YMN, Happy Valley-Goose Bay"</item>
+    <item>"YMO, Winisk"</item>
+    <item>"YMT, Métabetchouan"</item>
+    <item>"YMX, Mirabel"</item>
+    <item>"YMY, Montreal"</item>
+    <item>"YNA, Havre-St-Pierre"</item>
+    <item>"YNB, Yanbu al Bahr"</item>
+    <item>"YNC, Chisasibi"</item>
+    <item>"YND, Gatineau"</item>
+    <item>"YNE, Nelson House"</item>
+    <item>"YNG, Vienna"</item>
+    <item>"YNJ, Yanji"</item>
+    <item>"YNO, Casummit Lake"</item>
+    <item>"YNP, Natuashish"</item>
+    <item>"YNS, Chisasibi"</item>
+    <item>"YNT, Yantai"</item>
+    <item>"YNY, Sonyang-Myeon"</item>
+    <item>"YNZ, Yancheng"</item>
+    <item>"YOC, Dawson"</item>
+    <item>"YOG, Marathon"</item>
+    <item>"YOH, Nelson House"</item>
+    <item>"YOJ, Brownvale"</item>
+    <item>"YOO, Oshawa"</item>
+    <item>"YOP, Brownvale"</item>
+    <item>"YOW, Ottawa"</item>
+    <item>"YPB, Lake Cowichan"</item>
+    <item>"YPC, Hay River"</item>
+    <item>"YPE, Brownvale"</item>
+    <item>"YPH, Chisasibi"</item>
+    <item>"YPJ, Chisasibi"</item>
+    <item>"YPL, Casummit Lake"</item>
+    <item>"YPM, Casummit Lake"</item>
+    <item>"YPO, Winisk"</item>
+    <item>"YPR, Prince Rupert"</item>
+    <item>"YPW, Powell River"</item>
+    <item>"YPX, Chisasibi"</item>
+    <item>"YPZ, Smithers"</item>
+    <item>"YQB, Ste-Foy"</item>
+    <item>"YQC, Chisasibi"</item>
+    <item>"YQD, The Pas"</item>
+    <item>"YQF, Sylvan Lake"</item>
+    <item>"YQG, Windsor"</item>
+    <item>"YQK, Kenora"</item>
+    <item>"YQL, Pincher"</item>
+    <item>"YQM, Moncton"</item>
+    <item>"YQN, Marathon"</item>
+    <item>"YQQ, Comox"</item>
+    <item>"YQR, Regina"</item>
+    <item>"YQT, Thunder Bay"</item>
+    <item>"YQU, Brownvale"</item>
+    <item>"YQX, Gander"</item>
+    <item>"YQY, Sydney"</item>
+    <item>"YQZ, Quesnel"</item>
+    <item>"YRA, Hay River"</item>
+    <item>"YRB, Iqaluit"</item>
+    <item>"YRF, St. Anthony"</item>
+    <item>"YRG, Happy Valley-Goose Bay"</item>
+    <item>"YRJ, Roberval"</item>
+    <item>"YRL, Casummit Lake"</item>
+    <item>"YRS, Nelson House"</item>
+    <item>"YRT, Chesterfield Inlet"</item>
+    <item>"YSB, Garson"</item>
+    <item>"YSG, Hay River"</item>
+    <item>"YSH, Smiths Falls"</item>
+    <item>"YSJ, St. John"</item>
+    <item>"YSK, Iqaluit"</item>
+    <item>"YSM, Hay River"</item>
+    <item>"YSO, Happy Valley-Goose Bay"</item>
+    <item>"YSR, Iqaluit"</item>
+    <item>"YST, Meiktila"</item>
+    <item>"YSY, Hay River"</item>
+    <item>"YTD, Nelson House"</item>
+    <item>"YTE, Iqaluit"</item>
+    <item>"YTF, Alma"</item>
+    <item>"YTH, Nelson House"</item>
+    <item>"YTL, Casummit Lake"</item>
+    <item>"YTM, Mont Tremblant"</item>
+    <item>"YTQ, Chisasibi"</item>
+    <item>"YTS, South Porcupine"</item>
+    <item>"YTZ, Toronto"</item>
+    <item>"YUB, Hay River"</item>
+    <item>"YUD, Chisasibi"</item>
+    <item>"YUL, Dorval"</item>
+    <item>"YUM, Yuma"</item>
+    <item>"YUT, Chesterfield Inlet"</item>
+    <item>"YUX, Iqaluit"</item>
+    <item>"YUY, Évain"</item>
+    <item>"YVA, Moroni"</item>
+    <item>"YVB, Percé"</item>
+    <item>"YVM, Iqaluit"</item>
+    <item>"YVO, Val-d'or"</item>
+    <item>"YVP, Chisasibi"</item>
+    <item>"YVQ, Hay River"</item>
+    <item>"YVR, Richmond"</item>
+    <item>"YVZ, Casummit Lake"</item>
+    <item>"YWB, Chisasibi"</item>
+    <item>"YWG, Winnipeg"</item>
+    <item>"YWH, Hay River"</item>
+    <item>"YWJ, Hay River"</item>
+    <item>"YWK, Wabush"</item>
+    <item>"YWL, Williams Lake"</item>
+    <item>"YWM, St. Anthony"</item>
+    <item>"YWP, Marathon"</item>
+    <item>"YWS, Gibsons"</item>
+    <item>"YXC, Cranbrook"</item>
+    <item>"YXE, Saskatoon"</item>
+    <item>"YXH, Medicine Hat"</item>
+    <item>"YXJ, Fort St. John"</item>
+    <item>"YXK, Rimouski"</item>
+    <item>"YXL, Sioux Lookout"</item>
+    <item>"YXN, Chesterfield Inlet"</item>
+    <item>"YXP, Iqaluit"</item>
+    <item>"YXS, Prince George"</item>
+    <item>"YXT, Terrace"</item>
+    <item>"YXU, London"</item>
+    <item>"YXX, Abbotsford"</item>
+    <item>"YXY, Whitehorse"</item>
+    <item>"YYB, North Bay"</item>
+    <item>"YYC, Calgary"</item>
+    <item>"YYD, Smithers"</item>
+    <item>"YYE, Fort Nelson"</item>
+    <item>"YYF, Penticton"</item>
+    <item>"YYG, Charlottetown"</item>
+    <item>"YYH, Cambridge Bay"</item>
+    <item>"YYJ, Sidney"</item>
+    <item>"YYL, Nelson House"</item>
+    <item>"YYQ, Nelson House"</item>
+    <item>"YYR, Happy Valley-Goose Bay"</item>
+    <item>"YYT, St. John's"</item>
+    <item>"YYU, Kapuskasing"</item>
+    <item>"YYY, Mont-Joli"</item>
+    <item>"YYZ, Mississauga"</item>
+    <item>"YZF, Yellowknife"</item>
+    <item>"YZG, Chisasibi"</item>
+    <item>"YZP, Masset"</item>
+    <item>"YZR, Sarnia"</item>
+    <item>"YZS, Chesterfield Inlet"</item>
+    <item>"YZT, Gibsons"</item>
+    <item>"YZV, Sept-Îles"</item>
+    <item>"YZZ, Trail"</item>
+    <item>"ZAC, Nelson House"</item>
+    <item>"ZAD, Zadar"</item>
+    <item>"ZAG, Nagygoricza"</item>
+    <item>"ZAH, Dowzdab"</item>
+    <item>"ZAL, Pelchuquin"</item>
+    <item>"ZAM, Zamboanga"</item>
+    <item>"ZAQ, Nuremberg"</item>
+    <item>"ZAT, Zhaotong"</item>
+    <item>"ZAZ, Zaragoza"</item>
+    <item>"ZBA, Basel"</item>
+    <item>"ZBF, Bathurst"</item>
+    <item>"ZBL, Biloela"</item>
+    <item>"ZBP, Baltimore"</item>
+    <item>"ZBR, Chabahar"</item>
+    <item>"ZCB, "</item>
+    <item>"ZCL, Pánuco"</item>
+    <item>"ZCO, Padre Las Casas"</item>
+    <item>"ZDH, Basel"</item>
+    <item>"ZDN, Sydney"</item>
+    <item>"ZDU, London"</item>
+    <item>"ZEE, Kelsey"</item>
+    <item>"ZEI, Zei"</item>
+    <item>"ZEJ, "</item>
+    <item>"ZEL, Masset"</item>
+    <item>"ZEM, Chisasibi"</item>
+    <item>"ZEP, London"</item>
+    <item>"ZEU, Zeu"</item>
+    <item>"ZFI, Chesterfield"</item>
+    <item>"ZFJ, Rennes"</item>
+    <item>"ZFM, Hay River"</item>
+    <item>"ZFN, Hay River"</item>
+    <item>"ZFQ, Bordeaux"</item>
+    <item>"ZFV, Philadelphia"</item>
+    <item>"ZFZ, Buffalo"</item>
+    <item>"ZGD, Groton"</item>
+    <item>"ZGG, Glasgow"</item>
+    <item>"ZGH, Copenhagen"</item>
+    <item>"ZGI, Nelson House"</item>
+    <item>"ZGN, Zhongshan"</item>
+    <item>"ZGO, Gotha"</item>
+    <item>"ZGS, Havre-St-Pierre"</item>
+    <item>"ZGU, Gaua"</item>
+    <item>"ZHA, Zhanjiang"</item>
+    <item>"ZHO, Houston"</item>
+    <item>"ZIF, Ottawa"</item>
+    <item>"ZIG, Ziguinchor"</item>
+    <item>"ZIH, Petatlán"</item>
+    <item>"ZIV, Inverness"</item>
+    <item>"ZJT, Tanjung Pelepas"</item>
+    <item>"ZKE, Winisk"</item>
+    <item>"ZKG, Havre-St-Pierre"</item>
+    <item>"ZLN, Le Mans"</item>
+    <item>"ZLO, Manzanillo"</item>
+    <item>"ZLS, London"</item>
+    <item>"ZLT, Havre-St-Pierre"</item>
+    <item>"ZLY, Albany"</item>
+    <item>"ZMB, Hamburg"</item>
+    <item>"ZME, Newark"</item>
+    <item>"ZML, Milwaukee"</item>
+    <item>"ZMT, Masset"</item>
+    <item>"ZMU, Munich"</item>
+    <item>"ZMY, Huangpu"</item>
+    <item>"ZNA, Nanaimo"</item>
+    <item>"ZNB, Santo Antônio do Içá"</item>
+    <item>"ZNE, Newman"</item>
+    <item>"ZNV, Santa Elena de Uairén"</item>
+    <item>"ZNZ, Stone Town"</item>
+    <item>"ZOS, Osorno"</item>
+    <item>"ZPB, Casummit Lake"</item>
+    <item>"ZQN, Queenstown"</item>
+    <item>"ZQW, Zweibrucken"</item>
+    <item>"ZRB, Frankfurt"</item>
+    <item>"ZRD, Richmond"</item>
+    <item>"ZRH, Kloten"</item>
+    <item>"ZRJ, Casummit Lake"</item>
+    <item>"ZRL, Lancaster"</item>
+    <item>"ZRP, Newark"</item>
+    <item>"ZRT, Hartford"</item>
+    <item>"ZRU, Boston"</item>
+    <item>"ZRV, Providence"</item>
+    <item>"ZSA, Cockburn Town"</item>
+    <item>"ZSE, St Pierre dela Reunion"</item>
+    <item>"ZSF, Springfield"</item>
+    <item>"ZSJ, Casummit Lake"</item>
+    <item>"ZSN, South Indian Lake"</item>
+    <item>"ZTA, Tureira"</item>
+    <item>"ZTB, Havre-St-Pierre"</item>
+    <item>"ZTD, Schenectady"</item>
+    <item>"ZTE, Rochester"</item>
+    <item>"ZTF, Stamford"</item>
+    <item>"ZTH, Zante"</item>
+    <item>"ZTI, Humen"</item>
+    <item>"ZTJ, Princeton"</item>
+    <item>"ZTM, Nelson House"</item>
+    <item>"ZTN, Philadelphia"</item>
+    <item>"ZTO, Boston"</item>
+    <item>"ZTV, Louisville"</item>
+    <item>"ZTY, Boston"</item>
+    <item>"ZUA, Utica"</item>
+    <item>"ZUG, Harrisburg"</item>
+    <item>"ZUH, Zhuhai"</item>
+    <item>"ZUM, Wabush"</item>
+    <item>"ZUN, Zuni"</item>
+    <item>"ZVE, New Haven"</item>
+    <item>"ZVK, Savannakhet"</item>
+    <item>"ZVR, Hanover"</item>
+    <item>"ZWB, Hampton"</item>
+    <item>"ZWE, "</item>
+    <item>"ZWI, Wilmington"</item>
+    <item>"ZWS, Stuttgart"</item>
+    <item>"ZWU, Washington"</item>
+    <item>"ZWV, Glenview"</item>
+    <item>"ZWW, Hampton"</item>
+    <item>"ZXA, Aberdeen"</item>
+    <item>"ZXE, Edinburgh"</item>
+    <item>"ZYA, Amsterdam"</item>
+    <item>"ZYK, Shekou"</item>
+    <item>"ZYL, Sylhet"</item>
+    <item>"ZYN, Nimes"</item>
+    <item>"ZYP, New York"</item>
+    <item>"ZYQ, Syracuse"</item>
+    <item>"ZYR, Brussels"</item>
+    <item>"ZYZ, Antwerp"</item>
+    <item>"TNM, Teniente R. Marsh"</item>
+  </string-array>
+</resources>

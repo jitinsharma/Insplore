@@ -27,11 +27,15 @@ import io.github.jitinsharma.insplore.utilities.Utils;
  * Created by jitin on 18/07/16.
  */
 public class TdService extends IntentService{
-    ArrayList<TopDestinationObject> topDestinationObjects;
+    ArrayList<TopDestinationObject> topDestinationObjects = new ArrayList<>();
     public static final String ACTION_TdService = "io.github.jitinsharma.insplore.service.TdService";
 
+    public TdService(String name) {
+        super(name);
+    }
+
     public TdService(){
-        super("TdService");
+        super("io.github.jitinsharma.insplore.service.TdService");
     }
 
     @Override
@@ -63,7 +67,12 @@ public class TdService extends IntentService{
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("tag", error.getLocalizedMessage());
+                Log.d("tag", ""+error.getLocalizedMessage());
+                Intent intent = new Intent();
+                intent.setAction(ACTION_TdService);
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+                intent.putExtra(Constants.NETWORK_ERROR, ""+error.getMessage());
+                sendBroadcast(intent);
             }
         });
         requestQueue.add(stringRequest);
@@ -71,17 +80,19 @@ public class TdService extends IntentService{
 
     public void getTopDestinationData(String json) throws JSONException{
         JSONObject jsonObject = new JSONObject(json);
-        JSONArray dataArray = jsonObject.getJSONArray("results");
-        JSONObject airportObject = new JSONObject(Utils.loadJSONFromAsset(getBaseContext(), "airport_list.json"));
-        for (int i = 0; i <dataArray.length() ; i++) {
-            JSONObject data = dataArray.getJSONObject(i);
-            TopDestinationObject topDestinationObject = new TopDestinationObject();
-            topDestinationObject.setDestination(data.getString("destination"));
-            JSONObject cityObject = airportObject.getJSONObject(topDestinationObject.getDestination());
-            topDestinationObject.setCityName(cityObject.getString("city"));
-            topDestinationObject.setNoOfFlights(data.getString("flights"));
-            topDestinationObject.setNoOfPax(data.getString("travelers"));
-            topDestinationObjects.add(topDestinationObject);
+        if (jsonObject.has("results")) {
+            JSONArray dataArray = jsonObject.getJSONArray("results");
+            JSONObject airportObject = new JSONObject(Utils.loadJSONFromAsset(getBaseContext(), "airport_list.json"));
+            for (int i = 0; i < dataArray.length(); i++) {
+                JSONObject data = dataArray.getJSONObject(i);
+                TopDestinationObject topDestinationObject = new TopDestinationObject();
+                topDestinationObject.setDestination(data.getString("destination"));
+                JSONObject cityObject = airportObject.getJSONObject(topDestinationObject.getDestination());
+                topDestinationObject.setCityName(cityObject.getString("city"));
+                topDestinationObject.setNoOfFlights(data.getString("flights"));
+                topDestinationObject.setNoOfPax(data.getString("travelers"));
+                topDestinationObjects.add(topDestinationObject);
+            }
         }
         Intent intent = new Intent();
         intent.setAction(ACTION_TdService);

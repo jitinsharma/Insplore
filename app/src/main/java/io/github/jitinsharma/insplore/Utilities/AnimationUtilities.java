@@ -57,4 +57,10 @@ public class AnimationUtilities {
         view.setImageDrawable(drawable);
         view.startAnimation(animation);
     }
+
+    public static void animateViewUp(View view, Context context, int duration){
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.slide_up);
+        animation.setDuration(duration);
+        view.startAnimation(animation);
+    }
 }

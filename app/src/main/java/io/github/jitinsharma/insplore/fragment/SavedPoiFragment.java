@@ -210,8 +210,8 @@ public class SavedPoiFragment extends Fragment implements LoaderManager.LoaderCa
 
             @Override
             public void onMapClicked(int position) {
-                Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + poiObjects.get(position).getPoiLatitude()
-                        +","+poiObjects.get(position).getPoiLongitude());
+                Uri gmmIntentUri = Uri.parse("geo:" + poiObjects.get(position).getPoiLatitude()
+                        +","+poiObjects.get(position).getPoiLongitude()+"?z=15");
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 if (mapIntent.resolveActivity(getContext().getPackageManager()) != null) {

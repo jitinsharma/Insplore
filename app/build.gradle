@@ -61,3 +61,25 @@ task getCitiesAsString {
         stringsFile.write(sw.toString())
     }
 }
+
+task getAirportsAsString{
+    doLast {
+        String path = "app/src/main/assets/airports.json"
+        def inputFile = new File(path)
+        def json = new JsonSlurper().parseText(inputFile.text)
+        def airports = json
+        def sw = new StringWriter()
+        def xml = new MarkupBuilder(sw)
+        xml.resources {
+            'string-array'(name: "airport_cities") {
+                for (int i = 0; i < airports.size; i++) {
+                    def value = airports.get(i).code.toString() + ", " + airports.get(i).city.toString()
+                    //println value
+                    item("\""+value+"\"")
+                }
+            }
+        }
+        def stringsFile = new File("app/src/main/res/values/airports.xml")
+        stringsFile.write(sw.toString())
+    }
+}

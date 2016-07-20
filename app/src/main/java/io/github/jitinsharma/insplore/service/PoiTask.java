@@ -99,19 +99,21 @@ public class PoiTask extends AsyncTask<String, Void, ArrayList<PoiObject>> {
     }
 
     private ArrayList<PoiObject> getPoiData(String json)throws JSONException{
-        JSONObject jsonObject = new JSONObject(json);
-        JSONArray placeArray = jsonObject.getJSONArray("points_of_interest");
-        for (int i = 0; i <placeArray.length() ; i++) {
-            PoiObject poiObject = new PoiObject();
-            JSONObject placeObject = placeArray.getJSONObject(i);
-            poiObject.setMainImageUrl(placeObject.getString("main_image"));
-            poiObject.setTitle(placeObject.getString("title"));
-            poiObject.setPoiDescription(placeObject.getJSONObject("details").getString("description"));
-            poiObject.setWikipediaLink(placeObject.getJSONObject("details").getString("wiki_page_link"));
-            poiObject.setPoiLatitude(placeObject.getJSONObject("location").getString("latitude"));
-            poiObject.setPoiLongitude(placeObject.getJSONObject("location").getString("longitude"));
-            poiObject.setGeoNameId(placeObject.getString("geoname_id"));
-            poiObjects.add(poiObject);
+        if (json!=null) {
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray placeArray = jsonObject.getJSONArray("points_of_interest");
+            for (int i = 0; i < placeArray.length(); i++) {
+                PoiObject poiObject = new PoiObject();
+                JSONObject placeObject = placeArray.getJSONObject(i);
+                poiObject.setMainImageUrl(placeObject.getString("main_image"));
+                poiObject.setTitle(placeObject.getString("title"));
+                poiObject.setPoiDescription(placeObject.getJSONObject("details").getString("description"));
+                poiObject.setWikipediaLink(placeObject.getJSONObject("details").getString("wiki_page_link"));
+                poiObject.setPoiLatitude(placeObject.getJSONObject("location").getString("latitude"));
+                poiObject.setPoiLongitude(placeObject.getJSONObject("location").getString("longitude"));
+                poiObject.setGeoNameId(placeObject.getString("geoname_id"));
+                poiObjects.add(poiObject);
+            }
         }
         return poiObjects;
     }

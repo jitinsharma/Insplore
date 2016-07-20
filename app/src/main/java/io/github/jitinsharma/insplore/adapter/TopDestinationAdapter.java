@@ -23,10 +23,12 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
     LayoutInflater layoutInflater;
     private int lastPosition = -1;
     int duration = 700;
+    OnDetailClick onDetailClick;
 
-    public TopDestinationAdapter(Context context, ArrayList<TopDestinationObject> topDestinationObjects) {
+    public TopDestinationAdapter(Context context, ArrayList<TopDestinationObject> topDestinationObjects, OnDetailClick onDetailClick) {
         this.context = context;
         this.topDestinationObjects = topDestinationObjects;
+        this.onDetailClick = onDetailClick;
     }
 
     @Override
@@ -38,17 +40,19 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
 
     @Override
     public void onBindViewHolder(TopDestinationVH holder, int position) {
+        String places[] = context.getResources().getStringArray(R.array.yapq_cities);
         TopDestinationObject current = topDestinationObjects.get(position);
+        holder.details.setVisibility(View.GONE);
+        for (String place : places) {
+            if (place.contains(current.getCityName())){
+                holder.details.setVisibility(View.VISIBLE);
+            }
+        }
         holder.cityName.setText(current.getCityName());
         holder.noOfFlights.setText(current.getNoOfFlights());
         holder.noOfPax.setText(current.getNoOfPax());
         setAnimation(holder.itemView, position);
     }
-
-    /*@Override
-    public int getItemCount() {
-        return topDestinationObjects.size();
-    }*/
 
     @Override
     public int getItemCount() {
@@ -59,17 +63,26 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
         TextView cityName;
         TextView noOfFlights;
         TextView noOfPax;
+        TextView details;
 
         public TopDestinationVH(View itemView) {
             super(itemView);
+            itemView.setClickable(true);
             cityName = (TextView)itemView.findViewById(R.id.top_dest_city);
             noOfFlights = (TextView) itemView.findViewById(R.id.top_dest_flights);
             noOfPax = (TextView)itemView.findViewById(R.id.top_dest_passengers);
+            details = (TextView)itemView.findViewById(R.id.top_dest_detail);
+
+            details.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onDetailClick.onClick(getAdapterPosition());
+                }
+            });
         }
     }
 
     private void setAnimation(View viewToAnimate, int position) {
-        // If the bound view wasn't previously displayed on screen, it's animated
         duration = duration + 100;
         if (position > lastPosition) {
             Animation animation = AnimationUtils.loadAnimation(context, R.anim.enter_from_right);
@@ -78,4 +91,9 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
             lastPosition = position;
         }
     }
+
+    public interface OnDetailClick{
+        void onClick(int position);
+    }
+
 }

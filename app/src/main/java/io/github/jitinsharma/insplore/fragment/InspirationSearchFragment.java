@@ -73,6 +73,12 @@ public class InspirationSearchFragment extends Fragment {
     }
 
     @Override
+    public void onDestroy() {
+        getContext().unregisterReceiver(inBroadcastReceiver);
+        super.onDestroy();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment

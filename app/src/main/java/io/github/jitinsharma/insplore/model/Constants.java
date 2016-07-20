@@ -17,7 +17,10 @@ public final class Constants {
     public static final String LAST_LAT = "LAST_LATITUDE";
     public static final String LAST_LONG = "LAST_LONGITUDE";
     public static final String TOP_DEST_OBJ = "TOP_DESTINATION_OBJECT";
+    public static final String POI_OBJ = "PLACE_OF_INTEREST_OBJECT";
+    public static final String POI_CITY = "POI_CITY";
     public static final String TRIP_TYPE = "TRIP_TYPE";
     public static final String DEP_AIRPORT = "DEP_AIRPORT";
     public static final String RECEIVE_LIST = "RECEIVE_LIST";
+    public static final String NETWORK_ERROR = "NETWORK_ERROR";
 }

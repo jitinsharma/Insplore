@@ -60,7 +60,7 @@ public class SearchActivity extends AppCompatActivity {
                 getSupportActionBar().setTitle(self.getString(R.string.places_of_interest));
                 imageView.setBackgroundDrawable(getResources().getDrawable(R.drawable.places_toronto));
                 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                PlaceOfInterestFragment placeOfInterestFragment = PlaceOfInterestFragment.newInstance("","");
+                PlaceOfInterestFragment placeOfInterestFragment = PlaceOfInterestFragment.newInstance(null);
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, placeOfInterestFragment)
                         .commit();
