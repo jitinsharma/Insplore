@@ -46,7 +46,7 @@ public class DatePickerFragment extends DialogFragment
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
         Calendar maxDate = Calendar.getInstance();
-        maxDate.add(Calendar.MONTH, -1);
+        maxDate.add(Calendar.MONTH, -2);
 
         Calendar minDate = Calendar.getInstance();
         minDate.set(2011,1,1);
@@ -56,13 +56,13 @@ public class DatePickerFragment extends DialogFragment
                 this, year, month, day);
         datePickerDialog.getDatePicker().setMinDate(minDate.getTimeInMillis());
         datePickerDialog.getDatePicker().setMaxDate(maxDate.getTimeInMillis());
-        datePickerDialog.getDatePicker().updateDate(year-1, month+1, day);
+        datePickerDialog.getDatePicker().updateDate(year, month-1, day);
         return datePickerDialog;
     }
 
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-        onDatePickedListener.onDatePicked(year, month, day, 1);
+        onDatePickedListener.onDatePicked(year, month+1, day, 1);
     }
 
     public interface OnDatePickedListener{

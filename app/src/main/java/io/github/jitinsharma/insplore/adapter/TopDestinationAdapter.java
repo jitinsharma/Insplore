@@ -5,14 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import io.github.jitinsharma.insplore.R;
+import io.github.jitinsharma.insplore.model.OnPlacesClick;
 import io.github.jitinsharma.insplore.model.TopDestinationObject;
+import io.github.jitinsharma.insplore.utilities.AnimationUtilities;
 
 /**
  * Created by jitin on 28/06/16.
@@ -21,14 +21,13 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
     Context context;
     ArrayList<TopDestinationObject> topDestinationObjects;
     LayoutInflater layoutInflater;
-    private int lastPosition = -1;
     int duration = 700;
-    OnDetailClick onDetailClick;
+    OnPlacesClick onPlacesClick;
 
-    public TopDestinationAdapter(Context context, ArrayList<TopDestinationObject> topDestinationObjects, OnDetailClick onDetailClick) {
+    public TopDestinationAdapter(Context context, ArrayList<TopDestinationObject> topDestinationObjects, OnPlacesClick onPlacesClick) {
         this.context = context;
         this.topDestinationObjects = topDestinationObjects;
-        this.onDetailClick = onDetailClick;
+        this.onPlacesClick = onPlacesClick;
     }
 
     @Override
@@ -40,18 +39,19 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
 
     @Override
     public void onBindViewHolder(TopDestinationVH holder, int position) {
-        String places[] = context.getResources().getStringArray(R.array.yapq_cities);
         TopDestinationObject current = topDestinationObjects.get(position);
         holder.details.setVisibility(View.GONE);
-        for (String place : places) {
-            if (place.contains(current.getCityName())){
-                holder.details.setVisibility(View.VISIBLE);
-            }
+        if (current.isPlaceEnabled()){
+            holder.details.setVisibility(View.VISIBLE);
+        }
+        else{
+            holder.details.setVisibility(View.GONE);
         }
         holder.cityName.setText(current.getCityName());
         holder.noOfFlights.setText(current.getNoOfFlights());
         holder.noOfPax.setText(current.getNoOfPax());
-        setAnimation(holder.itemView, position);
+        AnimationUtilities.setAdapterSlideAnimation(holder.itemView, context, position, duration);
+        duration = duration + 100;
     }
 
     @Override
@@ -76,24 +76,9 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
             details.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onDetailClick.onClick(getAdapterPosition());
+                    onPlacesClick.onClick(getAdapterPosition());
                 }
             });
         }
     }
-
-    private void setAnimation(View viewToAnimate, int position) {
-        duration = duration + 100;
-        if (position > lastPosition) {
-            Animation animation = AnimationUtils.loadAnimation(context, R.anim.enter_from_right);
-            animation.setDuration(duration);
-            viewToAnimate.startAnimation(animation);
-            lastPosition = position;
-        }
-    }
-
-    public interface OnDetailClick{
-        void onClick(int position);
-    }
-
 }

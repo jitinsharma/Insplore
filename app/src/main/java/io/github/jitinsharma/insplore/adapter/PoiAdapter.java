@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,7 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 
 import java.util.ArrayList;
 
@@ -59,11 +62,6 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
         this.onItemClick = onItemClick;
     }
 
-    public PoiAdapter(Context context, ArrayList<PoiObject> poiObjects) {
-        this.context = context;
-        this.poiObjects = poiObjects;
-    }
-
     public PoiAdapter(Context context, ArrayList<PoiObject> poiObjects, OnItemClick onItemClick) {
         this.context = context;
         this.poiObjects = poiObjects;
@@ -78,7 +76,7 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
     }
 
     @Override
-    public void onBindViewHolder(PoiVH holder, int position) {
+    public void onBindViewHolder(final PoiVH holder, int position) {
         PoiObject current = poiObjects.get(position);
         if (current.getPoiLatitude()!=null){
             selectionArgs = new String[]{current.getPoiLatitude()};
@@ -91,19 +89,25 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
                 null
         );
         if (cursor!=null && cursor.moveToFirst()){
-            holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_accent_24dp));
+            holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.state_favorite_accent));
         }
         else{
-            holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_border_black_24dp));
+            holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.state_favorite_border_accent));
         }
         holder.poiTitle.setText(current.getTitle());
         holder.poiDescription.setVisibility(View.GONE);
-        //holder.poiDescription.setText(current.getPoiDescription());
         Glide.with(context)
                 .load(current.getMainImageUrl())
-                .into(holder.poiImage);
+                .asBitmap()
+                .into(new SimpleTarget<Bitmap>(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL) {
+                    @Override
+                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                        holder.poiImage.setImageBitmap(resource);
+                    }
+                });
         holder.poiImage.setColorFilter(context.getResources().getColor(android.R.color.darker_gray), android.graphics.PorterDuff.Mode.MULTIPLY);
-        AnimationUtilities.setAnimation(holder.itemView, context, position, 400);
+        AnimationUtilities.setAdapterSlideAnimation(holder.itemView, context, position, 400);
+        cursor.close();
     }
 
     @Override
@@ -144,8 +148,8 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
                     );
                     if (cursor!=null && !cursor.moveToFirst()){
                         ContentValues poiValues = new ContentValues();
-                        //bitmap = ((BitmapDrawable)poiImage.getDrawable()).getBitmap();
-                        bitmap = ((GlideBitmapDrawable)poiImage.getDrawable().getCurrent()).getBitmap();
+                        bitmap = ((BitmapDrawable)poiImage.getDrawable()).getBitmap();
+                        //bitmap = ((GlideBitmapDrawable)poiImage.getDrawable().getCurrent()).getBitmap();
                         imageArray = Utils.convertBitmapToBytes(bitmap);
 
                         poiValues.put(PoiEntry.COLUMN_GEO_ID, cursorPoiObject.getGeoNameId());
@@ -158,10 +162,10 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
                         Uri uri = context.getContentResolver().insert(PoiEntry.CONTENT_URI, poiValues);
                         Animation in = AnimationUtils.loadAnimation(context, R.anim.fade_in);
                         Animation out = AnimationUtils.loadAnimation(context, R.anim.fade_out);
-                        poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_accent_24dp));
+                        poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.state_favorite_accent));
                         poiFavorite.setAnimation(out);
                         in.start();
-                        Toast.makeText(context, "Added to favorites", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, context.getString(R.string.add_favorite), Toast.LENGTH_SHORT).show();
                     }
                     else{
                         context.getContentResolver().delete(
@@ -170,9 +174,9 @@ public class PoiAdapter extends RecyclerView.Adapter<PoiAdapter.PoiVH>{
                                 new String[]{cursorPoiObject.getPoiLatitude()}
                         );
                         Animation out = AnimationUtils.loadAnimation(context, R.anim.fade_out);
-                        poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_border_black_24dp));
+                        poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.state_favorite_border_accent));
                         poiFavorite.setAnimation(out);
-                        Toast.makeText(context, "Removed from favorites", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, context.getString(R.string.remove_favorite), Toast.LENGTH_SHORT).show();
                     }
                     //notifyDataSetChanged();
                     cursor.close();

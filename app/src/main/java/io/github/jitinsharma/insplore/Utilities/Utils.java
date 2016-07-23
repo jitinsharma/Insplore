@@ -3,6 +3,8 @@ package io.github.jitinsharma.insplore.utilities;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -41,5 +43,10 @@ public class Utils {
         bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
         bytes = stream.toByteArray();
         return bytes;
+    }
+
+    public static void hideKeyBoard(Context context, View view){
+        InputMethodManager in = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        in.hideSoftInputFromWindow(view.getApplicationWindowToken(), 0);
     }
 }

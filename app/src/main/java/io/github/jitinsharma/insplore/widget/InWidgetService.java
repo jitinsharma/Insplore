@@ -6,7 +6,6 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.database.Cursor;
-import android.util.Log;
 import android.widget.RemoteViews;
 
 import io.github.jitinsharma.insplore.R;
@@ -44,6 +43,7 @@ public class InWidgetService extends IntentService{
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this, InWidgetProvider.class));
         tinyDB = new TinyDB(this);
+        String cityName = tinyDB.getString(Constants.SAVED_CITY);
         cursor = getContentResolver().query(
                 InContract.PoiEntry.CONTENT_URI,
                 POI_COLUMNS,
@@ -52,18 +52,7 @@ public class InWidgetService extends IntentService{
                 null
         );
 
-        if (cursor == null) {
-            return;
-        }
-        if (!cursor.moveToFirst()) {
-            cursor.close();
-            return;
-        }
-
-        String cityName = tinyDB.getString(Constants.SAVED_CITY);
-        Log.d("WIDGET_TAG", cityName);
-
-        if (cursor.moveToLast()){
+        if (cursor!=null && cursor.moveToLast()){
             poiName = cursor.getString(cursor.getColumnIndex(InContract.PoiEntry.COLUMN_POI_TITLE));
             imageArray = cursor.getBlob(cursor.getColumnIndex(InContract.PoiEntry.COLUMN_POI_IMAGE));
         }
@@ -71,8 +60,15 @@ public class InWidgetService extends IntentService{
         for (int appWidgetId : appWidgetIds) {
             RemoteViews views = new RemoteViews(getPackageName(), R.layout.in_widget);
             views.setTextViewText(R.id.widget_city_name, cityName);
-            views.setTextViewText(R.id.widget_poi_title, poiName);
-            views.setImageViewBitmap(R.id.widget_poi_image, Utils.convertBytesToBitmap(imageArray));
+            if (poiName!=null) {
+                views.setTextViewText(R.id.widget_poi_title, poiName);
+            }
+            else{
+                views.setTextViewText(R.id.widget_poi_title, getBaseContext().getString(R.string.empty_text));
+            }
+            if (imageArray!=null) {
+                views.setImageViewBitmap(R.id.widget_poi_image, Utils.convertBytesToBitmap(imageArray));
+            }
 
             Intent launchIntent = new Intent(this, MainActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, launchIntent, 0);

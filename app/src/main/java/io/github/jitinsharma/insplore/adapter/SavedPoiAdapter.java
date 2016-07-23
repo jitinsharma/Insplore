@@ -1,8 +1,6 @@
 package io.github.jitinsharma.insplore.adapter;
 
 import android.content.Context;
-import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +12,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import io.github.jitinsharma.insplore.R;
-import io.github.jitinsharma.insplore.utilities.Utils;
 import io.github.jitinsharma.insplore.data.InContract;
 import io.github.jitinsharma.insplore.model.OnItemClick;
 import io.github.jitinsharma.insplore.model.PoiObject;
+import io.github.jitinsharma.insplore.utilities.AnimationUtilities;
+import io.github.jitinsharma.insplore.utilities.Utils;
 
 /**
  * Created by jitin on 10/07/16.
@@ -27,21 +26,8 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
     LayoutInflater layoutInflater;
     ArrayList<PoiObject> poiObjects;
     OnItemClick onItemClick;
-    String[] selectionArgs;
-    Bitmap bitmap;
-    byte[] imageArray;
     PoiObject cursorPoiObject;
-    Cursor cursor;
-    public static final String[] POI_COLUMNS = {
-            InContract.PoiEntry._ID,
-            InContract.PoiEntry.COLUMN_POI_TITLE,
-            InContract.PoiEntry.COLUMN_POI_DESC,
-            InContract.PoiEntry.COLUMN_POI_IMAGE,
-            InContract.PoiEntry.COLUMN_POI_LAT,
-            InContract.PoiEntry.COLUMN_POI_LONG,
-            InContract.PoiEntry.COLUMN_GEO_ID,
-            InContract.PoiEntry.COLUMN_POI_WIKI_LINK
-    };
+    int duration = 500;
 
     public SavedPoiAdapter(Context context, ArrayList<PoiObject> poiObjects, OnItemClick onItemClick) {
         this.context = context;
@@ -64,7 +50,9 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
         //holder.poiDescription.setText(current.getPoiDescription());
         holder.poiImage.setImageBitmap(Utils.convertBytesToBitmap(current.getImageArray()));
         holder.poiImage.setColorFilter(context.getResources().getColor(android.R.color.darker_gray), android.graphics.PorterDuff.Mode.MULTIPLY);
-        holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_accent_24dp));
+        holder.poiFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.state_favorite_accent));
+        AnimationUtilities.setAdapterSlideAnimation(holder.itemView, context, position, duration);
+        duration = duration + 100;
     }
 
     @Override
@@ -100,7 +88,7 @@ public class SavedPoiAdapter extends RecyclerView.Adapter<SavedPoiAdapter.SavedP
                             InContract.PoiEntry.CONTENT_URI,
                             InContract.PoiEntry.COLUMN_POI_LAT + " = ?",
                             new String[]{cursorPoiObject.getPoiLatitude()});
-                    Toast.makeText(context, "Removed from favorites", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, context.getString(R.string.remove_favorite), Toast.LENGTH_SHORT).show();
                     onItemClick.onFavoriteClicked(getAdapterPosition());
                 }
             });

@@ -6,7 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,8 +21,11 @@ import android.widget.ProgressBar;
 import java.util.ArrayList;
 
 import io.github.jitinsharma.insplore.R;
+import io.github.jitinsharma.insplore.activities.SearchActivity;
 import io.github.jitinsharma.insplore.adapter.InspireSearchAdapter;
+import io.github.jitinsharma.insplore.model.Constants;
 import io.github.jitinsharma.insplore.model.InspireSearchObject;
+import io.github.jitinsharma.insplore.model.OnPlacesClick;
 import io.github.jitinsharma.insplore.service.InService;
 
 /**
@@ -27,38 +34,24 @@ import io.github.jitinsharma.insplore.service.InService;
  * create an instance of this fragment.
  */
 public class InspirationSearchFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String airportCode;
     private RecyclerView searchResults;
-    private InspireSearchAdapter inspireSearchAdapter;
     private ArrayList<InspireSearchObject> inspireSearchObjects;
     InBroadcastReceiver inBroadcastReceiver;
     ProgressBar progressBar;
+    String tripType;
+    SearchActivity searchActivity;
 
     public InspirationSearchFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment InspirationSearchFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static InspirationSearchFragment newInstance(String param1, String param2) {
+    public static InspirationSearchFragment newInstance(String airportCode, String tripType) {
         InspirationSearchFragment fragment = new InspirationSearchFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(Constants.DEP_AIRPORT, airportCode);
+        args.putString(Constants.TRIP_TYPE, tripType);
         fragment.setArguments(args);
         return fragment;
     }
@@ -67,35 +60,49 @@ public class InspirationSearchFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            airportCode = getArguments().getString(Constants.DEP_AIRPORT);
+            tripType = getArguments().getString(Constants.TRIP_TYPE);
         }
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList(Constants.INSPIRE_OBJ, inspireSearchObjects);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void onDestroy() {
-        getContext().unregisterReceiver(inBroadcastReceiver);
+        if (inBroadcastReceiver!=null) {
+            getContext().unregisterReceiver(inBroadcastReceiver);
+        }
         super.onDestroy();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        searchActivity = (SearchActivity) getActivity();
         View root = inflater.inflate(R.layout.fragment_inspiration_search, container, false);
+        searchActivity.updateImage(ContextCompat.getDrawable(getContext(), R.drawable.inspire));
+        searchActivity.getSupportActionBar().setTitle(getContext().getString(R.string.inspire_search));
+        if (savedInstanceState!=null){
+            inspireSearchObjects = savedInstanceState.getParcelableArrayList(Constants.INSPIRE_OBJ);
+            searchActivity.updateImage(ContextCompat.getDrawable(getContext(), R.drawable.inspire));
+            searchActivity.getSupportActionBar().setTitle(getContext().getString(R.string.inspire_search));
+        }
         searchResults = (RecyclerView)root.findViewById(R.id.inspire_search_results);
         progressBar = (ProgressBar)root.findViewById(R.id.inspire_progress);
         searchResults.setLayoutManager(new LinearLayoutManager(getContext()));
-        //inspireSearchAdapter = new InspireSearchAdapter(getContext(), new ArrayList<InspireSearchObject>());
-        //searchResults.setAdapter(inspireSearchAdapter);
 
-        Intent inService = new Intent(getActivity(), InService.class);
-        getActivity().startService(inService);
-        inBroadcastReceiver = new InBroadcastReceiver();
-        IntentFilter intentFilter = new IntentFilter(InService.ACTION_InService);
-        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
-        getContext().registerReceiver(inBroadcastReceiver, intentFilter);
-
+        initializeReceiver();
+        if (inspireSearchObjects!=null){
+            progressBar.setVisibility(View.GONE);
+            setAdapterWithData();
+        }
+        else {
+            initializeService();
+        }
         return root;
     }
 
@@ -103,10 +110,53 @@ public class InspirationSearchFragment extends Fragment {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            inspireSearchObjects = intent.getParcelableArrayListExtra("KEY");
-            inspireSearchAdapter = new InspireSearchAdapter(getContext(), inspireSearchObjects);
-            searchResults.setAdapter(inspireSearchAdapter);
             progressBar.setVisibility(View.GONE);
+            if (intent.getStringExtra(Constants.NETWORK_ERROR)!=null){
+                Snackbar.make(getView(), getContext().getString(R.string.server_error), Snackbar.LENGTH_LONG).show();
+            }
+            else {
+                inspireSearchObjects = intent.getParcelableArrayListExtra("KEY");
+                if (inspireSearchObjects!=null && inspireSearchObjects.size()>0) {
+                    setAdapterWithData();
+                }
+                else{
+                    Snackbar.make(getView(), getContext().getString(R.string.no_result_error), Snackbar.LENGTH_LONG).show();
+                }
+            }
         }
+    }
+
+    public void setAdapterWithData(){
+        InspireSearchAdapter inspireSearchAdapter = new InspireSearchAdapter(getContext(), inspireSearchObjects, new OnPlacesClick() {
+            @Override
+            public void onClick(int position) {
+                displayPlacesOfInterest(inspireSearchObjects.get(position).getDestinationCity());
+            }
+        });
+        searchResults.setAdapter(inspireSearchAdapter);
+    }
+
+    public void displayPlacesOfInterest(String city){
+        searchActivity.updateTitle(getContext().getString(R.string.places_of_interest));
+        PlaceOfInterestFragment fragment = PlaceOfInterestFragment.newInstance(city);
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .commit();
+    }
+
+    public void initializeReceiver(){
+        inBroadcastReceiver = new InBroadcastReceiver();
+        IntentFilter intentFilter = new IntentFilter(InService.ACTION_InService);
+        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+        getContext().registerReceiver(inBroadcastReceiver, intentFilter);
+    }
+
+    public void initializeService(){
+        Intent inService = new Intent(getActivity(), InService.class);
+        inService.putExtra(Constants.DEP_AIRPORT, airportCode);
+        inService.putExtra(Constants.TRIP_TYPE, tripType);
+        getActivity().startService(inService);
     }
 }

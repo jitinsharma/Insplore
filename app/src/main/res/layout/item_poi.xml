@@ -22,6 +22,7 @@
                 android:id="@+id/poi_image"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:src="@drawable/placeholder"
                 android:contentDescription="@string/image"
                 android:scaleType="fitXY"/>
 
@@ -48,8 +49,7 @@
                 android:id="@+id/poi_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/standard_padding"
-                android:text="@string/city_short"/>
+                android:padding="@dimen/standard_padding" />
 
             <View
                 android:id="@+id/poi_line_divider"
@@ -66,9 +66,10 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:clickable="true"
+                android:contentDescription="@string/add_remove_favorite"
                 android:background="?attr/selectableItemBackground"
                 android:padding="@dimen/standard_padding"
-                android:src="@drawable/ic_favorite_border_black_24dp"/>
+                android:src="@drawable/state_favorite_border_accent"/>
 
             <ImageView
                 android:id="@+id/poi_explore"
@@ -78,9 +79,10 @@
                 android:layout_toLeftOf="@+id/poi_favorite"
                 android:layout_toStartOf="@+id/poi_favorite"
                 android:clickable="true"
+                android:contentDescription="@string/explore"
                 android:background="?attr/selectableItemBackground"
                 android:padding="@dimen/standard_padding"
-                android:src="@drawable/ic_explore_black_24dp"/>
+                android:src="@drawable/state_explore_accent"/>
 
             <ImageView
                 android:id="@+id/poi_wiki"
@@ -92,6 +94,7 @@
                 android:clickable="true"
                 android:background="?attr/selectableItemBackground"
                 android:padding="@dimen/standard_padding"
+                android:contentDescription="@string/wiki"
                 android:src="@mipmap/ic_wikipedia_logotype_of_earth_puzzle"/>
 
             <ImageView
@@ -102,9 +105,10 @@
                 android:layout_toLeftOf="@+id/poi_wiki"
                 android:layout_toStartOf="@+id/poi_wiki"
                 android:clickable="true"
+                android:contentDescription="@string/share"
                 android:background="?attr/selectableItemBackground"
                 android:padding="@dimen/standard_padding"
-                android:src="@drawable/ic_share_black_24dp"/>
+                android:src="@drawable/state_share_accent"/>
         </RelativeLayout>
     </RelativeLayout>
 </android.support.v7.widget.CardView>

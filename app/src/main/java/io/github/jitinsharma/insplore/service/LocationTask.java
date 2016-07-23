@@ -28,6 +28,7 @@ import io.github.jitinsharma.insplore.model.LocationObject;
 public class LocationTask extends AsyncTask<LatLng, Void, LocationObject> {
     Context context;
     public AsyncTaskListener<LocationObject> asyncTaskListener;
+    LocationObject locationObject;
 
     public LocationTask(Context context, AsyncTaskListener<LocationObject> asyncTaskListener) {
         this.context = context;
@@ -109,12 +110,13 @@ public class LocationTask extends AsyncTask<LatLng, Void, LocationObject> {
     }
 
     public LocationObject getAirportAndCity(String airportJson) throws JSONException {
-        //JSONObject jsonObject = new JSONObject(airportJson);
-        LocationObject locationObject = new LocationObject();
-        JSONArray dataArray = new JSONArray(airportJson);
-        JSONObject nearestData = dataArray.getJSONObject(0);
-        locationObject.setAirportCode(nearestData.getString("airport"));
-        locationObject.setCityName(nearestData.getString("city_name"));
+        if (airportJson!=null) {
+            locationObject = new LocationObject();
+            JSONArray dataArray = new JSONArray(airportJson);
+            JSONObject nearestData = dataArray.getJSONObject(0);
+            locationObject.setAirportCode(nearestData.getString("airport"));
+            locationObject.setCityName(nearestData.getString("city_name"));
+        }
         return locationObject;
     }
 }

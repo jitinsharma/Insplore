@@ -14,6 +14,8 @@ public class InspireSearchObject implements Parcelable{
     String airlineCode;
     String depCode;
     String destinationCity;
+    String currencyCode;
+    boolean placeEnabled;
 
     public InspireSearchObject() {
 
@@ -27,6 +29,8 @@ public class InspireSearchObject implements Parcelable{
         airlineCode = in.readString();
         depCode = in.readString();
         destinationCity = in.readString();
+        currencyCode = in.readString();
+        placeEnabled = in.readByte() != 0;
     }
 
     public static final Creator<InspireSearchObject> CREATOR = new Creator<InspireSearchObject>() {
@@ -97,6 +101,23 @@ public class InspireSearchObject implements Parcelable{
         this.airlineCode = airlineCode;
     }
 
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
+
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
+
+    public boolean isPlaceEnabled() {
+        return placeEnabled;
+    }
+
+    public void setPlaceEnabled(boolean placeEnabled) {
+        this.placeEnabled = placeEnabled;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -111,5 +132,7 @@ public class InspireSearchObject implements Parcelable{
         parcel.writeString(airlineCode);
         parcel.writeString(depCode);
         parcel.writeString(destinationCity);
+        parcel.writeString(currencyCode);
+        parcel.writeByte((byte) (placeEnabled ? 1 : 0));
     }
 }

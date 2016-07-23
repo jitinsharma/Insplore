@@ -1,31 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/widget_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <ImageView
-        android:id="@+id/widget_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:tintMode="multiply"
-        android:src="@android:color/transparent"
-        android:tint="@android:color/darker_gray"/>
+    android:background="@android:color/white">
 
     <TextView
         android:id="@+id/widget_city_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hyphen"
-        android:padding="@dimen/standard_padding"
-        android:drawableLeft="@drawable/ic_location_on_black_24dp"
-        android:drawableStart="@drawable/ic_location_on_black_24dp"
+        android:background="@color/colorPrimary"
+        android:drawableLeft="@drawable/state_location_on_white"
         android:drawablePadding="@dimen/standard_padding"
+        android:drawableStart="@drawable/state_location_on_white"
+        android:padding="@dimen/standard_padding"
+        android:text="@string/hyphen"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
-        tools:text="New Delhi"
-        android:textSize="20sp"/>
+        tools:text="New Delhi" />
 
     <RelativeLayout
         android:id="@+id/widget_saved_poi"
@@ -33,29 +27,35 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/widget_city_name">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/widget_poi_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/standard_padding"
+            android:textStyle="bold|italic"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/widget_text"/>
+
+        <ImageView
+            android:id="@+id/widget_poi_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="150dp"
+            android:contentDescription="@string/image"
+            android:scaleType="fitXY"
+            android:layout_below="@+id/widget_poi_text"
+            android:src="@drawable/placeholder" />
 
-            <ImageView
-                android:id="@+id/widget_poi_image"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:contentDescription="@string/image"
-                android:src="@drawable/lotus_temple"
-                android:scaleType="fitXY"/>
-
-            <TextView
-                android:id="@+id/widget_poi_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/standard_padding"
-                android:textStyle="bold"
-                android:textSize="25sp"
-                android:fontFamily="sans-serif-light"
-                android:textColor="@android:color/white"
-                android:text="@string/hyphen"
-                tools:text="Lotus Temple"/>
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/widget_poi_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:padding="@dimen/standard_padding"
+            android:text="@string/empty_text"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/widget_poi_text"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:text="Lotus Temple" />
     </RelativeLayout>
-    </RelativeLayout>
+</RelativeLayout>

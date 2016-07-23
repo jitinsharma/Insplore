@@ -4,7 +4,6 @@ import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -32,26 +31,17 @@ public class AnimationUtilities {
         colorAnimation.start();
     }
 
-    public static void setAnimation(View viewToAnimate, Context context, int position, int duration) {
+    public static void setAdapterSlideAnimation(View viewToAnimate, Context context, int position, int duration) {
         duration = duration + 100;
         if (position > lastPosition) {
-            Animation animation = AnimationUtils.loadAnimation(context, R.anim.slide_up);
+            Animation animation = AnimationUtils.loadAnimation(context, R.anim.enter_from_right);
             animation.setDuration(duration);
             viewToAnimate.startAnimation(animation);
             lastPosition = position;
         }
     }
 
-    public static void animateImage(ImageView imageView, Drawable from, Drawable to){
-        Drawable[] layers = new Drawable[2];
-        layers[0] = from;
-        layers[1] = to;
-        TransitionDrawable transitionDrawable = new TransitionDrawable(layers);
-        imageView.setImageDrawable(transitionDrawable);
-        transitionDrawable.startTransition(1000);
-    }
-
-    public static void animateSlideIn(ImageView view, Context context, int duration, Drawable drawable){
+    public static void animateImageFadeIn(ImageView view, Context context, int duration, Drawable drawable){
         Animation animation = AnimationUtils.loadAnimation(context, R.anim.fade_in);
         animation.setDuration(duration);
         view.setImageDrawable(drawable);

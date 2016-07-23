@@ -12,6 +12,7 @@ public class TopDestinationObject implements Parcelable{
     String noOfPax;
     String cityName;
     String poiCityName;
+    boolean placeEnabled;
 
     public TopDestinationObject() {
     }
@@ -22,6 +23,7 @@ public class TopDestinationObject implements Parcelable{
         noOfPax = in.readString();
         cityName = in.readString();
         poiCityName = in.readString();
+        placeEnabled = in.readByte()!=0;
     }
 
     public static final Creator<TopDestinationObject> CREATOR = new Creator<TopDestinationObject>() {
@@ -76,6 +78,14 @@ public class TopDestinationObject implements Parcelable{
         this.poiCityName = poiCityName;
     }
 
+    public boolean isPlaceEnabled() {
+        return placeEnabled;
+    }
+
+    public void setPlaceEnabled(boolean placeEnabled) {
+        this.placeEnabled = placeEnabled;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -88,5 +98,6 @@ public class TopDestinationObject implements Parcelable{
         parcel.writeString(noOfPax);
         parcel.writeString(cityName);
         parcel.writeString(poiCityName);
+        parcel.writeByte((byte)(placeEnabled ? 1 : 0));
     }
 }

@@ -4,18 +4,27 @@ import groovy.json.JsonSlurper
 import groovy.xml.MarkupBuilder
 
 android {
+    signingConfigs {
+        release {
+            keyAlias 'insplore'
+            keyPassword 'insplore'
+            storeFile file('keystore/key.jks')
+            storePassword 'insplore'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "io.github.jitinsharma.insplore"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

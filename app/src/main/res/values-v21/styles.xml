@@ -9,7 +9,8 @@
         <item name="android:windowContentTransitions">true</item>
     </style>
 
-    <style name="Background" parent="AppTheme.NoActionBar">
-        <item name="android:background">@drawable/blur_bg_3</item>
+
+    <style name="Search" parent="AppTheme.NoActionBar">
+        <item name="android:windowTranslucentStatus">false</item>
     </style>
 </resources>

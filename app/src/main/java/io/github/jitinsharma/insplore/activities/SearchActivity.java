@@ -4,14 +4,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -28,94 +34,103 @@ public class SearchActivity extends AppCompatActivity {
     Bundle bundle;
     ImageView imageView;
     CollapsingToolbarLayout collapsingToolbarLayout;
+    AppBarLayout appBarLayout;
+    Toolbar toolbar;
     private int mMutedColor = 0xFF333333;
+    FragmentManager fragmentManager;
+    static{
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        appBarLayout = (AppBarLayout)findViewById(R.id.search_app_bar);
         collapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
+        toolbar = (Toolbar)findViewById(R.id.search_toolbar);
         imageView = (ImageView)findViewById(R.id.toolbar_image);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         self = getBaseContext();
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
 
         if (getIntent() != null && getIntent().hasExtra(Constants.INTENT_TYPE)) {
             Intent intent = getIntent();
             if (getIntent().getStringExtra(Constants.INTENT_TYPE).equals(Constants.TOP_DESTINATION)) {
-                imageView.setBackgroundDrawable(self.getResources().getDrawable(R.drawable.skyscrapers));
-                getSupportActionBar().setTitle(self.getString(R.string.top_destination));
                 bundle = new Bundle();
                 bundle.putString(Constants.TD_MONTH, getIntent().getStringExtra(Constants.TD_MONTH));
                 bundle.putString(Constants.SAVED_AIRPORT_CODE, getIntent().getStringExtra(Constants.SAVED_AIRPORT_CODE));
                 TopDestinationFragment topDestinationFragment = new TopDestinationFragment();
                 topDestinationFragment.setArguments(bundle);
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, topDestinationFragment)
-                        .commit();
+                loadFragment(topDestinationFragment);
             }
             else if (getIntent().getStringExtra(Constants.INTENT_TYPE).equals(Constants.POI)){
-                getSupportActionBar().setTitle(self.getString(R.string.places_of_interest));
-                imageView.setBackgroundDrawable(getResources().getDrawable(R.drawable.places_toronto));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 PlaceOfInterestFragment placeOfInterestFragment = PlaceOfInterestFragment.newInstance(null);
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, placeOfInterestFragment)
-                        .commit();
+                loadFragment(placeOfInterestFragment);
             }
             else if (getIntent().getStringExtra(Constants.INTENT_TYPE).equals(Constants.SAVED_POI)){
-                getSupportActionBar().setTitle(self.getString(R.string.my_saved_places));
-                imageView.setBackgroundDrawable(getResources().getDrawable(R.drawable.places_toronto));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                SavedPoiFragment savedPoiFragment = SavedPoiFragment.newInstance("","");
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, savedPoiFragment)
-                        .commit();
+                SavedPoiFragment savedPoiFragment = SavedPoiFragment.newInstance();
+                loadFragment(savedPoiFragment);
             }
             else if (getIntent().getStringExtra(Constants.INTENT_TYPE).equals(Constants.INSPIRE_ME)){
-                getSupportActionBar().setTitle(self.getString(R.string.inspire_search));
-                imageView.setBackgroundDrawable(getResources().getDrawable(R.drawable.inspire));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setColorFilter(self.getResources().getColor(android.R.color.darker_gray), android.graphics.PorterDuff.Mode.MULTIPLY);
-                InspirationSearchFragment fragment = InspirationSearchFragment.newInstance("","");
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
-                        .commit();
+                InspirationSearchFragment fragment = InspirationSearchFragment.newInstance(intent.getStringExtra(Constants.SAVED_AIRPORT_CODE)
+                        ,intent.getStringExtra(Constants.TRIP_TYPE));
+                loadFragment(fragment);
             }
         }
         else{
-            getSupportActionBar().setTitle(self.getString(R.string.my_saved_places));
-            imageView.setBackgroundDrawable(getResources().getDrawable(R.drawable.places_toronto));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            SavedPoiFragment savedPoiFragment = SavedPoiFragment.newInstance("","");
-            fragmentManager.beginTransaction()
-                    .replace(R.id.container, savedPoiFragment)
-                    .commit();
+            SavedPoiFragment savedPoiFragment = SavedPoiFragment.newInstance();
+            loadFragment(savedPoiFragment);
         }
-        updateWindowColor(imageView);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if(collapsingToolbarLayout.getHeight() + verticalOffset < 2 * ViewCompat.getMinimumHeight(collapsingToolbarLayout)) {
+                    Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
+                    Palette p = Palette.generate(bitmap, 12);
+                    mMutedColor = p.getDarkMutedColor(0xFF333333);
+                    collapsingToolbarLayout.setContentScrimColor(mMutedColor);
+                    final Window window = getWindow();
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                        window.setStatusBarColor(mMutedColor);
+                    }
+                }
+                else
+                {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                        getWindow().setStatusBarColor(ContextCompat.getColor(self,android.R.color.transparent));
+                    }
+                }
+            }
+        });
+    }
+
+    public void loadFragment(Fragment fragment){
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .commit();
     }
 
     public void updateWindowColor(ImageView imageView){
-        Bitmap bitmap = ((BitmapDrawable)imageView.getBackground()).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
         Palette p = Palette.generate(bitmap, 12);
         mMutedColor = p.getDarkMutedColor(0xFF333333);
         collapsingToolbarLayout.setContentScrimColor(mMutedColor);
-        Window window = getWindow();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(mMutedColor);
-        }
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        if (intent!=null){
-            String test = ""+intent.getStringExtra(Constants.SAVED_POI);
-            Log.d("tag", test);
-        }
-        super.onNewIntent(intent);
+    public void updateImage(Drawable drawable){
+        imageView.setImageDrawable(drawable);
+        imageView.setColorFilter(self.getResources().getColor(android.R.color.darker_gray), android.graphics.PorterDuff.Mode.MULTIPLY);
+        updateWindowColor(imageView);
+    }
+
+    public void updateTitle(String value){
+        getSupportActionBar().setTitle(value);
     }
 }

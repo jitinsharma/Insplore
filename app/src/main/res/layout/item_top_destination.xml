@@ -37,12 +37,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/top_dest_city"
                 android:layout_centerHorizontal="true"
-                android:text="@string/details"
+                android:text="@string/places"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:fontFamily="sans-serif-medium"
                 android:clickable="true"
-                android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                android:drawableLeft="@drawable/state_location_on_white"
+                android:drawableStart="@drawable/state_location_on_white"
                 android:padding="@dimen/standard_padding"
                 android:layout_margin="@dimen/standard_padding"
                 android:background="@drawable/rounded_corner"/>
@@ -63,8 +64,8 @@
                 android:text="@string/hyphen"
                 tools:text="64259"
                 android:textStyle="bold"
-                android:drawableLeft="@drawable/ic_flight_takeoff_black_24dp"
-                android:drawableStart="@drawable/ic_flight_takeoff_black_24dp"
+                android:drawableLeft="@drawable/state_flight_accent"
+                android:drawableStart="@drawable/state_flight_accent"
                 android:padding="@dimen/standard_padding"
                 android:drawablePadding="@dimen/standard_padding"/>
 
@@ -77,8 +78,8 @@
                 android:textStyle="bold"
                 android:layout_toRightOf="@+id/top_dest_flights"
                 android:layout_toEndOf="@+id/top_dest_flights"
-                android:drawableLeft="@drawable/ic_person_black_24dp"
-                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:drawableLeft="@drawable/state_person_accent"
+                android:drawableStart="@drawable/state_person_accent"
                 android:padding="@dimen/standard_padding"
                 android:drawablePadding="@dimen/standard_padding"/>
         </RelativeLayout>

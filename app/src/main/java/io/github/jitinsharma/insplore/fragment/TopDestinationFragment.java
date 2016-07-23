@@ -10,12 +10,14 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -29,10 +31,13 @@ import java.util.Date;
 import java.util.Locale;
 
 import io.github.jitinsharma.insplore.R;
+import io.github.jitinsharma.insplore.activities.SearchActivity;
 import io.github.jitinsharma.insplore.adapter.TopDestinationAdapter;
 import io.github.jitinsharma.insplore.model.Constants;
+import io.github.jitinsharma.insplore.model.OnPlacesClick;
 import io.github.jitinsharma.insplore.model.TopDestinationObject;
 import io.github.jitinsharma.insplore.service.TdService;
+import io.github.jitinsharma.insplore.utilities.Utils;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -49,6 +54,13 @@ public class TopDestinationFragment extends Fragment{
     TdBroadcastReceiver tdBroadcastReceiver;
     LinearLayout topDestInput;
     TextView topDestDate;
+    SearchActivity searchActivity;
+    String savedMonthString;
+    String cityName;
+    boolean placeClicked = false;
+    static{
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,20 +77,21 @@ public class TopDestinationFragment extends Fragment{
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putParcelableArrayList(Constants.TOP_DEST_OBJ, topDestinationObjects);
+        //outState.putString(Constants.ENTERED_VALUE, cityListName.getText().toString());
+        outState.putBoolean(Constants.PLACE_CLICKED, placeClicked);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     public void onDestroy() {
-        //getContext().unregisterReceiver(tdBroadcastReceiver);
+        if (tdBroadcastReceiver!=null) {
+            getContext().unregisterReceiver(tdBroadcastReceiver);
+        }
         super.onDestroy();
     }
 
     @Override
     public void onPause() {
-        if (tdBroadcastReceiver!=null) {
-            getContext().unregisterReceiver(tdBroadcastReceiver);
-        }
         super.onPause();
     }
 
@@ -91,41 +104,37 @@ public class TopDestinationFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_top_destination, container, false);
+        searchActivity = (SearchActivity)getActivity();
+        searchActivity.updateImage(ContextCompat.getDrawable(getContext(), R.drawable.top_dest_image));
+        searchActivity.getSupportActionBar().setTitle(getContext().getString(R.string.top_destination));
         if (savedInstanceState != null){
             topDestinationObjects = savedInstanceState.getParcelableArrayList(Constants.TOP_DEST_OBJ);
+            savedMonthString = savedInstanceState.getString(Constants.DATE_VALUE);
+            cityName = savedInstanceState.getString(Constants.ENTERED_VALUE);
+            placeClicked = savedInstanceState.getBoolean(Constants.PLACE_CLICKED);
         }
-        View root = inflater.inflate(R.layout.fragment_top_destination, container, false);
         topDestInput = (LinearLayout)root.findViewById(R.id.top_dest_input);
         topDestDate = (TextView)root.findViewById(R.id.top_dest_date_text);
         topDestinationList = (RecyclerView)root.findViewById(R.id.top_dest_list);
         progressBar = (ProgressBar)root.findViewById(R.id.top_dest_progress);
         cityListName = (AutoCompleteTextView)root.findViewById(R.id.top_dest_search);
+
         topDestinationList.setLayoutManager(new LinearLayoutManager(getContext()));
         topDestinationList.setNestedScrollingEnabled(false);
+        initializeReceiver();
+
+        if (placeClicked){
+            displayPlacesOfInterest(cityName);
+        }
 
         if (airportCode!=null){
             topDestInput.setVisibility(View.GONE);
             if (topDestinationObjects==null) {
-                tdService = new Intent(getActivity(), TdService.class);
-                tdService.putExtra(Constants.DEP_AIRPORT, airportCode);
-                tdService.putExtra(Constants.TD_MONTH, month);
-                getActivity().startService(tdService);
-                tdBroadcastReceiver = new TdBroadcastReceiver();
-                IntentFilter intentFilter = new IntentFilter(TdService.ACTION_TdService);
-                intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
-                getContext().registerReceiver(tdBroadcastReceiver, intentFilter);
-                //TopDestinationTask topDestinationTask = new TopDestinationTask(getContext(), new TopDestinationListener());
-                //topDestinationTask.execute(airportCode, month);
+                initializeService(airportCode, month);
             }
             else{
-                topDestinationAdapter = new TopDestinationAdapter(getContext(), topDestinationObjects, new TopDestinationAdapter.OnDetailClick() {
-                    @Override
-                    public void onClick(int position) {
-                        displayPlacesOfInterest(topDestinationObjects.get(position).getCityName());
-                    }
-                });
-                topDestinationList.setLayoutManager(new LinearLayoutManager(getContext()));
-                topDestinationList.setNestedScrollingEnabled(false);
+                setAdapterWithData();
                 progressBar.setVisibility(View.GONE);
             }
         }
@@ -136,11 +145,27 @@ public class TopDestinationFragment extends Fragment{
             ArrayAdapter<String> airportArrayAdapter = new ArrayAdapter<String>(getContext(),
                     android.R.layout.simple_dropdown_item_1line, airports);
             cityListName.setAdapter(airportArrayAdapter);
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(new Date());
-            int month = calendar.get(Calendar.MONTH)-1;
-            String monthString = String.format(Locale.ENGLISH,"%02d",month);
-            topDestDate.setText(calendar.get(Calendar.YEAR) + "-" + monthString);
+            if (cityName!=null){
+                cityListName.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        cityListName.showDropDown();
+                    }
+                },500);
+                cityListName.setText(cityName);
+                cityListName.setSelection(cityListName.getText().length());
+
+            }
+            if (savedMonthString==null) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(new Date());
+                int month = calendar.get(Calendar.MONTH) - 1;
+                String monthString = String.format(Locale.ENGLISH, "%02d", month);
+                topDestDate.setText(calendar.get(Calendar.YEAR) + "-" + monthString);
+            }
+            else{
+                topDestDate.setText(savedMonthString);
+            }
             topDestDate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -159,18 +184,10 @@ public class TopDestinationFragment extends Fragment{
             cityListName.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    InputMethodManager in = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                    in.hideSoftInputFromWindow(view.getApplicationWindowToken(), 0);
+                    Utils.hideKeyBoard(getContext(), view);
                     progressBar.setVisibility(View.VISIBLE);
                     String[] data = ((String)adapterView.getItemAtPosition(i)).split(",");
-                    tdService = new Intent(getActivity(), TdService.class);
-                    tdService.putExtra(Constants.DEP_AIRPORT, data[0]);
-                    tdService.putExtra(Constants.TD_MONTH, topDestDate.getText());
-                    getActivity().startService(tdService);
-                    tdBroadcastReceiver = new TdBroadcastReceiver();
-                    IntentFilter intentFilter = new IntentFilter(TdService.ACTION_TdService);
-                    intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
-                    getContext().registerReceiver(tdBroadcastReceiver, intentFilter);
+                    initializeService(data[0], topDestDate.getText().toString());
                 }
             });
         }
@@ -183,42 +200,52 @@ public class TopDestinationFragment extends Fragment{
         public void onReceive(Context context, Intent intent) {
             progressBar.setVisibility(View.GONE);
             if (intent.getStringExtra(Constants.NETWORK_ERROR)!=null){
-                Snackbar.make(getView(), "A server error occured. Please try again later", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(getView(), getContext().getString(R.string.server_error), Snackbar.LENGTH_LONG).show();
             }
             else {
                 topDestinationObjects = intent.getParcelableArrayListExtra(Constants.RECEIVE_LIST);
                 if (topDestinationObjects!=null && topDestinationObjects.size()>0) {
-                    topDestinationAdapter = new TopDestinationAdapter(getContext(), topDestinationObjects, new TopDestinationAdapter.OnDetailClick() {
-                        @Override
-                        public void onClick(int position) {
-                            displayPlacesOfInterest(topDestinationObjects.get(position).getCityName());
-                        }
-                    });
-                    topDestinationList.setAdapter(topDestinationAdapter);
+                    setAdapterWithData();
                 }
                 else{
-                    Snackbar.make(getView(), "No Results found for your search", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(getView(), getContext().getString(R.string.no_result_error), Snackbar.LENGTH_LONG).show();
                 }
             }
         }
     }
 
+    public void setAdapterWithData(){
+        topDestinationAdapter = new TopDestinationAdapter(getContext(), topDestinationObjects, new OnPlacesClick() {
+            @Override
+            public void onClick(int position) {
+                searchActivity.updateImage(getContext().getResources().getDrawable(R.drawable.places));
+                displayPlacesOfInterest(topDestinationObjects.get(position).getCityName());
+            }
+        });
+        topDestinationList.setAdapter(topDestinationAdapter);
+    }
+
     public void displayPlacesOfInterest(String city){
+        placeClicked = true;
         PlaceOfInterestFragment fragment = PlaceOfInterestFragment.newInstance(city);
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .commit();
     }
 
-    /*class TopDestinationListener implements AsyncTaskListener<ArrayList<TopDestinationObject>> {
+    public void initializeReceiver(){
+        tdBroadcastReceiver = new TdBroadcastReceiver();
+        IntentFilter intentFilter = new IntentFilter(TdService.ACTION_TdService);
+        intentFilter.addCategory(Intent.CATEGORY_DEFAULT);
+        getContext().registerReceiver(tdBroadcastReceiver, intentFilter);
+    }
 
-        @Override
-        public void onTaskComplete(ArrayList<TopDestinationObject> result) {
-            topDestinationObjects = result;
-            topDestinationAdapter = new TopDestinationAdapter(getContext(), result);
-            topDestinationList.setAdapter(topDestinationAdapter);
-            progressBar.setVisibility(View.GONE);
-        }
-    }*/
+    public void initializeService(String code, String month){
+        tdService = new Intent(getActivity(), TdService.class);
+        tdService.putExtra(Constants.DEP_AIRPORT, code);
+        tdService.putExtra(Constants.TD_MONTH, month);
+        getActivity().startService(tdService);
+    }
 }

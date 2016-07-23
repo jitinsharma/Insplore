@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -22,16 +23,18 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -73,14 +76,19 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
         ActivityCompat.OnRequestPermissionsResultCallback {
-    private GoogleMap mMap;
-    private GoogleApiClient mGoogleApiClient;
+    public static final String TAG = "InsploreMap";
+    protected static final int REQUEST_CHECK_SETTINGS = 2;
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 101;
+
+    static {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
+
+    final int PLACE_PICKER_REQUEST = 1;
     Location mLastLocation;
     LocationObject locationObject;
-    public static final String TAG = "InsploreMap";
     TinyDB tinyDB;
     TextView nearbyLocations;
-    final int PLACE_PICKER_REQUEST = 1;
     CardView flightSearchCard;
     ImageView imageView;
     TabLayout tabLayout;
@@ -88,19 +96,16 @@ public class MainActivity extends AppCompatActivity
     TextView topDestDate;
     Context self;
     RelativeLayout topDestinationView;
-    SwitchCompat returnTripSwitch;
-    private static final int LOCATION_PERMISSION_REQUEST_CODE = 101;
-    protected static final int REQUEST_CHECK_SETTINGS = 2;
-    public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
-    public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS =
-            UPDATE_INTERVAL_IN_MILLISECONDS / 2;
-    LocationRequest locationRequest;
-
+    SwitchCompat tripSwitch;
+    ProgressBar progressBar;
+    private GoogleMap mMap;
+    private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tinyDB = new TinyDB(this);
         self = getBaseContext();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         tabLayout = (TabLayout) findViewById(R.id.divider);
@@ -120,31 +125,47 @@ public class MainActivity extends AppCompatActivity
         goButton = (TextView) findViewById(R.id.go_button);
         topDestDate = (TextView) findViewById(R.id.top_dest_date_text);
         topDestinationView = (RelativeLayout) findViewById(R.id.top_destination_options);
-        returnTripSwitch = (SwitchCompat) findViewById(R.id.return_trip);
+        tripSwitch = (SwitchCompat) findViewById(R.id.return_trip);
+        progressBar = (ProgressBar) findViewById(R.id.main_progress);
+        tabLayout.addTab(tabLayout.newTab().setText(getBaseContext().getString(R.string.top_destination)));
+        tabLayout.addTab(tabLayout.newTab().setText(getBaseContext().getString(R.string.inspire_search)));
 
-        /*if (mGoogleApiClient == null) {
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .addApi(LocationServices.API)
-                    .build();
-        }*/
         buildGoogleApiClient();
 
         SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().
                 findFragmentById(R.id.lite_map);
         supportMapFragment.getMapAsync(this);
-        locationObject = new LocationObject();
-        tinyDB = new TinyDB(this);
-        tabLayout.addTab(tabLayout.newTab().setText(getBaseContext().getString(R.string.top_destination)));
-        tabLayout.addTab(tabLayout.newTab().setText(getBaseContext().getString(R.string.inspire_search)));
-        locationObject.setTabSelection(Constants.TOP_DESTINATION);
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        int month = calendar.get(Calendar.MONTH) - 1;
-        String monthString = String.format(Locale.ENGLISH, "%02d", month);
-        topDestDate.setText(calendar.get(Calendar.YEAR) + "-" + monthString);
+        if (savedInstanceState != null) {
+            supportMapFragment.setRetainInstance(true);
+            locationObject = savedInstanceState.getParcelable(Constants.LOCATION_OBJ);
+        }
+        if (locationObject != null) {
+            topDestDate.setText(locationObject.getDate());
+            tabLayout.getTabAt(locationObject.getTabNumber()).select();
+            if (locationObject.getTabNumber() == 1) {
+                if (!locationObject.isTripSwitch()) {
+                    tripSwitch.setChecked(false);
+                } else {
+                    tripSwitch.setChecked(true);
+                }
+                AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
+                        getBaseContext(), R.color.colorPrimary), ContextCompat.getColor(
+                        getBaseContext(), R.color.colorAccent), tabLayout);
+                AnimationUtilities.animateImageFadeIn(imageView, self, 500, self.getResources().getDrawable(R.drawable.inspire));
+                topDestinationView.setVisibility(View.GONE);
+                tripSwitch.setVisibility(View.VISIBLE);
+            }
+        } else {
+            locationObject = new LocationObject();
+            locationObject.setTabNumber(0);
+            locationObject.setTripSwitch(true);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(new Date());
+            int month = calendar.get(Calendar.MONTH) - 1;
+            String monthString = String.format(Locale.ENGLISH, "%02d", month);
+            topDestDate.setText(calendar.get(Calendar.YEAR) + "-" + monthString);
+            locationObject.setDate(topDestDate.getText().toString());
+        }
 
         nearbyLocations.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,19 +183,20 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), SearchActivity.class);
-                if (locationObject.getTabSelection().equals(Constants.TOP_DESTINATION)) {
+                if (locationObject.getTabNumber() == 0) {
                     intent.putExtra(Constants.INTENT_TYPE, Constants.TOP_DESTINATION);
                     intent.putExtra(Constants.TD_MONTH, topDestDate.getText().toString());
                     intent.putExtra(Constants.SAVED_AIRPORT_CODE, tinyDB.getString(Constants.SAVED_AIRPORT_CODE));
                 } else {
                     intent.putExtra(Constants.INTENT_TYPE, Constants.INSPIRE_ME);
-                    intent.putExtra(Constants.TRIP_TYPE, "");
+                    intent.putExtra(Constants.TRIP_TYPE, tripSwitch.isChecked() ? "false" : "true");
                     intent.putExtra(Constants.SAVED_AIRPORT_CODE, tinyDB.getString(Constants.SAVED_AIRPORT_CODE));
                 }
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                     ActivityOptions options = ActivityOptions
-                            .makeSceneTransitionAnimation(MainActivity.this, imageView, "search");
+                            .makeSceneTransitionAnimation(MainActivity.this, imageView,
+                                    self.getString(R.string.transition_name));
                     startActivity(intent, options.toBundle());
                 } else {
                     startActivity(intent);
@@ -187,22 +209,22 @@ public class MainActivity extends AppCompatActivity
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()) {
                     case 0:
-                        locationObject.setTabSelection(Constants.TOP_DESTINATION);
                         AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
                                 getBaseContext(), R.color.colorAccent), ContextCompat.getColor(
                                 getBaseContext(), R.color.colorPrimary), tabLayout);
-                        AnimationUtilities.animateSlideIn(imageView, self, 500, self.getResources().getDrawable(R.drawable.skyscrapers));
+                        AnimationUtilities.animateImageFadeIn(imageView, self, 500, self.getResources().getDrawable(R.drawable.top_dest_image));
                         topDestinationView.setVisibility(View.VISIBLE);
-                        returnTripSwitch.setVisibility(View.GONE);
+                        tripSwitch.setVisibility(View.GONE);
+                        locationObject.setTabNumber(0);
                         break;
                     case 1:
-                        locationObject.setTabSelection(Constants.INSPIRE_ME);
                         AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
                                 getBaseContext(), R.color.colorPrimary), ContextCompat.getColor(
                                 getBaseContext(), R.color.colorAccent), tabLayout);
-                        AnimationUtilities.animateSlideIn(imageView, self, 500, self.getResources().getDrawable(R.drawable.inspire));
+                        AnimationUtilities.animateImageFadeIn(imageView, self, 500, self.getResources().getDrawable(R.drawable.inspire));
                         topDestinationView.setVisibility(View.GONE);
-                        returnTripSwitch.setVisibility(View.VISIBLE);
+                        tripSwitch.setVisibility(View.VISIBLE);
+                        locationObject.setTabNumber(1);
                         break;
                     default:
                         AnimationUtilities.animatedBackgroundColor(ContextCompat.getColor(
@@ -233,11 +255,29 @@ public class MainActivity extends AppCompatActivity
                         //Toast.makeText(MainActivity.this, ""+year+month+day, Toast.LENGTH_SHORT).show();
                         monthString = String.format("%02d", month);
                         topDestDate.setText(year + "-" + monthString);
+                        locationObject.setDate(topDestDate.getText().toString());
                     }
                 });
                 datePickerFragment.show(getSupportFragmentManager(), "datepicker");
             }
         });
+
+        tripSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    locationObject.setTripSwitch(true);
+                } else {
+                    locationObject.setTripSwitch(false);
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putParcelable(Constants.LOCATION_OBJ, locationObject);
+        super.onSaveInstanceState(outState);
     }
 
     protected synchronized void buildGoogleApiClient() {
@@ -262,18 +302,24 @@ public class MainActivity extends AppCompatActivity
                             public void run() {
                                 mGoogleApiClient.reconnect();
                             }
-                        },2000);
+                        }, 2000);
                         break;
                     case Activity.RESULT_CANCELED:
-                        Snackbar.make(getCurrentFocus(), "No location was found. Swipe right to access more options", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(getCurrentFocus(), self.getString(R.string.location_error), Snackbar.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.GONE);
                         break;
                 }
                 break;
             case PLACE_PICKER_REQUEST:
                 if (resultCode == RESULT_OK) {
                     Place place = PlacePicker.getPlace(data, this);
-                    String toastMsg = String.format("Place: %s", place.getName());
-                    Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
+                    Uri gmmIntentUri = Uri.parse("geo:" + place.getLatLng().latitude
+                            + "," + place.getLatLng().longitude + "?z=21");
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                    mapIntent.setPackage("com.google.android.apps.maps");
+                    if (mapIntent.resolveActivity(self.getPackageManager()) != null) {
+                        startActivity(mapIntent);
+                    }
                 }
                 break;
         }
@@ -319,6 +365,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        if (locationObject.getLatitude() != 0) {
+            zoomMap(locationObject.getLatitude(), locationObject.getLongitude());
+        }
     }
 
     @Override
@@ -348,9 +397,7 @@ public class MainActivity extends AppCompatActivity
             locationObject.setLongitude(tinyDB.getDouble(Constants.LAST_LONG, 0));
             zoomMap(locationObject.getLatitude(), locationObject.getLongitude());
             flightSearchCard.setVisibility(View.VISIBLE);
-            AnimationUtilities.animateViewUp(flightSearchCard, self, 500);
         } else {
-            //Snackbar.make(getCurrentFocus(), "No location was found. Swipe right to access more options", Snackbar.LENGTH_LONG).show();
             settingsRequest();
         }
     }
@@ -378,30 +425,21 @@ public class MainActivity extends AppCompatActivity
         locationTask.execute(latLng);
     }
 
-    class AirportCityListener implements AsyncTaskListener<LocationObject> {
-
-        @Override
-        public void onTaskComplete(LocationObject result) {
-            tinyDB.putString(Constants.SAVED_AIRPORT_CODE, result.getAirportCode());
-            tinyDB.putString(Constants.SAVED_CITY, result.getCityName());
-            Toast.makeText(getBaseContext(), result.getAirportCode() + result.getCityName(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
     public void enableLocation() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
             // Permission to access the location is missing.
-            PermissionUtils.requestPermission(this, LOCATION_PERMISSION_REQUEST_CODE,
-                    Manifest.permission.ACCESS_FINE_LOCATION, true);
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    LOCATION_PERMISSION_REQUEST_CODE);
         } else {
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                     mGoogleApiClient);
-            Log.e("Last location", ""+mLastLocation);
+            Log.e("Last location", "" + mLastLocation);
         }
     }
 
-    public void doMapOperations(){
+    public void doMapOperations() {
         locationObject.setLatitude(mLastLocation.getLatitude());
         locationObject.setLongitude(mLastLocation.getLongitude());
         tinyDB.putDouble(Constants.LAST_LAT, mLastLocation.getLatitude());
@@ -409,9 +447,9 @@ public class MainActivity extends AppCompatActivity
         zoomMap(mLastLocation.getLatitude(), mLastLocation.getLongitude());
         if (tinyDB.getString(Constants.SAVED_AIRPORT_CODE).isEmpty() && tinyDB.getString(Constants.SAVED_CITY).isEmpty()) {
             loadAirportCityData(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+        } else {
+            flightSearchCard.setVisibility(View.VISIBLE);
         }
-        flightSearchCard.setVisibility(View.VISIBLE);
-        AnimationUtilities.animateViewUp(flightSearchCard, self, 500);
     }
 
     @Override
@@ -425,7 +463,9 @@ public class MainActivity extends AppCompatActivity
             // Enable the my location layer if the permission has been granted.
             enableLocation();
         } else {
-
+            progressBar.setVisibility(View.GONE);
+            Snackbar.make(getCurrentFocus(), self.getString(R.string.location_error), Snackbar.LENGTH_LONG).show();
+            mGoogleApiClient.disconnect();
         }
     }
 
@@ -436,7 +476,7 @@ public class MainActivity extends AppCompatActivity
         locationRequest.setFastestInterval(5 * 1000);
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(locationRequest);
-        builder.setAlwaysShow(true); //this is the key ingredient
+        builder.setAlwaysShow(true);
 
         PendingResult<LocationSettingsResult> result =
                 LocationServices.SettingsApi.checkLocationSettings(mGoogleApiClient, builder.build());
@@ -449,13 +489,12 @@ public class MainActivity extends AppCompatActivity
                     case LocationSettingsStatusCodes.SUCCESS:
                         // All location settings are satisfied. The client can initialize location
                         // requests here.
-                        Log.e("tag", "inside result");
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
                                 mGoogleApiClient.reconnect();
                             }
-                        },2000);
+                        }, 2000);
                         break;
                     case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
                         // Location settings are not satisfied. But could be fixed by showing the user
@@ -475,5 +514,21 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
+    }
+
+    class AirportCityListener implements AsyncTaskListener<LocationObject> {
+
+        @Override
+        public void onTaskComplete(LocationObject result) {
+            progressBar.setVisibility(View.GONE);
+            if (result != null) {
+                flightSearchCard.setVisibility(View.VISIBLE);
+                AnimationUtilities.animateViewUp(flightSearchCard, self, 500);
+                tinyDB.putString(Constants.SAVED_AIRPORT_CODE, result.getAirportCode());
+                tinyDB.putString(Constants.SAVED_CITY, result.getCityName());
+            } else {
+                Snackbar.make(getCurrentFocus(), self.getString(R.string.server_error), Snackbar.LENGTH_LONG).show();
+            }
+        }
     }
 }

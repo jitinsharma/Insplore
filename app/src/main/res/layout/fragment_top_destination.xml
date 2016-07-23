@@ -46,8 +46,9 @@
                         android:id="@+id/top_dest_date_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/date_icon"
                         android:padding="@dimen/standard_padding"
-                        android:src="@drawable/ic_date_range_black_24dp" />
+                        android:src="@drawable/state_date_black" />
 
                     <TextView
                         android:id="@+id/top_dest_date_text"

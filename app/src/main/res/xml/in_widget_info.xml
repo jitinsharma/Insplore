@@ -5,7 +5,7 @@
     android:minResizeHeight="@dimen/widget_today_min_resize_height"
     android:minResizeWidth="@dimen/widget_today_min_resize_width"
     android:minWidth="@dimen/widget_today_default_width"
-    android:previewImage="@mipmap/ic_launcher"
+    android:previewImage="@drawable/widget"
     android:resizeMode="horizontal"
     android:updatePeriodMillis="86400000"
     android:widgetCategory="home_screen" />

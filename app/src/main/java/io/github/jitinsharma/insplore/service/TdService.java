@@ -29,6 +29,7 @@ import io.github.jitinsharma.insplore.utilities.Utils;
 public class TdService extends IntentService{
     ArrayList<TopDestinationObject> topDestinationObjects = new ArrayList<>();
     public static final String ACTION_TdService = "io.github.jitinsharma.insplore.service.TdService";
+    String places[];
 
     public TdService(String name) {
         super(name);
@@ -79,6 +80,7 @@ public class TdService extends IntentService{
     }
 
     public void getTopDestinationData(String json) throws JSONException{
+        places = getBaseContext().getResources().getStringArray(R.array.yapq_cities);
         JSONObject jsonObject = new JSONObject(json);
         if (jsonObject.has("results")) {
             JSONArray dataArray = jsonObject.getJSONArray("results");
@@ -91,6 +93,11 @@ public class TdService extends IntentService{
                 topDestinationObject.setCityName(cityObject.getString("city"));
                 topDestinationObject.setNoOfFlights(data.getString("flights"));
                 topDestinationObject.setNoOfPax(data.getString("travelers"));
+                for (String place : places) {
+                    if (place.equals(topDestinationObject.getCityName())){
+                        topDestinationObject.setPlaceEnabled(true);
+                    }
+                }
                 topDestinationObjects.add(topDestinationObject);
             }
         }
