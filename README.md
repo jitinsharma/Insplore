@@ -13,3 +13,7 @@ The app allows user to search for various locations.
 - Put the api key in strings.xml (<string name="ama_sandbox"></string>)
 - Create a google maps api key.
 - Put the api key in (src/debug/res/values/google_maps_api.xml)
+
+## Screenshots
+
+![screen](../master/pics/pic_1.png) ![screen](../master/pics/pic_td.png)
